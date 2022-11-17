@@ -5,11 +5,11 @@ const config = {
   name: 'db',
   connector: 'postgresql',
   url: '',
-  host: '',
+  host: 'heffalump.db.elephantsql.com',
   port: 5432,
-  user: '',
-  password: '',
-  database: '',
+  user: 'fvamecoa',
+  password: 'p4p8Z3xKiwWGuVjur9oAq1OqfKwIioKH',
+  database: 'fvamecoa',
   ssl: false,
 };
 
