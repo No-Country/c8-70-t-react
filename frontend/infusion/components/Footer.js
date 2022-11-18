@@ -42,16 +42,16 @@ export default function Footer() {
 
         {/* <!-- Section: Links  --> */}
         <section className="">
-          <div className="container text-center text-md-start mt-5">
+          <div className="container text-center text-md-start mt-5 mb-5">
             {/* <!-- Grid row --> */}
             <div className="row mt-3">
               {/* <!-- Grid column --> */}
               <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                 {/* <!-- Content --> */}
-                <h6 className="text-uppercase fw-bold mb-4 text-uppercase">
+                <h6 className="text-uppercase fw-bold mb-2 text-uppercase">
                   <i className="fas fa-gem"></i>Infusion Diseño
                 </h6>
-                <p>
+                <p className="lh-1">
                   Empresa de diseño y marroquineria 
                 </p>
               </div>
@@ -60,18 +60,18 @@ export default function Footer() {
               {/* <!-- Grid column --> */}
               <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                 {/* <!-- Links --> */}
-                <h6 className="text-uppercase fw-bold mb-4 text-uppercase">Enlaces Rapidos</h6>
-                <p>
+                <h6 className="text-uppercase fw-bold mb-2 text-uppercase">Enlaces Rapidos</h6>
+                <p className="lh-1">
                   <a href="#!" className="text-reset">
                     Personalizables
                   </a>
                 </p>
-                <p>
+                <p className="lh-1">
                   <a href="#!" className="text-reset">
                     Sobre Nosotros
                   </a>
                 </p>
-                <p>
+                <p className="lh-1">
                   <a href="#!" className="text-reset">
                     Contacto
                   </a>
@@ -80,19 +80,19 @@ export default function Footer() {
               {/* <!-- Grid column --> */}
 
               {/* <!-- Grid column --> */}
-              <div className="col-md-3 col-lg-3 col-xl-3 mb-md-0 mb-4">
+              <div className="col-md-3 col-lg-2 col-xl-2 mb-md-0 mb-4">
                 {/* <!-- Links --> */}
-                <h6 className="text-uppercase fw-bold mb-4 text-uppercase">Contacto</h6>
-                <p>
+                <h6 className="text-uppercase fw-bold mb-2 text-uppercase">Contacto</h6>
+                <p className="lh-1">
                   <i className="fas fa-print "></i> +57 3137209263
                 </p>
-                <p>
+                <p className="lh-1">
                   <i className="fas fa-print "></i> infusion@gmail.com
                 </p>
-                <p>
+                <p className="lh-1">
                   <i className="fas fa-home "></i> Medellin - Colombia
                 </p>
-                <p>
+                <p className="lh-1">
                   <i className="fas fa-envelope"></i>
                   {/* info@example.com */}
                 </p>
@@ -103,18 +103,18 @@ export default function Footer() {
               {/* <!-- Grid column --> */}
               <div className="col-md-4 col-lg-2 col-xl-2 mx-auto mb-4">
                 {/* <!-- Links --> */}
-                <h6 className="text-uppercase fw-bold mb-4 text-uppercase">Navegacion</h6>
-                <p>
+                <h6 className="text-uppercase fw-bold mb-2 text-uppercase">Navegacion</h6>
+                <p className="lh-1">
                   <a href="#!" className="text-reset">
                     Politica de privacidad
                   </a>
                 </p>
-                <p>
+                <p className="lh-1">
                   <a href="#!" className="text-reset">
                     Politica de devoluciones
                   </a>
                 </p>
-                <p>
+                <p className="lh-1">
                   <a href="#!" className="text-reset">
                     FAQ - Ayuda
                   </a>
@@ -124,22 +124,24 @@ export default function Footer() {
               {/* <!-- Grid column --> */}
               <div className="col-md-6 col-lg-2 col-xl-2 mx-auto mb-4">
                 {/* <!-- Links --> */}
-                <h6 className="text-uppercase fw-bold mb-4 text-uppercase">Redes Sociales</h6>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Politica de privacidad
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Politica de devoluciones
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset">
-                    FAQ - Ayuda
-                  </a>
-                </p>
+                <h6 className="text-uppercase fw-bold mb-2 text-uppercase">Redes Sociales</h6>
+                <div className="justify-content-md-start justify-content-center d-flex">
+                  <p className="mx-2">
+                    <a href="#!" className="text-reset">
+                      <i class="bi bi-twitter"></i>
+                    </a>
+                  </p>
+                  <p className="mx-2">
+                    <a href="#!" className="text-reset">
+                      <i class="bi bi-instagram"></i>
+                    </a>
+                  </p>
+                  <p className="mx-2">
+                    <a href="#!" className="text-reset">
+                      <i class="bi bi-whatsapp"></i>
+                    </a>
+                  </p>
+                </div>
               </div>
               {/* <!-- Grid column --> */}
             </div>
@@ -150,7 +152,7 @@ export default function Footer() {
 
         {/* <!-- Copyright --> */}
         <div
-          className="text-center p-4"
+          className="text-center p-4 bg-light text-dark"
           // style="background-color: rgba(0, 0, 0, 0.05);"
         >
           © Todos los derechos reservados - Infusion 2022
