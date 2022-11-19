@@ -90,14 +90,16 @@ export default function Home() {
       <br />
       <br />
       <ProductList />
-      <div className="mt-5 mb-5 d-flex justify-content-center border-secondary bg-white">
-        <Link
-          href="/About"
-          className="text-decoration-none fs-3 border-dark border-1 text-dark"
-        >
-          {" "}
-          Ver mas
-        </Link>
+      <div className="d-flex justify-content-center">
+        <div className="mt-5 mb-5 justify-content-center btn btn-secondary bg-white w-25">
+          <Link
+            href="/About"
+            className="text-decoration-none fs-4 border-dark border-1 text-dark m-2"
+          >
+            {" "}
+            Ver mas
+          </Link>
+        </div>
       </div>
     </>
   );
