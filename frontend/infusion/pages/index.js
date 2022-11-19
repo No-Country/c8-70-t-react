@@ -2,44 +2,45 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import ProductCard from "../components/ProductCard";
 import CategoryCard from "../components/CategoryCard";
+import Title from "../components/Title";
 
 const CategoryList = [
   {
-    category: 'Carteras',
-    link:'/Productos',
-    image:"/home-product-1.png"
+    category: "Carteras",
+    link: "/Productos",
+    image: "/home-product-1.png",
   },
   {
-    category: 'Mochilas',
-    link:'/Productos',
-    image:"/home-product-3.png"
+    category: "Mochilas",
+    link: "/Productos",
+    image: "/home-product-3.png",
   },
   {
-    category: 'Manos Libres',
-    link:'/Productos',
-    image:"/home-product-2.png"
+    category: "Manos Libres",
+    link: "/Productos",
+    image: "/home-product-2.png",
   },
   {
-    category: 'Bandoleras',
-    link:'/Productos',
-    image:"/home-product-2.png"
+    category: "Bandoleras",
+    link: "/Productos",
+    image: "/home-product-2.png",
   },
   {
-    category: 'Billeteras',
-    link:'/Productos',
-    image:"/home-product-2.png"
+    category: "Billeteras",
+    link: "/Productos",
+    image: "/home-product-2.png",
   },
   {
-    category: 'Monederos',
-    link:'/Productos',
-    image:"/home-product-2.png"
-  }
-]
+    category: "Monederos",
+    link: "/Productos",
+    image: "/home-product-2.png",
+  },
+];
 
 export default function Home() {
   return (
     <>
-      <br />
+      <Title title="Nuestros productos son elaborados artesanalmente" />
       <div className="card mb-3 border-0">
         <div className="row d-flex flex-column flex-md-row justify-content-md-center justify-content-center">
           <div className="col-6 row justify-content-center align-items-center">
@@ -67,20 +68,69 @@ export default function Home() {
         </div>
       </div>
       <br />
-      <div className="mt-5 mb-5">
-        <p className="card-text text-center fs-3 fw-lighter">
-          {" "}
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.{" "}
-        </p>
-      </div>
+      <Title
+        title="Categorias"
+        subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+      />
       <br />
       <div className="row row-cols-1 row-cols-md-3 row-cols-sm-2  g-4">
-        {CategoryList.map((item) => <CategoryCard category={item.category} image={item.image} link={item.link}></CategoryCard>)}
+        {CategoryList.map((item) => (
+          <CategoryCard
+            category={item.category}
+            image={item.image}
+            link={item.link}
+          ></CategoryCard>
+        ))}
       </div>
       <br />
-      
+      <div className="row row-cols-1 row-cols-md-3 g-4">
+        <div className="col">
+          <div className="card border-0">
+            <div className="card-body p-5">
+              <h5 className="card-title text-uppercase">
+                Productos Artesanales
+              </h5>
+              <p className="card-text">
+                This is a longer card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="col">
+          <div className="card border-0">
+            <div className="card-body p-5">
+              <h5 className="card-title text-uppercase">Envios Gratis</h5>
+              <p className="card-text">
+                This is a longer card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="col">
+          <div className="card border-0">
+            <div className="card-body p-5">
+              <h5 className="card-title text-uppercase">Sitio Seguro</h5>
+              <p className="card-text">
+                This is a longer card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
       <br />
-      <ProductCard className={'shadow-5'}></ProductCard>
+      <Title
+        title="Los mas populares"
+        subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+      />
+      <br />
+      <br />
+      <ProductCard className={"shadow-5"}></ProductCard>
       <div className="mt-5 mb-5 d-flex justify-content-center border-secondary bg-white">
         <Link
           href="/About"
@@ -90,8 +140,6 @@ export default function Home() {
           Ver mas
         </Link>
       </div>
-
-      
     </>
   );
 }
