@@ -1,41 +1,9 @@
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import ProductCard from "../components/ProductCard";
-import CategoryCard from "../components/CategoryCard";
 import Title from "../components/Title";
-
-const CategoryList = [
-  {
-    category: "Carteras",
-    link: "/Productos",
-    image: "/home-product-1.png",
-  },
-  {
-    category: "Mochilas",
-    link: "/Productos",
-    image: "/home-product-3.png",
-  },
-  {
-    category: "Manos Libres",
-    link: "/Productos",
-    image: "/home-product-2.png",
-  },
-  {
-    category: "Bandoleras",
-    link: "/Productos",
-    image: "/home-product-2.png",
-  },
-  {
-    category: "Billeteras",
-    link: "/Productos",
-    image: "/home-product-2.png",
-  },
-  {
-    category: "Monederos",
-    link: "/Productos",
-    image: "/home-product-2.png",
-  },
-];
+import CategoryList from "../components/CategoryList";
+import ProductList from "../components/ProductList";
 
 export default function Home() {
   return (
@@ -73,15 +41,7 @@ export default function Home() {
         subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
       />
       <br />
-      <div className="row row-cols-1 row-cols-md-3 row-cols-sm-2  g-4">
-        {CategoryList.map((item) => (
-          <CategoryCard
-            category={item.category}
-            image={item.image}
-            link={item.link}
-          ></CategoryCard>
-        ))}
-      </div>
+      <CategoryList />
       <br />
       <div className="row row-cols-1 row-cols-md-3 g-4">
         <div className="col">
@@ -130,7 +90,7 @@ export default function Home() {
       />
       <br />
       <br />
-      <ProductCard className={"shadow-5"}></ProductCard>
+      <ProductList />
       <div className="mt-5 mb-5 d-flex justify-content-center border-secondary bg-white">
         <Link
           href="/About"
