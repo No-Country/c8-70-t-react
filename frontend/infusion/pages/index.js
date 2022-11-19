@@ -1,6 +1,5 @@
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
-import ProductCard from "../components/ProductCard";
 import Title from "../components/Title";
 import CategoryList from "../components/CategoryList";
 import ProductList from "../components/ProductList";

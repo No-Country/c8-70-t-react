@@ -1,63 +1,23 @@
 import Image from "next/image";
 import React from "react";
+import styles from "../styles/ProductCard.module.css";
 
 export default function ProductCard({ nombre, precio, image }) {
   return (
     <>
-      <div class="col">
-        <div class="card h-100 border-0">
-          <img src={image} class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title text-uppercase">{nombre}</h5>
-            <p class="card-text text-uppercase">{precio}</p>
+      <div className="col">
+        <div className="card h-100 border-0">
+          <img src={image} className="card-img-top" alt="..." />
+          <div className="card-body ms-4 my-3">
+            <h5 className="card-title ">{nombre}</h5>
+            <p className="card-text text-uppercase ">{precio}</p>
           </div>
+          <p className={`${styles.customBtn} fs-6 mt-4  p-4`}>Personalizable</p>
+          <button className={`${styles.cartBtn}`}>
+            <i className="bi bi-cart-fill"></i>
+          </button>
         </div>
       </div>
-      {/* <div class="col">
-          <div class="card h-100 border-0">
-            <img src="/home-product-4.png" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title text-uppercase">Cartera bahamas</h5>
-              <p class="card-text text-uppercase">$75.0000 cop</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 border-0">
-            <img src="/home-product-4.png" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title text-uppercase">Cartera bahamas</h5>
-              <p class="card-text text-uppercase">$75.0000 cop</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 border-0">
-            <img src="/home-product-4.png" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title text-uppercase">Cartera bahamas</h5>
-              <p class="card-text text-uppercase">$75.0000 cop</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 border-0">
-            <img src="/home-product-4.png" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title text-uppercase">Cartera bahamas</h5>
-              <p class="card-text text-uppercase">$75.0000 cop</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 border-0">
-            <img src="/home-product-4.png" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title text-uppercase">Cartera bahamas</h5>
-              <p class="card-text text-uppercase">$75.0000 cop</p>
-            </div>
-          </div>
-        </div> */}
     </>
   );
 }
