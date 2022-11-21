@@ -1,12 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import styles from "../styles/ProductCard.module.css";
 
-export default function ProductCard({ nombre, precio, image }) {
+export default function ProductCard({ nombre, precio, image, detalle }) {
   return (
     <>
       <div className="col">
-        <div className="card h-100 border-0">
+        <Link href={detalle} className="card h-100 border-0 position-relative text-decoration-none text-black">
           <img src={image} className="card-img-top" alt="..." />
           <div className="card-body ms-4 my-3">
             <h5 className="card-title ">{nombre}</h5>
@@ -16,7 +17,7 @@ export default function ProductCard({ nombre, precio, image }) {
           <button className={`${styles.cartBtn}`}>
             <i className="bi bi-cart-fill"></i>
           </button>
-        </div>
+        </Link>
       </div>
     </>
   );

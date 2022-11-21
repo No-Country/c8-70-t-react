@@ -42,9 +42,13 @@ export default function Home() {
       <br />
       <CategoryList />
       <br />
-      <div className="row row-cols-1 row-cols-md-3 g-4">
-        <div className="col">
+      <div className="row row-cols-1 row-cols-lg-3 row-cols-sm-1 mt-4 g-4">
+        <div className="col mt-5">
           <div className="card border-0">
+            <button className={`${styles.icon+' '+styles.artesanal}`}>
+              {/* <i className={`${styles.n} bi bi-cart-fill`}></i> */}
+              <img src="/handmade.svg" alt="handmade"></img>
+            </button>
             <div className="card-body p-5">
               <h5 className="card-title text-uppercase">
                 Productos Artesanales
@@ -57,8 +61,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="col">
+        <div className="col mt-5">
           <div className="card border-0">
+          <button className={`${styles.icon+' '+styles.gratis}`}>
+              {/* <i className={` bi bi-cart-fill`}></i> */}
+              <img src="/envios.svg" alt="envios"></img>
+            </button>
             <div className="card-body p-5">
               <h5 className="card-title text-uppercase">Envios Gratis</h5>
               <p className="card-text">
@@ -69,8 +77,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="col">
+        <div className="col mt-5">
           <div className="card border-0">
+          <button className={`${styles.icon+' '+styles.seguro}`}>
+              {/* <i className={` bi bi-cart-fill`}></i> */}
+              <img src="/seguro.svg" alt="seguro"></img>
+            </button>
             <div className="card-body p-5">
               <h5 className="card-title text-uppercase">Sitio Seguro</h5>
               <p className="card-text">
@@ -94,9 +106,9 @@ export default function Home() {
         <div className="mt-5 mb-5 justify-content-center btn btn-secondary bg-white w-25">
           <Link
             href="/About"
-            className="text-decoration-none fs-4 border-dark border-1 text-dark m-2"
+            className="text-decoration-none fs-4 border-dark border-1 text-dark m-2 m-auto"
           >
-            {" "}
+            {/* {" "} */}
             Ver mas
           </Link>
         </div>

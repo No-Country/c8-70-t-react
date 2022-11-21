@@ -5,7 +5,7 @@ import Footer from "./Footer";
 export default function Layout({ children }) {
   return (
     <>
-      <div className="me-5 ms-5 pe-5 ps-5">
+      <div>
         <Header />
         <main>{children}</main>
         <Footer />

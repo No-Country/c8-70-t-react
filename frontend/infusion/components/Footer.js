@@ -5,7 +5,7 @@ import styles from "../styles/Footer.module.css";
 export default function Footer() {
   return (
     <div>
-      {/* <!-- Footer --> */}
+      
       <footer
         className={`text-center text-lg-start bg-light text-muted ${styles.footer}`}
       >
@@ -135,17 +135,17 @@ export default function Footer() {
                 <div className="justify-content-md-start justify-content-center d-flex">
                   <p className="mx-2">
                     <a href="#!" className="text-reset text-decoration-none">
-                      <i class="bi bi-twitter"></i>
+                      <i className="bi bi-twitter"></i>
                     </a>
                   </p>
                   <p className="mx-2">
                     <a href="#!" className="text-reset text-decoration-none">
-                      <i class="bi bi-instagram"></i>
+                      <i className="bi bi-instagram"></i>
                     </a>
                   </p>
                   <p className="mx-2">
                     <a href="#!" className="text-reset text-decoration-none">
-                      <i class="bi bi-whatsapp"></i>
+                      <i className="bi bi-whatsapp"></i>
                     </a>
                   </p>
                 </div>
@@ -160,13 +160,11 @@ export default function Footer() {
         {/* <!-- Copyright --> */}
         <div
           className="text-center p-4 bg-light text-dark"
-          // style="background-color: rgba(0, 0, 0, 0.05);"
         >
           © Todos los derechos reservados - Infusion 2022
         </div>
         {/* <!-- Copyright --> */}
       </footer>
-      {/* <!-- Footer --> */}
     </div>
   );
 }
