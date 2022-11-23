@@ -42,6 +42,7 @@ export default function ProductList() {
   ];
 
   return (
+    // hay que poner keys por item
     <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
       {ProductData.map((item) => (
         <ProductCard

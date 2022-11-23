@@ -8,7 +8,7 @@ export default function CartMenu() {
       <div
         className="offcanvas offcanvas-end border-5"
         style={{ border: "3px black solid" }}
-        tabindex="-1"
+        tabIndex="-1"
         id="offcanvasRight"
         aria-labelledby="offcanvasRightLabel"
       >
@@ -58,14 +58,14 @@ export default function CartMenu() {
         <div className="d-flex flex-column px-4">
           <div className="col">
             <div className="d-flex">
-              <h8 className="me-auto" style={{ fontSize: "16px" }}>
+              <h5 className="me-auto" style={{ fontSize: "16px" }}>
                 {" "}
                 Subtotal
-              </h8>
-              <h8 className="" style={{ fontSize: "16px" }}>
+              </h5>
+              <h5 className="" style={{ fontSize: "16px" }}>
                 {" "}
                 $ 75.000
-              </h8>
+              </h5>
             </div>
           </div>
           <div className="col">
@@ -86,9 +86,14 @@ export default function CartMenu() {
           </div>
         </div>
         <div className="m-auto mb-3 ">
-          <Link href="/Checkout">
+          <Link
+            href="/Checkout"
+            
+          >
             <button
               className="btn btn-info text-light px-5"
+              data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight"
               style={{
                 borderRadius: "10px !important",
                 height: "40px",
