@@ -41,7 +41,27 @@ export class Product extends Entity {
   @property({
     type: 'string',
   })
-  image?: string;
+  thumbnail?: string;
+
+  @property({
+    type: 'string',
+  })
+  front_image?: string;
+
+  @property({
+    type: 'string',
+  })
+  back_image?: string;
+
+  @property({
+    type: 'string',
+  })
+  top_image?: string;
+
+  @property({
+    type: 'string',
+  })
+  bottom_image?: string;
 
   @property({
     type: 'date',
