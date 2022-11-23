@@ -1,16 +1,26 @@
 import React from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import styles from "../styles/Header.module.css";
 import ProductCounter from "./ProductCounter";
 
 export default function Header() {
+  const router = useRouter();
+  const ruta = router.pathname;
+  console.log(ruta);
   return (
     <>
-      <header className={`${styles.header}`}>
-        <nav className="navbar navbar-expand-lg navbar-light bg-none">
+      <header
+        className={
+          ruta === "/"
+            ? `${styles.headerHome} navbar-brand text-uppercase fw-lighter fw-normal`
+            : `${styles.headerLayout}`
+        }
+      >
+        <nav className="navbar navbar-expand-lg navbar-light align-items-center">
           <div className="container-fluid ms-5 me-5 mt-3 g-5">
             <Link
-              className="navbar-brand text-uppercase fw-lighter text-light fw-normal"
+              className="navbar-brand text-uppercase fw-lighter fw-normal"
               href="/"
             >
               Logo
@@ -30,7 +40,11 @@ export default function Header() {
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
                   <Link
-                    className="nav-link active text-uppercase fw-lighter text-light fw-normal"
+                    className={
+                      ruta === "/"
+                        ? " nav-link text-uppercase fw-lighter fw-normal text-light"
+                        : " nav-link text-uppercase fw-lighter fw-normal text-dark"
+                    }
                     aria-current="page"
                     href="/"
                   >
@@ -39,7 +53,11 @@ export default function Header() {
                 </li>
                 <li className="nav-item">
                   <Link
-                    className="nav-link text-uppercase fw-lighter text-light fw-normal"
+                    className={
+                      ruta === "/"
+                        ? " nav-link text-uppercase fw-lighter fw-normal text-light"
+                        : " nav-link text-uppercase fw-lighter fw-normal text-dark"
+                    }
                     href="/Custom"
                   >
                     Personalizables
@@ -47,7 +65,11 @@ export default function Header() {
                 </li>
                 <li className="nav-item">
                   <Link
-                    className="nav-link text-uppercase fw-lighter text-light fw-normal"
+                    className={
+                      ruta === "/"
+                        ? " nav-link text-uppercase fw-lighter fw-normal text-light"
+                        : " nav-link text-uppercase fw-lighter fw-normal text-dark"
+                    }
                     href="/About"
                     aria-disabled="true"
                   >
@@ -56,7 +78,11 @@ export default function Header() {
                 </li>
                 <li className="nav-item">
                   <Link
-                    className="nav-link text-uppercase fw-lighter text-light fw-normal"
+                    className={
+                      ruta === "/"
+                        ? " nav-link text-uppercase fw-lighter fw-normal text-light"
+                        : " nav-link text-uppercase fw-lighter fw-normal text-dark"
+                    }
                     href="/Contact"
                     aria-disabled="true"
                   >
@@ -68,7 +94,11 @@ export default function Header() {
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                   <li className="nav-item">
                     <Link
-                      className="nav-link text-uppercase fw-lighter text-light fw-normal"
+                      className={
+                        ruta === "/"
+                          ? " nav-link text-uppercase fw-lighter fw-normal text-light"
+                          : " nav-link text-uppercase fw-lighter fw-normal text-dark"
+                      }
                       href="/Register"
                     >
                       Registrarse
@@ -76,7 +106,11 @@ export default function Header() {
                   </li>
                   <li className="nav-item">
                     <Link
-                      className="nav-link text-uppercase fw-lighter text-light fw-normal"
+                      className={
+                        ruta === "/"
+                          ? " nav-link text-uppercase fw-lighter fw-normal text-light"
+                          : " nav-link text-uppercase fw-lighter fw-normal text-dark"
+                      }
                       href="/Login"
                     >
                       Iniciar Sesion
@@ -84,10 +118,14 @@ export default function Header() {
                   </li>
                   <li className="nav-item">
                     <Link
-                      className="nav-link text-uppercase fw-lighter text-light"
+                      className={
+                        ruta === "/"
+                          ? " nav-link text-uppercase fw-lighter fw-normal text-light"
+                          : " nav-link text-uppercase fw-lighter fw-normal text-dark"
+                      }
                       href="/Login"
                     >
-                      <i className="bi bi-person-fill"></i>
+                      <i className="bi bi-person-fill fs-4"></i>
                     </Link>
                   </li>
                   <li className="nav-item">
@@ -98,10 +136,14 @@ export default function Header() {
                       data-bs-toggle="offcanvas"
                       data-bs-target="#offcanvasRight"
                       aria-controls="offcanvasRight"
-                      className="nav-link text-uppercase fw-lighter text-light"
+                      className={
+                        ruta === "/"
+                          ? " nav-link text-uppercase fw-lighter fw-normal text-light"
+                          : " nav-link text-uppercase fw-lighter fw-normal text-dark"
+                      }
                       href="/Cart"
                     >
-                      <i className="bi bi-bag-fill"></i>
+                      <i className="bi bi-bag-fill fs-4"></i>
                     </Link>
                   </li>
                 </ul>
@@ -176,18 +218,15 @@ export default function Header() {
           </div>
           <div className="col">
             <div className="d-flex">
-              
-                <h5 className=" me-auto" style={{ fontSize: "18px" }}>
-                  {" "}
-                  <strong>Total</strong>
-                </h5>
+              <h5 className=" me-auto" style={{ fontSize: "18px" }}>
+                {" "}
+                <strong>Total</strong>
+              </h5>
 
-                <h5 className="" style={{ fontSize: "18px" }}>
-                  {" "}
-                  <strong>$ 75.000</strong>
-                  
-                </h5>
-              
+              <h5 className="" style={{ fontSize: "18px" }}>
+                {" "}
+                <strong>$ 75.000</strong>
+              </h5>
             </div>
             <p className="" style={{ fontSize: "14px" }}>
               <strong>Tasas y envios calculadas en el carrito</strong>

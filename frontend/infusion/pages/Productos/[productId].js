@@ -7,7 +7,7 @@ import AddCartButton from "../../components/AddCartButton";
 const Detail = () => {
   const router = useRouter();
   return (
-    <div>
+    <div className="mx-5 px-5">
       <h1 className="text-center">producto {router.query.productId}</h1>
       <div className="mb-5 d-flex flex-column-reverse flex-lg-row ">
         <div className="d-flex flex-column-reverse flex-md-row flex-grow-1">
@@ -36,7 +36,13 @@ const Detail = () => {
         <div className="col col-md-auto d-flex flex-column flex-md-row mb-3 mx-auto">
           <div
             className="p-2 bg-light h-75"
-            style={{ minWidth: "360px",  maxWidth: "560px", width:'90%', maxHeight: "260px", fontSize: "14px" }}
+            style={{
+              minWidth: "360px",
+              maxWidth: "560px",
+              width: "90%",
+              maxHeight: "260px",
+              fontSize: "14px",
+            }}
           >
             <div className="d-flex px-2">
               <div className="col">
