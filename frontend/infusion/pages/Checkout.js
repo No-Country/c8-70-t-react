@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import AddCartButton from "../components/AddCartButton";
 import ProductCounter from "../components/ProductCounter";
@@ -5,6 +6,13 @@ import ProductCounter from "../components/ProductCounter";
 export default function Checkout() {
   return (
     <div>
+      <Link
+        href="/Productos"
+        className="d-flex text-dark bg-none text-decoration-none ms-4 ps-3"
+      >
+        <i className="bi bi-arrow-left-short fs-3"></i>
+        <p className="pt-2"> Volver a inicio</p>{" "}
+      </Link>
       <div className="col col-md-auto d-flex flex-column flex-md-row mb-3 mx-auto">
         <div
           className="p-2 bg-light h-75"
