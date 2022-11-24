@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function ProductCounter() {
+export default function ProductCounter({scale}) {
   return (
     <div
       className="btn-group btn-group-sm"
-      style={{borderRadius: '10px !important', width: "129px", height: "40px",borderColor:'#00A5D0 !important' }}
+      style={{borderRadius: '10px !important', width: "129px", height: "40px",borderColor:'#00A5D0 !important',transform:`${scale}` }}
       role="group"
       aria-label="Basic example"
     >
