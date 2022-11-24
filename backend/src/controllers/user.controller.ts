@@ -7,6 +7,8 @@ import * as _ from 'lodash';
 import {User} from '../models';
 import {Credentials, UserRepository} from '../repositories';
 import {BcryptHasher} from '../services/hash.password.bcrypt';
+import {JWTService} from '../services/jwt-service';
+import {MyUserService} from '../services/user-service';
 import {validateCredentials} from '../services/validator';
 import {CredentialsRequestBody} from './specs/user.controller.spec';
 
@@ -18,7 +20,11 @@ export class UserController {
     @repository(UserRepository)
     public userRepository: UserRepository,
     @inject('service.hasher')
-    public hasher: BcryptHasher
+    public hasher: BcryptHasher,
+    @inject('services.user.service')
+    public userService: MyUserService,
+    @inject('services.jwt.service')
+    public jwtService: JWTService
   ) {}
 
   @post('/users/signup',{
@@ -60,6 +66,9 @@ export class UserController {
     }
   })
   async login(@requestBody(CredentialsRequestBody) credentials: Credentials):Promise<{token: string}>{
-    return Promise.resolve({token: '23usdsdhfdsn3ejwi3'});
+    const user = await this.userService.verifyCredentials(credentials);
+    const userProfile = this.userService.convertToUserProfile(user);
+    const token = await this.jwtService.generateToken(userProfile);
+    return Promise.resolve({token});
   }
 }
