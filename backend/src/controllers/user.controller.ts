@@ -5,9 +5,10 @@ import {repository} from '@loopback/repository';
 import {getJsonSchemaRef, post, requestBody} from '@loopback/rest';
 import * as _ from 'lodash';
 import {User} from '../models';
-import {UserRepository} from '../repositories';
+import {Credentials, UserRepository} from '../repositories';
 import {BcryptHasher} from '../services/hash.password.bcrypt';
 import {validateCredentials} from '../services/validator';
+import {CredentialsRequestBody} from './specs/user.controller.spec';
 
 // import {inject} from '@loopback/core';
 
@@ -20,7 +21,7 @@ export class UserController {
     public hasher: BcryptHasher
   ) {}
 
-  @post('/signup',{
+  @post('/users/signup',{
     responses:{
       '200':{
         description:'User',
@@ -37,5 +38,28 @@ export class UserController {
     userData.created = Date();
     userData.modified = Date();
     return savedUser;
+  }
+
+  @post('/users/login',{
+    responses: {
+      '200':{
+        description: 'Token',
+        content: {
+          'application/json':{
+            schema:{
+              type: 'object',
+              properties:{
+                token:{
+                  type: 'string'
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  })
+  async login(@requestBody(CredentialsRequestBody) credentials: Credentials):Promise<{token: string}>{
+    return Promise.resolve({token: '23usdsdhfdsn3ejwi3'});
   }
 }
