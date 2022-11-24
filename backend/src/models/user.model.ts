@@ -22,12 +22,12 @@ export class User extends Entity {
     id: true,
     generated: true,
   })
-  id?: number;
+  id: number;
 
   @property({
     type: 'string',
   })
-  username?: string;
+  username: string;
 
   @property({
     type: 'string',
