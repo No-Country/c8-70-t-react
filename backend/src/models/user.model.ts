@@ -32,12 +32,12 @@ export class User extends Entity {
   @property({
     type: 'string',
   })
-  email?: string;
+  email: string;
 
   @property({
     type: 'string',
   })
-  password?: string;
+  password: string;
 
   @property({
     type: 'string',
