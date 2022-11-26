@@ -2,8 +2,11 @@ import Link from "next/link";
 import React from "react";
 import AddCartButton from "../components/AddCartButton";
 import CheckedList from "../components/CheckedList";
+import CheckedShipping from "../components/CheckedShipping";
+import CheckedUser from "../components/CheckedUser";
 import CheckoutFormUser from "../components/CheckoutFormUser";
 import CheckoutList from "../components/CheckoutList";
+import ShippingForm from "../components/ShippingForm";
 import SumProductList from "../components/SumProductList";
 
 import styles from "../styles/ProgressBar.module.css";
@@ -96,6 +99,7 @@ export default function Checkout() {
       </div>
 
       {/* aqui inicia la lista de productos */}
+          
       <div className="d-flex gap-3 flex-column flex-lg-row">
         <div className="col d-flex flex-column flex-sm-row mb-3 ms-2 ">
           {/* area ppal */}
@@ -111,6 +115,7 @@ export default function Checkout() {
           >
             <CheckoutList />
             {/* <CheckoutFormUser/> */}
+            {/* <ShippingForm/> */}
           </div>
         </div>
         {/* aqui inicia resumen de la compra */}
@@ -127,7 +132,7 @@ export default function Checkout() {
             }}
           >
             <SumProductList></SumProductList>
-            {/* <CheckedList></CheckedList> */}
+            
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@ export default function Header() {
             : `${styles.headerLayout}`
         }
       >
-        {router.pathname === "/Checkout" ? (
+        {router.pathname === "/Checkout" || router.pathname === "/PersonalData" || router.pathname === "/Shipping" || router.pathname === "/PayMethod" ? (
           <div className="d-flex pt-3 ms-4 ps-4 text-dark bg-white align-items-center">
             <p>
               Atención al cliente | +54 3122693369 de Lunes a Viernes 9:00 AM

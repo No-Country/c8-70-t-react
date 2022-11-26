@@ -6,7 +6,7 @@ export default function CheckedList({ nombre, precio, image, detalle }) {
   return (
     <>
       <div className=" text-center">
-        <h5 className="my-3 mx-3" style={{ fontSize: "18px" }}>
+        <h5 className="my-2 mx-3" style={{ fontSize: "18px" }}>
           Resumen de la compra
         </h5>
       </div>

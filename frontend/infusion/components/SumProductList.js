@@ -55,7 +55,9 @@ export default function SumProductList({ product, precio}) {
                     backgroundColor: "#00A5D0",
                   }}
                 >
+                  <Link href="/PersonalData" className="text-light text-decoration-none mb-5">
                   Avanzar con la compra
+                  </Link>
                 </button>
               </div>
               <div className="m-auto mb-3 ">
