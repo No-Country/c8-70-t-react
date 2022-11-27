@@ -29,8 +29,8 @@ export default function CheckedShipping({ nombre, email, phone }) {
           </div>
         </div>
       </div> */}
-      <div className="d-flex gap-3 flex-column flex-lg-row mb-3 col-12 col-lg-8">
-        <div className="col d-flex flex-column flex-sm-row mb-3 ms-2 ">
+      <div className="d-flex gap-3 flex-column flex-lg-row mb-3 col-12 col-lg-12">
+        {/* <div className="col d-flex flex-column flex-sm-row mb-3  "> */}
           {/* area ppal */}
           <div
             className="p-4 bg-light col-12"
@@ -38,7 +38,7 @@ export default function CheckedShipping({ nombre, email, phone }) {
               // minWidth: "660px",
               // maxWidth: "1960px",
               // width:'220%',
-              minHeight: "260px",
+              // minHeight: "260px",
               fontSize: "14px",
             }}
           >
@@ -48,17 +48,17 @@ export default function CheckedShipping({ nombre, email, phone }) {
               style={{ border: "1px black solid" }}
             ></hr>
             <span className="fs-6">
-            <strong>Nombre:</strong> Fulanito Guzmán</span>
+            <strong>A entregar en: </strong> Av. Palacios 27</span>
             <br/>
             <span className="fs-6">
-            <strong>Email:</strong> Fulanito@Guzman.com</span>
+            <strong>Ciudad:</strong> Medellín</span>
             <br/>
             <span className="fs-6">
-            <strong>Telefono:</strong> 3133455567</span>
+            <strong>Tiempo estimado:</strong>  15 días hábiles</span>
             <br/>
             {/* <h5 className="mb-3">Telefono:</h5> */}
           </div>
-        </div>
+        {/* </div> */}
       </div>
     </>
   );

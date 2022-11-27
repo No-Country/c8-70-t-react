@@ -8,9 +8,9 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
     <>
       <h4 className="mb-3">Facturacion y Entrega</h4>
       <hr
-          className="bg-black opacity-100"
-          style={{ border: "1px black solid" }}
-        ></hr>
+        className="bg-black opacity-100"
+        style={{ border: "1px black solid" }}
+      ></hr>
       <form className="needs-validation" novalidate="">
         <div className="row g-3">
           <div className="col-6">
@@ -46,7 +46,13 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
           </div>
 
           <div className="col-12 col-sm-3 col-lg-3 mt-3 mt-sm-5 flex-wrap">
-            <a href="https://visor.codigopostal.gov.co/472/visor/?lang=es" target="_blank" rel="noopener noreferrer" for="firstName" className="form-label">
+            <a
+              href="https://visor.codigopostal.gov.co/472/visor/?lang=es"
+              target="_blank"
+              rel="noopener noreferrer"
+              for="firstName"
+              className="form-label"
+            >
               ¿No sabes tu código postal?
             </a>
             {/* <div className="invalid-feedback">
@@ -122,22 +128,22 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
         </div>
         <div className="m-auto mt-5">
           {/* al presionar este boton se guarda el estado de lista de cart */}
-          <button
-            className="btn btn-info text-light px-5"
-            style={{
-              borderRadius: "10px !important",
-              height: "40px",
-              backgroundColor: "#00A5D0",
-            }}
-            type="button"
+          <Link
+            href="/PayMethod"
+            className="text-light text-decoration-none mb-5"
           >
-            <Link
-              href="/PayMethod"
-              className="text-light text-decoration-none mb-5"
+            <button
+              className="btn btn-info text-light px-5"
+              style={{
+                borderRadius: "10px !important",
+                height: "40px",
+                backgroundColor: "#00A5D0",
+              }}
+              type="button"
             >
               Avanzar con la compra
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
       </form>
     </>

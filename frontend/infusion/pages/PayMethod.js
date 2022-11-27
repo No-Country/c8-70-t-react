@@ -5,9 +5,7 @@ import CheckedList from "../components/CheckedList";
 import CheckedShipping from "../components/CheckedShipping";
 import CheckedUser from "../components/CheckedUser";
 import CheckoutFormUser from "../components/CheckoutFormUser";
-import CheckoutList from "../components/CheckoutList";
 import ShippingForm from "../components/ShippingForm";
-import SumProductList from "../components/SumProductList";
 
 import styles from "../styles/ProgressBar.module.css";
 
@@ -26,47 +24,17 @@ export default function PayMethod() {
       </Link>
 
       {/* aqui inicia el componente steps */}
-      
-      
 
       {/* aqui inicia la lista de productos */}
-          <CheckedUser/>
-          <CheckedShipping/>
-      <div className="d-flex gap-3 flex-column flex-lg-row">
-        <div className="col d-flex flex-column flex-sm-row mb-3 ms-2 ">
+      <div className="d-flex flex-column flex-md-row flex-column-reverse">
+        <div className="d-flex gap-3 flex-column col-12 col-md-8">
           {/* area ppal */}
-          <div
-            className="p-4 bg-light col-12"
-            style={{
-              // minWidth: "660px",
-              // maxWidth: "1960px",
-              // width:'220%',
-              minHeight: "360px",
-              fontSize: "14px",
-            }}
-          >
-            {/* <CheckoutFormUser/> */}
-            {/* <ShippingForm/> */}
-          </div>
+          <CheckedUser />
+          <CheckedShipping />
         </div>
-        {/* aqui inicia resumen de la compra */}
-        <div className="col col-md-auto d-flex flex-column flex-lg-row mb-3 mx-auto">
-          <div
-            className="p-4 bg-light h-75"
-            style={{
-              minWidth: "360px",
-              maxWidth: "740px",
-              // width: "700px",
-              // width: "130%",
-              minHeight: "360px",
-              fontSize: "14px",
-            }}
-          >
-            <CheckedList></CheckedList>
-          </div>
-        </div>
+          {/* aqui inicia resumen de la compra */}
+        <CheckedList></CheckedList>
       </div>
-      
     </div>
   );
 }

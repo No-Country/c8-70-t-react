@@ -138,22 +138,22 @@ export default function CheckoutFormUser({ nombre, precio, image, detalle }) {
         {/* <hr className="my-4"/> */}
         <div className="m-auto mt-5">
           {/* al presionar este boton se guarda el estado de lista de cart */}
-          <button
-            className="btn btn-info text-light px-5"
-            style={{
-              borderRadius: "10px !important",
-              height: "40px",
-              backgroundColor: "#00A5D0",
-            }}
-            type="button"
+          <Link
+            href="/Shipping"
+            className="text-light text-decoration-none mb-5"
           >
-            <Link
-              href="/Shipping"
-              className="text-light text-decoration-none mb-5"
+            <button
+              className="btn btn-info text-light px-5"
+              style={{
+                borderRadius: "10px !important",
+                height: "40px",
+                backgroundColor: "#00A5D0",
+              }}
+              type="button"
             >
               Avanzar con la compra
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
       </form>
     </>

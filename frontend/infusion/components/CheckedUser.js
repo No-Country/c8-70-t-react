@@ -5,8 +5,8 @@ import ProductCounter from "../components/ProductCounter";
 export default function CheckedUser({ nombre, email, phone }) {
   return (
     <>
-      <div className="d-flex gap-3 flex-column flex-lg-row mb-3 col-12 col-lg-8">
-        <div className="col d-flex flex-column flex-sm-row mb-3 ms-2 ">
+      <div className="d-flex flex-column flex-lg-row col-12">
+        {/* <div className="col d-flex flex-column flex-sm-row mb-3 "> */}
           {/* area ppal */}
           <div
             className="p-4 bg-light col-12"
@@ -14,7 +14,7 @@ export default function CheckedUser({ nombre, email, phone }) {
               // minWidth: "660px",
               // maxWidth: "1960px",
               // width:'220%',
-              minHeight: "260px",
+              // maxHeight: "260px",
               fontSize: "14px",
             }}
           >
@@ -34,7 +34,7 @@ export default function CheckedUser({ nombre, email, phone }) {
             <br/>
             {/* <h5 className="mb-3">Telefono:</h5> */}
           </div>
-        </div>
+        {/* </div> */}
       </div>
     </>
   );
