@@ -1,0 +1,15 @@
+.headerHome {
+  background: url(../public//image-home-1.svg) no-repeat center;
+  background-size: cover;
+  min-height: 70vh;
+  color: white !important;
+}
+
+.header .navbar {
+  background-color: transparent !important;
+}
+
+.headerLayout {
+  background-color: white;
+  color: black !important;
+}

@@ -1,0 +1,31 @@
+.customBtn {
+  width: 160px;
+  height: 40px;
+  right: 50px;
+  top: 10px;
+  font-size: 30px;
+  background: white;
+  position: absolute;
+  align-items: center;
+  border: none;
+  display: flex;
+  justify-content: center;
+}
+
+.cartBtn {
+  width: 56px;
+  height: 56px;
+  right: 50px;
+  top: 520px;
+  /* right: 10%;
+  top: 70%; */
+  font-size: 35px;
+  color: #101f2d;
+  background-color: #fbfbfb;
+  position: absolute;
+  align-items: center;
+  border: none;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
