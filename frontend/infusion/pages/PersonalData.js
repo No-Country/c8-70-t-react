@@ -33,7 +33,7 @@ export default function PersonalData() {
           {/* <CheckedUser/> */}
           {/* <CheckedShipping/> */}
           {/* <CheckedList></CheckedList> */}
-      <div className="d-flex gap-3 flex-column flex-lg-row">
+      <div className="d-flex gap-3 flex-column flex-lg-row flex-column-reverse">
         <div className="col d-flex flex-column flex-sm-row mb-3 ms-2 ">
           {/* area ppal */}
           <div
@@ -46,27 +46,12 @@ export default function PersonalData() {
               fontSize: "14px",
             }}
           >
-            {/* <CheckoutList /> */}
             <CheckoutFormUser/>
-            {/* <ShippingForm/> */}
           </div>
         </div>
         {/* aqui inicia resumen de la compra */}
         <div className="col col-md-auto d-flex flex-column flex-lg-row mb-3 mx-auto">
-          <div
-            className="p-4 bg-light h-75"
-            style={{
-              minWidth: "360px",
-              maxWidth: "740px",
-              // width: "700px",
-              // width: "130%",
-              minHeight: "360px",
-              fontSize: "14px",
-            }}
-          >
-            {/* <SumProductList></SumProductList> */}
             <CheckedList></CheckedList>
-          </div>
         </div>
       </div>
       

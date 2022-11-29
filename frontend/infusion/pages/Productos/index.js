@@ -6,7 +6,7 @@ export default function Productos() {
   return (
     <>
       <div>
-        <div className="d-flex p-4 text-dark bg-white align-items-center">
+        <div className="d-flex flex-column flex-md-row p-4 text-dark bg-white align-items-center">
           <p className="me-auto p-2 ms-5">Categoria/Mochilas</p>
           <p className=" me-2">Ordenar por:</p>
           <div className="dropdown d-flex me-5">
@@ -43,6 +43,7 @@ export default function Productos() {
           </div>
         </div>
         <div className=" mx-5 px-5">
+          {/* quitar margenes en version movil */}
           <div className="mt-5 mb-5">
             <ProductList />
           </div>

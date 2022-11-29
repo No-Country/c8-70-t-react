@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import AddCartButton from "../components/AddCartButton";
 import CheckedList from "../components/CheckedList";
+import CheckedPayment from "../components/CheckedPayment";
 import CheckedShipping from "../components/CheckedShipping";
 import CheckedUser from "../components/CheckedUser";
 import CheckoutFormUser from "../components/CheckoutFormUser";
@@ -10,7 +11,7 @@ import ShippingForm from "../components/ShippingForm";
 
 import styles from "../styles/ProgressBar.module.css";
 
-export default function PayMethod() {
+export default function BuyConfirmation() {
   // const  [progress , setProgress] = useState(initialState = 0)
 
   return (
@@ -32,7 +33,7 @@ export default function PayMethod() {
           {/* area ppal */}
           <CheckedUser />
           <CheckedShipping />
-          <ChoosePayment/>
+          <CheckedPayment/>
           {/* falta componente <ChooseMethod> aqui */}
         </div>
         {/* aqui inicia resumen de la compra */}
