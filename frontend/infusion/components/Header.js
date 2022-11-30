@@ -11,14 +11,11 @@ export default function Header() {
   console.log(ruta);
   return (
     <>
-      <header
-        className={
-          ruta === "/"
-            ? `${styles.headerHome} navbar-brand text-uppercase fw-lighter fw-normal`
-            : `${styles.headerLayout}`
-        }
-      >
-        {router.pathname === "/Checkout" || router.pathname === "/PersonalData" || router.pathname === "/Shipping" || router.pathname === "/PayMethod" ? (
+      <header className="navbar-brand text-uppercase fw-lighter fw-normal bg-light">
+        {router.pathname === "/Checkout" ||
+        router.pathname === "/PersonalData" ||
+        router.pathname === "/Shipping" ||
+        router.pathname === "/PayMethod" ? (
           <div className="d-flex pt-3 ms-4 ps-4 text-dark bg-white align-items-center">
             <p>
               Atención al cliente | +54 3122693369 de Lunes a Viernes 9:00 AM
@@ -31,9 +28,7 @@ export default function Header() {
               <Link
                 className="navbar-brand text-uppercase fw-lighter fw-normal"
                 href="/"
-              >
-                Logo
-              </Link>
+              ></Link>
               <button
                 className="navbar-toggler"
                 type="button"
@@ -52,24 +47,16 @@ export default function Header() {
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                   <li className="nav-item">
                     <Link
-                      className={
-                        ruta === "/"
-                          ? " nav-link text-uppercase fw-lighter fw-normal text-light"
-                          : " nav-link text-uppercase fw-lighter fw-normal text-dark"
-                      }
+                      className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
                       aria-current="page"
                       href="/"
                     >
-                      Inicio
+                      <img src="../LOGO.svg" alt="" />
                     </Link>
                   </li>
                   <li className="nav-item">
                     <Link
-                      className={
-                        ruta === "/"
-                          ? " nav-link text-uppercase fw-lighter fw-normal text-light"
-                          : " nav-link text-uppercase fw-lighter fw-normal text-dark"
-                      }
+                      className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
                       href="/Custom"
                     >
                       Personalizables
@@ -77,11 +64,7 @@ export default function Header() {
                   </li>
                   <li className="nav-item">
                     <Link
-                      className={
-                        ruta === "/"
-                          ? " nav-link text-uppercase fw-lighter fw-normal text-light"
-                          : " nav-link text-uppercase fw-lighter fw-normal text-dark"
-                      }
+                      className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
                       href="/About"
                       aria-disabled="true"
                     >
@@ -90,11 +73,7 @@ export default function Header() {
                   </li>
                   <li className="nav-item">
                     <Link
-                      className={
-                        ruta === "/"
-                          ? " nav-link text-uppercase fw-lighter fw-normal text-light"
-                          : " nav-link text-uppercase fw-lighter fw-normal text-dark"
-                      }
+                      className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
                       href="/Contact"
                       aria-disabled="true"
                     >
@@ -106,11 +85,7 @@ export default function Header() {
                   <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
                       <Link
-                        className={
-                          ruta === "/"
-                            ? " nav-link text-uppercase fw-lighter fw-normal text-light"
-                            : " nav-link text-uppercase fw-lighter fw-normal text-dark"
-                        }
+                        className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
                         href="/Register"
                       >
                         Registrarse
@@ -118,11 +93,7 @@ export default function Header() {
                     </li>
                     <li className="nav-item">
                       <Link
-                        className={
-                          ruta === "/"
-                            ? " nav-link text-uppercase fw-lighter fw-normal text-light"
-                            : " nav-link text-uppercase fw-lighter fw-normal text-dark"
-                        }
+                        className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
                         href="/Login"
                       >
                         Iniciar Sesion
@@ -130,11 +101,7 @@ export default function Header() {
                     </li>
                     <li className="nav-item">
                       <Link
-                        className={
-                          ruta === "/"
-                            ? " nav-link text-uppercase fw-lighter fw-normal text-light"
-                            : " nav-link text-uppercase fw-lighter fw-normal text-dark"
-                        }
+                        className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
                         href="/Login"
                       >
                         <i className="bi bi-person-fill fs-4"></i>
@@ -148,11 +115,7 @@ export default function Header() {
                         data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasRight"
                         aria-controls="offcanvasRight"
-                        className={
-                          ruta === "/"
-                            ? " nav-link text-uppercase fw-lighter fw-normal text-light"
-                            : " nav-link text-uppercase fw-lighter fw-normal text-dark"
-                        }
+                        className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
                         href="/Cart"
                       >
                         <i className="bi bi-bag-fill fs-4"></i>
