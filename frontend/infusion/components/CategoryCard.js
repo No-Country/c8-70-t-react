@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function CategoryCard({ category, link, image }) {
   return (
     <>
-      <div className="col">
+      <div className="card">
         <Link href={link} className=" text-decoration-none text-dark">
           <div className="card border-0">
             <img src={image} className="card-img-top" alt="..." />

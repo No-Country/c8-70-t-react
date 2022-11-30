@@ -26,13 +26,7 @@ export default function PersonalData() {
       </Link>
 
       {/* aqui inicia el componente steps */}
-      
-      
-
       {/* aqui inicia la lista de productos */}
-          {/* <CheckedUser/> */}
-          {/* <CheckedShipping/> */}
-          {/* <CheckedList></CheckedList> */}
       <div className="d-flex gap-3 flex-column flex-lg-row flex-column-reverse">
         <div className="col d-flex flex-column flex-sm-row mb-3 ms-2 ">
           {/* area ppal */}

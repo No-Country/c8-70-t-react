@@ -1,8 +1,12 @@
 .customBtn {
-  width: 160px;
-  height: 40px;
-  right: 50px;
-  top: 10px;
+  width: 65%;
+  height: 10%;
+  /* width: 160px;
+  height: 40px; */
+  right: 10%;
+  top: 0%;
+  /* right: 50px;
+  top: 10px; */
   font-size: 30px;
   background: white;
   position: absolute;
@@ -13,12 +17,15 @@
 }
 
 .cartBtn {
-  width: 56px;
-  height: 56px;
-  right: 50px;
-  top: 520px;
-  /* right: 10%;
-  top: 70%; */
+  width: 20%;
+  height: 15%;
+  z-index: 1;
+  /* width: 56px;
+  height: 56px; */
+  /* right: 50px;
+  top: 520px; */
+  right: 10%;
+  top: 70%;
   font-size: 35px;
   color: #101f2d;
   background-color: #fbfbfb;

@@ -18,7 +18,7 @@ export default function CheckedUser({ nombre, email, phone }) {
               fontSize: "14px",
             }}
           >
-            <h4 className="mb-3">Datos Personales</h4>
+            <h4 className="mb-3">1 DATOS PERSONALES</h4>
             <hr
               className="bg-black opacity-100"
               style={{ border: "1px black solid" }}

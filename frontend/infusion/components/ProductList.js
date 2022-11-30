@@ -43,7 +43,8 @@ export default function ProductList() {
 
   return (
     // hay que poner keys por item
-    <div className="row row-cols-2 row-cols-md-2 row-cols-lg-3 g-4">
+    <div className="row row-cols-2 row-cols-md-2 row-cols-lg-3 g-2">
+    {/* <div className="d-flex flex-column row-cols-2 row-cols-lg-3"> */}
       {ProductData.map((item) => (
         <ProductCard
           nombre={item.nombre}

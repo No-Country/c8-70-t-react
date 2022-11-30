@@ -42,7 +42,7 @@ export default function CheckedShipping({ nombre, email, phone }) {
               fontSize: "14px",
             }}
           >
-            <h4 className="mb-3">Datos de Entrega</h4>
+            <h4 className="mb-3">2 FACTURACIÓN Y ENTREGA</h4>
             <hr
               className="bg-black opacity-100"
               style={{ border: "1px black solid" }}

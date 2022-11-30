@@ -8,10 +8,10 @@ export default function Home() {
   return (
     <>
       <Title title="Nuestros productos son elaborados artesanalmente" />
-      <div className="mx-5 px-5">
+      {/* <div className="mx-5 px-5"> */}
         <div className="card mb-3 border-0">
           <div className="row d-flex flex-column flex-md-row justify-content-md-center justify-content-center">
-            <div className="col-6 row justify-content-center align-items-center">
+            <div className="col-12 row justify-content-center align-items-center">
               <div className="card-body m-5 ps-5 pe-5">
                 <h5 className="card-title display-6 text-uppercase fw-normal mb-4">
                   Lorem ipsum
@@ -114,7 +114,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </>
   );
 }

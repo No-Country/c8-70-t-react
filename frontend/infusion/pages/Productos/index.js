@@ -6,12 +6,14 @@ export default function Productos() {
   return (
     <>
       <div>
-        <div className="d-flex flex-column flex-md-row p-4 text-dark bg-white align-items-center">
-          <p className="me-auto p-2 ms-5">Categoria/Mochilas</p>
-          <p className=" me-2">Ordenar por:</p>
-          <div className="dropdown d-flex me-5">
+        <div className="d-flex flex-column flex-md-row p-4 text-dark bg-white justify-content-around align-items-center ">
+          <div>
+            <p className="me-auto p-2 ">Categoria/Mochilas</p>
+          </div>
+          <div className="dropdown d-flex flex-column flex-sm-row align-items-center">
+            <p className=" me-2">Ordenar por:</p>
             <button
-              className={`${styles.header} btn-lg bg-white text-dark h-100 w-100 mb-3 p-2 me-5`}
+              className={`${styles.header} btn-lg bg-white text-dark h-100 w-100 mb-3 p-2 `}
               type="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
@@ -42,13 +44,13 @@ export default function Productos() {
             </ul>
           </div>
         </div>
-        <div className=" mx-5 px-5">
+        {/* <div className=" mx-5 px-5"> */}
           {/* quitar margenes en version movil */}
           <div className="mt-5 mb-5">
             <ProductList />
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </>
   );
 }

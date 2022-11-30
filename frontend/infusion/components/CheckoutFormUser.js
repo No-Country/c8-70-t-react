@@ -56,7 +56,7 @@ export default function CheckoutFormUser({ nombre, precio, image, detalle }) {
             <div className="invalid-feedback">Valid last name is required.</div>
           </div>
 
-          <div className="col-5 ">
+          <div className="col-6 ">
             <label for="address" className="form-label">
               Documento de Identidad
             </label>
@@ -72,7 +72,7 @@ export default function CheckoutFormUser({ nombre, precio, image, detalle }) {
             </div>
           </div>
 
-          <div className="col-2">
+          <div className="col-5 col-sm-2">
             <label for="zip" className="form-label">
               Cod Area
             </label>
@@ -86,7 +86,7 @@ export default function CheckoutFormUser({ nombre, precio, image, detalle }) {
             <div className="invalid-feedback">Zip code required.</div>
           </div>
 
-          <div className="col-5">
+          <div className="col-12 col-sm-4">
             <label for="address" className="form-label">
               Telefono
             </label>

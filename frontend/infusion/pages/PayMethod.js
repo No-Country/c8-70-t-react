@@ -33,7 +33,7 @@ export default function PayMethod() {
           <CheckedUser />
           <CheckedShipping />
           <ChoosePayment/>
-          {/* falta componente <ChooseMethod> aqui */}
+          
         </div>
         {/* aqui inicia resumen de la compra */}
         <CheckedList></CheckedList>

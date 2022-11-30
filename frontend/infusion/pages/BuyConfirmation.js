@@ -29,12 +29,27 @@ export default function BuyConfirmation() {
 
       {/* aqui inicia la lista de productos */}
       <div className="d-flex flex-column flex-md-row flex-column-reverse">
-        <div className="d-flex gap-3 flex-column col-12 col-md-8">
+        <div className="d-flex gap-3 flex-column col-12 col-md-8 ">
           {/* area ppal */}
           <CheckedUser />
           <CheckedShipping />
           <CheckedPayment/>
-          {/* falta componente <ChooseMethod> aqui */}
+          <Link
+            href="/"
+            className="text-light text-decoration-none mb-5 mx-auto"
+          >
+            <button
+              className="btn btn-info text-light px-5 text-wrap"
+              style={{
+                borderRadius: "10px !important",
+                height: "40px",
+                backgroundColor: "#00A5D0",
+              }}
+              type="button"
+            >
+              Finalizar la Compra
+            </button>
+          </Link>
         </div>
         {/* aqui inicia resumen de la compra */}
         <CheckedList></CheckedList>

@@ -20,22 +20,21 @@ export default function CheckedPayment({ nombre, email, phone }) {
               fontSize: "14px",
             }}
           >
-            <h4 className="mb-3">Datos de Entrega</h4>
+            <h4 className="mb-3">3 MÉTODO DE PAGO</h4>
             <hr
               className="bg-black opacity-100"
               style={{ border: "1px black solid" }}
             ></hr>
             <span className="fs-6">
-            <strong>A entregar en: </strong> Av. Palacios 27</span>
+            <strong>A pagar: </strong> $85.000 en Rapi Pagol (Solo sucursales abiertas)</span>
             <br/>
             <span className="fs-6">
-            <strong>Ciudad:</strong> Medellín</span>
+            <strong>Datos para tu factura:</strong> Fulanito Guzmán 34987765</span>
             <br/>
-            <span className="fs-6">
-            <strong>Tiempo estimado:</strong>  15 días hábiles</span>
-            <br/>
+            
             {/* <h5 className="mb-3">Telefono:</h5> */}
           </div>
+          
         {/* </div> */}
       </div>
     </>

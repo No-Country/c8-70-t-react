@@ -7,6 +7,7 @@ import AddCartButton from "../../components/AddCartButton";
 const Detail = () => {
   const router = useRouter();
   return (
+    //!arreglar los margenes
     <div className="mx-5 px-5">
       <h1 className="text-center">producto {router.query.productId}</h1>
       <div className="mb-5 d-flex flex-column-reverse flex-lg-row ">
