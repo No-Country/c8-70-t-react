@@ -21,10 +21,10 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
           className="bg-black opacity-100"
           style={{ border: "1px black solid" }}
         ></hr>
-        <form className="needs-validation" novalidate="">
+        <form className="needs-validation" noValidate="">
           <div className="row g-3">
             <div className="col-6">
-              <label for="email" className="form-label">
+              <label htmlFor="email" className="form-label">
                 Ciudad <span className="text-muted"></span>
               </label>
               <input
@@ -39,7 +39,7 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
             </div>
 
             <div className="col-6 col-sm-3 col-lg-3">
-              <label for="firstName" className="form-label">
+              <label htmlFor="firstName" className="form-label">
                 Codigo Postal
               </label>
               <input
@@ -47,7 +47,7 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
                 className="form-control bg-dark bg-opacity-10"
                 id="firstName"
                 placeholder="0525"
-                value=""
+                // value=""
                 required=""
               />
               <div className="invalid-feedback">
@@ -60,7 +60,7 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
                 href="https://visor.codigopostal.gov.co/472/visor/?lang=es"
                 target="_blank"
                 rel="noopener noreferrer"
-                for="firstName"
+                htmlFor="firstName"
                 className="form-label"
               >
                 ¿No sabes tu código postal?
@@ -71,12 +71,12 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
             </div>
 
             {/* ¿No sabes tu código postal? */}
-            <label for="direccion" className="form-label">
+            <label htmlFor="direccion" className="form-label">
               Direccion
             </label>
 
             <div className="col-4 col-sm-4">
-              <label for="calle" className="form-label">
+              <label htmlFor="calle" className="form-label">
                 Calle
               </label>
               <input
@@ -84,7 +84,7 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
                 className="form-control bg-dark bg-opacity-10"
                 id="lastName"
                 placeholder="CLL - KR"
-                value=""
+                // value=""
                 required=""
               />
               <div className="invalid-feedback">
@@ -93,7 +93,7 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
             </div>
 
             <div className="col-4 col-sm-4 ">
-              <label for="numerocalle" className="form-label">
+              <label htmlFor="numerocalle" className="form-label">
                 Numero
               </label>
               <input
@@ -109,7 +109,7 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
             </div>
 
             <div className="col-4 col-sm-4 ">
-              <label for="numerocasa" className="form-label">
+              <label htmlFor="numerocasa" className="form-label">
                 # residencia
               </label>
               <input
@@ -123,7 +123,7 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
             </div>
 
             <div className="col-12 col-sm-6">
-              <label for="nombrereceptor" className="form-label">
+              <label htmlFor="nombrereceptor" className="form-label">
                 Nombre de quien recibe el paquete
               </label>
               <input

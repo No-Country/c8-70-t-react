@@ -27,8 +27,8 @@ export default function PayMethod() {
       {/* aqui inicia el componente steps */}
 
       {/* aqui inicia la lista de productos */}
-      <div className="d-flex flex-column flex-md-row flex-column-reverse">
-        <div className="d-flex gap-3 flex-column col-12 col-md-8">
+      <div className="d-flex gap-3 flex-column flex-lg-row flex-column-reverse">
+        <div className="col d-flex flex-column gap-3 mb-3">
           {/* area ppal */}
           <CheckedUser />
           <CheckedShipping />

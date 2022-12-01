@@ -5,7 +5,7 @@ import ProductCounter from "../components/ProductCounter";
 export default function CheckoutList({ nombre, precio, image, detalle }) {
   return (
     <>
-      <div class="table-responsive table-hover">
+      <div className="table-responsive table-hover">
         <table className="table table-responsive table-hover align-middle">
           <thead>
             <tr>
@@ -24,7 +24,7 @@ export default function CheckoutList({ nombre, precio, image, detalle }) {
               <th>{/* <h5 className=""> Eliminar</h5> */}</th>
             </tr>
           </thead>
-          <tbody class="table-group-divider">
+          <tbody className="table-group-divider">
             <tr>
               <th scope="row">
                 <div className=" d-flex flex-column flex-md-row">

@@ -37,43 +37,43 @@ export default function ChoosePayment({ nombre, email, phone }) {
             <strong>Telefono:</strong> 3133455567
           </span> */}
           <br />
-          <ul class="list-group">
-            <li class="list-group-item" aria-current="true">
-              <div class="form-check d-flex justify-content-between p-2">
-                <label class="form-check-label" for="flexRadioDefault1">
+          <ul className="list-group">
+            <li className="list-group-item" aria-current="true">
+              <div className="form-check d-flex justify-content-between p-2">
+                <label className="form-check-label" htmlFor="flexRadioDefault1">
                   <strong>Contra Entrega</strong>
                 </label>
                 <input
-                  class="form-check-input"
+                  className="form-check-input"
                   type="radio"
                   name="flexRadioDefault"
                   id="flexRadioDefault1"
                 />
               </div>
             </li>
-            <li class="list-group-item">
-              <div class="form-check  d-flex justify-content-between align-content-end p-2">
-                {/* <label class="form-check-label" for="flexRadioDefault1">
+            <li className="list-group-item">
+              <div className="form-check  d-flex justify-content-between align-content-end p-2">
+                {/* <label className="form-check-label" htmlFor="flexRadioDefault1">
                   <strong>Nequi</strong>
                 </label> */}
-                  <Image src="/nequi-2.svg" width={80} height={30}></Image>
+                  <Image src="/nequi-2.svg" width={80} height={30} alt={'nequi logo'}></Image>
                   {/* <img src="/nequi-logo.svg" width={200} height={30}></img> */}
                 <input
-                  class="form-check-input"
+                  className="form-check-input"
                   type="radio"
                   name="flexRadioDefault"
                   id="flexRadioDefault1"
                 />
               </div>
             </li>
-            <li class="list-group-item">
-              <div class="form-check  d-flex justify-content-between p-2">
-                {/* <label class="form-check-label" for="flexRadioDefault1">
+            <li className="list-group-item">
+              <div className="form-check  d-flex justify-content-between p-2">
+                {/* <label className="form-check-label" htmlFor="flexRadioDefault1">
                   <strong>Daviplata</strong>
                 </label> */}
-                  <Image src="/daviplata-logo.png" width={100} height={30}></Image>
+                  <Image src="/daviplata-logo.png" width={100} height={30} alt={'daviplata logo'}></Image>
                 <input
-                  class="form-check-input"
+                  className="form-check-input"
                   type="radio"
                   name="flexRadioDefault"
                   id="flexRadioDefault1"

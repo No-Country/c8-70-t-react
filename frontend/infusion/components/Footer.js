@@ -7,7 +7,7 @@ export default function Footer() {
     <div>
       
       <footer
-        className={`text-center text-lg-start bg-light text-muted ${styles.footer}`}
+        className={`text-center text-lg-start bg-light text-muted ${styles.footer} mt-5`}
       >
         {/* <!-- Section: Social media --> */}
         {/* <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"> */}

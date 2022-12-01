@@ -28,8 +28,8 @@ export default function BuyConfirmation() {
       {/* aqui inicia el componente steps */}
 
       {/* aqui inicia la lista de productos */}
-      <div className="d-flex flex-column flex-md-row flex-column-reverse">
-        <div className="d-flex gap-3 flex-column col-12 col-md-8 ">
+      <div className="d-flex flex-column flex-lg-row flex-column-reverse gap-3">
+        <div className="col d-flex gap-3 flex-column ">
           {/* area ppal */}
           <CheckedUser />
           <CheckedShipping />

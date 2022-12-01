@@ -3,16 +3,18 @@ import Link from "next/link";
 import Title from "../components/Title";
 import CategoryList from "../components/CategoryList";
 import ProductList from "../components/ProductList";
+import LayoutMargin from "../components/LayoutMargin";
 
 export default function Home() {
   return (
     <>
       <Title title="Nuestros productos son elaborados artesanalmente" />
       {/* <div className="mx-5 px-5"> */}
+      <LayoutMargin>
         <div className="card mb-3 border-0">
-          <div className="row d-flex flex-column flex-md-row justify-content-md-center justify-content-center">
-            <div className="col-12 row justify-content-center align-items-center">
-              <div className="card-body m-5 ps-5 pe-5">
+          <div className=" d-flex flex-column flex-lg-row justify-content-center align-content-center">
+            <div className="col-lg-6 row text-center">
+              <div className="card-body m-5 ps-5 pe-5 text-wrap">
                 <h5 className="card-title display-6 text-uppercase fw-normal mb-4">
                   Lorem ipsum
                 </h5>
@@ -24,9 +26,9 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className={`${styles.img} col-10 col-lg-5 my-auto`}>
+            <div className={`${styles.img} col-6 col-lg-5 my-auto mx-auto`}>
               <img
-                className="img-fluid ms-auto"
+                className="img-fluid mx-auto"
                 src="/image-home-2.svg"
                 alt="..."
                 width={1000}
@@ -114,6 +116,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
+        </LayoutMargin>
       {/* </div> */}
     </>
   );

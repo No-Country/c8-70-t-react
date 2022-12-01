@@ -30,23 +30,14 @@ export default function PersonalData() {
       <div className="d-flex gap-3 flex-column flex-lg-row flex-column-reverse">
         <div className="col d-flex flex-column flex-sm-row mb-3 ms-2 ">
           {/* area ppal */}
-          <div
-            className="p-4 bg-light col-12"
-            style={{
-              // minWidth: "660px",
-              // maxWidth: "1960px",
-              // width:'220%',
-              minHeight: "360px",
-              fontSize: "14px",
-            }}
-          >
-            <CheckoutFormUser/>
-          </div>
+          <CheckoutFormUser />
+          
         </div>
         {/* aqui inicia resumen de la compra */}
         <div className="col col-md-auto d-flex flex-column flex-lg-row mb-3 mx-auto">
-            <CheckedList></CheckedList>
+          <CheckedList></CheckedList>
         </div>
+        
       </div>
       
     </div>
