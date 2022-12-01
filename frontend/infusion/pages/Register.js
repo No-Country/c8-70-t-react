@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import LayoutMargin from "../components/LayoutMargin";
 
 export default function Register() {
   return (
@@ -8,7 +9,8 @@ export default function Register() {
         <p className="">Inicio</p>
         <p className="fw-bolder">/Registrarse</p>
       </div>
-      <div className="mx-5">
+      {/* <div className="mx-5"> */}
+      <LayoutMargin>
         <div className="bg-light">
           <h3 className="mb-2 fw-bold ms-5 pt-5">Crear nueva cuenta</h3>
           <div className="d-flex ms-5">
@@ -17,111 +19,115 @@ export default function Register() {
               <p> Inicia sesión aqui</p>
             </Link>
           </div>
-          <form className="d-flex bg-light px-5 pb-5 pt-3 mb-5">
-            <div className="col-6">
-              <p className="fw-bolder">Datos personales </p>
-              <div className="col-12 my-3 w-75">
-                <label for="firstName" className="form-label">
-                  Nombre* <span className="text-muted"></span>
-                </label>
-                <input
-                  type="text"
-                  className="form-control bg-dark bg-opacity-10"
-                  id="firstName"
-                  placeholder="Ej. Laura"
-                />
+          <form className="mb-5 pb-5">
+            <div className="d-flex flex-column flex-md-row bg-light px-5  pt-3 ">
+              <div className="col-12  col-md-6 p-4">
+                <p className="fw-bolder">Datos personales </p>
+                <div className="col-12 col-md-12 my-3">
+                  <label htmlFor="firstName" className="form-label">
+                    Nombre* <span className="text-muted"></span>
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control bg-dark bg-opacity-10"
+                    id="firstName"
+                    placeholder="Ej. Laura"
+                  />
+                </div>
+                <div className="col-sm-12 my-3">
+                  <label htmlFor="lastName" className="form-label">
+                    Apellido*
+                  </label>
+                  <input
+                    type="email"
+                    className="form-control bg-dark bg-opacity-10"
+                    id="lastName"
+                    placeholder="Ej. Guzman"
+                    // value=""
+                    required=""
+                  />
+                </div>
+              
+                <div className="col-sm-12 my-3">
+                  <label htmlFor="passport" className="form-label">
+                    Documento*
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control bg-dark bg-opacity-10"
+                    id="passport"
+                    placeholder="Ej. 12345678"
+                    // value=""
+                    required=""
+                  />
+                </div>
               </div>
-              <div className="col-sm-12 my-3 w-75">
-                <label for="lastName" className="form-label">
-                  Apellido*
-                </label>
-                <input
-                  type="email"
-                  className="form-control bg-dark bg-opacity-10"
-                  id="lastName"
-                  placeholder="Ej. Guzman"
-                  value=""
-                  required=""
-                />
-              </div>
-
-              <div className="col-sm-12 my-3 w-75">
-                <label for="passaport" className="form-label">
-                  Documento*
-                </label>
-                <input
-                  type="text"
-                  className="form-control bg-dark bg-opacity-10"
-                  id="passaport"
-                  placeholder="Ej. 12345678"
-                  value=""
-                  required=""
-                />
-              </div>
-              <div className="mt-3">
-                <Link
-                  href="/RegisterMessage"
-                  className="text-light text-decoration-none mb-5"
-                >
-                  <button
-                    className="btn btn-info text-light px-5"
-                    style={{
-                      borderRadius: "10px !important",
-                      height: "40px",
-                      backgroundColor: "#00A5D0",
-                    }}
-                    type="button"
-                  >
-                    Crear cuenta
-                  </button>
-                </Link>
+              <div className="col-12 col-md-6 ps-md-5 p-4">
+                {" "}
+                <p className="fw-bolder">Informacion de Inicio de sesión</p>
+                <div className="col-12 my-3">
+                  <label htmlFor="email" className="form-label">
+                    Email* <span className="text-muted"></span>
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control bg-dark bg-opacity-10"
+                    id="email"
+                    placeholder="Ej. nombre@mail.com"
+                  />
+                </div>
+                <div className="col-sm-12 my-3">
+                  <label htmlFor="password" className="form-label">
+                    Contraseña*
+                  </label>
+                  <input
+                    type="password"
+                    className="form-control bg-dark bg-opacity-10"
+                    id="password"
+                    placeholder="Abl123"
+                    // value=""
+                    required=""
+                  />
+                </div>
+                <div className="col-sm-12 my-3">
+                  <label htmlFor="password2" className="form-label">
+                    Confirmar contraseña*
+                  </label>
+                  <input
+                    type="password"
+                    className="form-control bg-dark bg-opacity-10"
+                    id="password2"
+                    placeholder="Abl1234"
+                    // value=""
+                    required=""
+                  />
+                </div>
               </div>
             </div>
 
-            <div className="col-6 ps-5">
-              {" "}
-              <p className="fw-bolder">Informacion de Inicio de sesión</p>
-              <div className="col-12 my-3 w-75">
-                <label for="email" className="form-label">
-                  Email* <span className="text-muted"></span>
-                </label>
-                <input
-                  type="text"
-                  className="form-control bg-dark bg-opacity-10"
-                  id="email"
-                  placeholder="Ej. nombre@mail.com"
-                />
-              </div>
-              <div className="col-sm-12 my-3 w-75">
-                <label for="password" className="form-label">
-                  Contraseña*
-                </label>
-                <input
-                  type="email"
-                  className="form-control bg-dark bg-opacity-10"
-                  id="password"
-                  placeholder="Abl123"
-                  value=""
-                  required=""
-                />
-              </div>
-              <div className="col-sm-12 my-3 w-75">
-                <label for="password2" className="form-label">
-                  Confirmar contraseña*
-                </label>
-                <input
-                  type="passwoord"
-                  className="form-control bg-dark bg-opacity-10"
-                  id="passward"
-                  placeholder="Abl1234"
-                  value=""
-                  required=""
-                />
-              </div>
+            {/* boton */}
+            <div className="ms-5 ps-4">
+              <Link
+                href="/RegisterMessage"
+                className="text-light text-decoration-none mb-5"
+              >
+                <button
+                  className="btn btn-info text-light px-5"
+                  style={{
+                    borderRadius: "10px !important",
+                    height: "40px",
+                    backgroundColor: "#00A5D0",
+                  }}
+                  type="button"
+                >
+                  Crear cuenta
+                </button>
+              </Link>
             </div>
           </form>
         </div>
-      </div>
+        </LayoutMargin>
+      {/* </div> */}
     </>
   );
 }
