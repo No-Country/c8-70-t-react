@@ -6,6 +6,7 @@ import CheckedShipping from "../components/CheckedShipping";
 import CheckedUser from "../components/CheckedUser";
 import CheckoutFormUser from "../components/CheckoutFormUser";
 import CheckoutList from "../components/CheckoutList";
+import ProgressCheckout from "../components/ProgressCheckout";
 import ShippingForm from "../components/ShippingForm";
 import SumProductList from "../components/SumProductList";
 
@@ -26,6 +27,7 @@ export default function PersonalData() {
       </Link>
 
       {/* aqui inicia el componente steps */}
+      <ProgressCheckout />
       {/* aqui inicia la lista de productos */}
       <div className="d-flex gap-3 flex-column flex-lg-row flex-column-reverse">
         <div className="col d-flex flex-column flex-sm-row mb-3 ms-2 ">

@@ -17,7 +17,7 @@ export default function Header() {
         router.pathname === "/Shipping" ||
         router.pathname === "/PayMethod" ? (
           <div className="d-flex pt-3 ms-4 ps-4 text-dark bg-white align-items-center">
-            <p>
+            <p className="text-wrap">
               Atención al cliente | +54 3122693369 de Lunes a Viernes 9:00 AM
               hasta 20:00 PM
             </p>

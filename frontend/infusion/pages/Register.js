@@ -9,11 +9,10 @@ export default function Register() {
         <p className="">Inicio</p>
         <p className="fw-bolder">/Registrarse</p>
       </div>
-      {/* <div className="mx-5"> */}
       <LayoutMargin>
-        <div className="bg-light">
-          <h3 className="mb-2 fw-bold ms-5 pt-5">Crear nueva cuenta</h3>
-          <div className="d-flex ms-5">
+        <div className="bg-light ">
+          <h3 className="mb-2 fw-bold ms-5 pt-5 ps-4">Crear nueva cuenta</h3>
+          <div className="d-flex ms-5 ps-4">
             <h6 className="fw-light">¿Ya tienes una cuenta?</h6>
             <Link href="/Login" className=" fs-6 text-info ms-1">
               <p> Inicia sesión aqui</p>
@@ -127,7 +126,6 @@ export default function Register() {
           </form>
         </div>
         </LayoutMargin>
-      {/* </div> */}
     </>
   );
 }

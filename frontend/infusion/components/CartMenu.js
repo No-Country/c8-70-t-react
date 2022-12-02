@@ -28,11 +28,11 @@ export default function CartMenu() {
           style={{ border: "1px black solid" }}
         ></hr>
         <div className="offcanvas-body scroll">
-          <div className="d-flex mb-3">
+          <div className="d-flex mb-3 gap-2">
             <div className="w-50">
               <img src="/home-product-1.png" width={150}></img>
             </div>
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-column ">
               <div className="col">
                 <h5 className="text-start" style={{ fontSize: "18px" }}>
                   Morral Bahamas

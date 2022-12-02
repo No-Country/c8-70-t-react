@@ -6,6 +6,7 @@ import CheckedShipping from "../components/CheckedShipping";
 import CheckedUser from "../components/CheckedUser";
 import CheckoutFormUser from "../components/CheckoutFormUser";
 import CheckoutList from "../components/CheckoutList";
+import ProgressCheckout from "../components/ProgressCheckout";
 import ShippingForm from "../components/ShippingForm";
 import SumProductList from "../components/SumProductList";
 
@@ -25,7 +26,7 @@ export default function Shipping() {
         <p className="pt-2"> Volver a Checkout</p>{" "}
       </Link>
       {/* aqui inicia el componente steps */}
-
+      <ProgressCheckout />
       {/* aqui inicia la lista de productos */}
       {/* <CheckedShipping/> */}
       <div className="d-flex gap-3 flex-column flex-lg-row flex-column-reverse mb-5">

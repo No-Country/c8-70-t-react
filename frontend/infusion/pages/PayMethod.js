@@ -6,6 +6,7 @@ import CheckedShipping from "../components/CheckedShipping";
 import CheckedUser from "../components/CheckedUser";
 import CheckoutFormUser from "../components/CheckoutFormUser";
 import ChoosePayment from "../components/ChoosePayment";
+import ProgressCheckout from "../components/ProgressCheckout";
 import ShippingForm from "../components/ShippingForm";
 
 import styles from "../styles/ProgressBar.module.css";
@@ -25,7 +26,7 @@ export default function PayMethod() {
       </Link>
 
       {/* aqui inicia el componente steps */}
-
+      <ProgressCheckout />
       {/* aqui inicia la lista de productos */}
       <div className="d-flex gap-3 flex-column flex-lg-row flex-column-reverse">
         <div className="col d-flex flex-column gap-3 mb-3">
