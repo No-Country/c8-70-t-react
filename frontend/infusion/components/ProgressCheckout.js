@@ -8,7 +8,6 @@ const ProgressCheckout = () => {
     <>
       <div
         className={`${styles.container} container position-relative justify-content-center align-items-center bg-light mb-5 py-5`}
-        // className="container justify-content-center align-items-center bg-light mb-5 p-5"
       >
         <div className="py-3 py-sm-1">
           <div className={`${styles.bar} progress`}>

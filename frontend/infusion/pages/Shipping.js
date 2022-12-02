@@ -6,6 +6,7 @@ import CheckedShipping from "../components/CheckedShipping";
 import CheckedUser from "../components/CheckedUser";
 import CheckoutFormUser from "../components/CheckoutFormUser";
 import CheckoutList from "../components/CheckoutList";
+import LayoutMargin from "../components/LayoutMargin";
 import ProgressCheckout from "../components/ProgressCheckout";
 import ShippingForm from "../components/ShippingForm";
 import SumProductList from "../components/SumProductList";
@@ -29,20 +30,22 @@ export default function Shipping() {
       <ProgressCheckout />
       {/* aqui inicia la lista de productos */}
       {/* <CheckedShipping/> */}
-      <div className="d-flex gap-3 flex-column flex-lg-row flex-column-reverse mb-5">
-        <div className="col d-flex flex-column gap-3">
-          <CheckedUser />
-          {/* area ppal */}
+      <LayoutMargin>
+        <div className="d-flex gap-3 flex-column flex-lg-row flex-column-reverse mb-5">
+          <div className="col d-flex flex-column gap-3">
+            <CheckedUser />
+            {/* area ppal */}
 
-          {/* <CheckoutList /> */}
-          {/* <CheckoutFormUser/> */}
-          <ShippingForm />
+            {/* <CheckoutList /> */}
+            {/* <CheckoutFormUser/> */}
+            <ShippingForm />
+          </div>
+          {/* aqui inicia resumen de la compra */}
+          <div className="col col-md-auto d-flex flex-column flex-lg-row mb-3 mx-auto">
+            <CheckedList></CheckedList>
+          </div>
         </div>
-        {/* aqui inicia resumen de la compra */}
-        <div className="col col-md-auto d-flex flex-column flex-lg-row mb-3 mx-auto">
-          <CheckedList></CheckedList>
-        </div>
-      </div>
+      </LayoutMargin>
     </div>
   );
 }

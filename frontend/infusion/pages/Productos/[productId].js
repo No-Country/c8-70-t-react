@@ -3,25 +3,28 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import ProductCounter from "../../components/ProductCounter";
 import AddCartButton from "../../components/AddCartButton";
+import LayoutMargin from "../../components/LayoutMargin";
 
 const Detail = () => {
   const router = useRouter();
   return (
     //!arreglar los margenes
-    <div className="mx-5 px-5">
+    <>
+    <LayoutMargin>
       <h1 className="text-center">producto {router.query.productId}</h1>
-      <div className="mb-5 d-flex flex-column-reverse flex-lg-row ">
-        <div className="d-flex flex-column-reverse flex-md-row flex-grow-1">
-          <div className="col col-md-3 d-flex flex-row flex-md-column ">
-            <div className="p-2" style={{ width: "150px" }}>
-              <img src="/home-product-1.png" style={{ width: "150px" }}></img>
+      <div className="mb-5 d-flex flex-column flex-lg-row ">
+        <div className="d-flex col-lg-8 flex-column-reverse flex-xl-row ">
+          <div className="row  d-flex flex-row ">
+            <div className="p-2" style={{ maxWidth: "150px" }}>
+              <img src="/home-product-1.png" style={{ maxWidth: "150px" }}></img>
             </div>
-            <div className="p-2" style={{ width: "150px" }}>
-              <img src="/home-product-1.png" style={{ width: "150px" }}></img>
+            <div className="p-2" style={{ maxWidth: "150px" }}>
+              <img src="/home-product-1.png" style={{ maxWidth: "150px" }}></img>
             </div>
-            <div className="p-2" style={{ width: "150px" }}>
-              <img src="/home-product-1.png" style={{ width: "150px" }}></img>
+            <div className="p-2" style={{ maxWidth: "150px" }}>
+              <img src="/home-product-1.png" style={{ maxWidth: "150px" }}></img>
             </div>
+            
           </div>
           <div className="col row-cols-1 row-cols-sm-1 col-md-3 justify-content-center mx-auto w-100 me-3 flex-fill">
             {/* <img src="/home-product-1.png" className="img-fluid"></img> */}
@@ -34,13 +37,13 @@ const Detail = () => {
             ></Image>
           </div>
         </div>
-        <div className="col col-md-auto d-flex flex-column flex-md-row mb-3 mx-auto">
+        <div className="col justify-content-center w-100 d-flex flex-column flex-md-row mt-3 mt-lg-0 align-items-lg-start align-items-sm-center">
           <div
-            className="p-2 bg-light h-75"
+            className="p-2 bg-light "
             style={{
-              minWidth: "360px",
+              minWidth: "320px",
               maxWidth: "560px",
-              width: "90%",
+              width: "100%",
               maxHeight: "260px",
               fontSize: "14px",
             }}
@@ -103,7 +106,8 @@ const Detail = () => {
           </div>
         </div>
       </div>
-    </div>
+      </LayoutMargin>
+    </>
   );
 };
 

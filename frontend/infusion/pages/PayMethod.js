@@ -6,6 +6,7 @@ import CheckedShipping from "../components/CheckedShipping";
 import CheckedUser from "../components/CheckedUser";
 import CheckoutFormUser from "../components/CheckoutFormUser";
 import ChoosePayment from "../components/ChoosePayment";
+import LayoutMargin from "../components/LayoutMargin";
 import ProgressCheckout from "../components/ProgressCheckout";
 import ShippingForm from "../components/ShippingForm";
 
@@ -28,17 +29,18 @@ export default function PayMethod() {
       {/* aqui inicia el componente steps */}
       <ProgressCheckout />
       {/* aqui inicia la lista de productos */}
-      <div className="d-flex gap-3 flex-column flex-lg-row flex-column-reverse">
-        <div className="col d-flex flex-column gap-3 mb-3">
-          {/* area ppal */}
-          <CheckedUser />
-          <CheckedShipping />
-          <ChoosePayment/>
-          
+      <LayoutMargin>
+        <div className="d-flex gap-3 flex-column flex-lg-row flex-column-reverse">
+          <div className="col d-flex flex-column gap-3 mb-3">
+            {/* area ppal */}
+            <CheckedUser />
+            <CheckedShipping />
+            <ChoosePayment />
+          </div>
+          {/* aqui inicia resumen de la compra */}
+          <CheckedList></CheckedList>
         </div>
-        {/* aqui inicia resumen de la compra */}
-        <CheckedList></CheckedList>
-      </div>
+      </LayoutMargin>
     </div>
   );
 }

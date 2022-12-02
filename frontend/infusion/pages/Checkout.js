@@ -11,6 +11,7 @@ import SumProductList from "../components/SumProductList";
 import ProgressCheckout from "../components/ProgressCheckout";
 
 import styles from "../styles/ProgressBar.module.css";
+import LayoutMargin from "../components/LayoutMargin";
 
 export default function Checkout() {
   // const  [progress , setProgress] = useState(initialState = 0)
@@ -30,7 +31,7 @@ export default function Checkout() {
       <ProgressCheckout />
 
       {/* aqui inicia la lista de productos */}
-
+      <LayoutMargin>
       <div className="d-flex gap-3 flex-column flex-lg-row">
         <div className="col d-flex flex-column flex-sm-row mb-3 ms-2 ">
           {/* area ppal */}
@@ -66,6 +67,7 @@ export default function Checkout() {
           </div>
         </div>
       </div>
+      </LayoutMargin>
       {/* aqui empieza la lista checkeado, se deberia hacer conditional entre <checkedlist> y <>*/}
       {/* <div className="col d-flex flex-column flex-lg-row mb-3 mx-auto">
             <div

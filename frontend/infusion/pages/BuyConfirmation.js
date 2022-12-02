@@ -7,6 +7,7 @@ import CheckedShipping from "../components/CheckedShipping";
 import CheckedUser from "../components/CheckedUser";
 import CheckoutFormUser from "../components/CheckoutFormUser";
 import ChoosePayment from "../components/ChoosePayment";
+import LayoutMargin from "../components/LayoutMargin";
 import ProgressCheckout from "../components/ProgressCheckout";
 import ShippingForm from "../components/ShippingForm";
 
@@ -29,32 +30,34 @@ export default function BuyConfirmation() {
       {/* aqui inicia el componente steps */}
       <ProgressCheckout />
       {/* aqui inicia la lista de productos */}
-      <div className="d-flex flex-column flex-lg-row flex-column-reverse gap-3">
-        <div className="col d-flex gap-3 flex-column ">
-          {/* area ppal */}
-          <CheckedUser />
-          <CheckedShipping />
-          <CheckedPayment/>
-          <Link
-            href="/"
-            className="text-light text-decoration-none mb-5 mx-auto"
-          >
-            <button
-              className="btn btn-info text-light px-5 text-wrap"
-              style={{
-                borderRadius: "10px !important",
-                height: "40px",
-                backgroundColor: "#00A5D0",
-              }}
-              type="button"
+      <LayoutMargin>
+        <div className="d-flex flex-column flex-lg-row flex-column-reverse gap-3">
+          <div className="col d-flex gap-3 flex-column ">
+            {/* area ppal */}
+            <CheckedUser />
+            <CheckedShipping />
+            <CheckedPayment />
+            <Link
+              href="/"
+              className="text-light text-decoration-none mb-5 mx-auto"
             >
-              Finalizar la Compra
-            </button>
-          </Link>
+              <button
+                className="btn btn-info text-light px-5 text-wrap"
+                style={{
+                  borderRadius: "10px !important",
+                  height: "40px",
+                  backgroundColor: "#00A5D0",
+                }}
+                type="button"
+              >
+                Finalizar la Compra
+              </button>
+            </Link>
+          </div>
+          {/* aqui inicia resumen de la compra */}
+          <CheckedList></CheckedList>
         </div>
-        {/* aqui inicia resumen de la compra */}
-        <CheckedList></CheckedList>
-      </div>
+      </LayoutMargin>
     </div>
   );
 }

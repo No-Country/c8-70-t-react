@@ -9,7 +9,7 @@ import CheckoutList from "../components/CheckoutList";
 import ProgressCheckout from "../components/ProgressCheckout";
 import ShippingForm from "../components/ShippingForm";
 import SumProductList from "../components/SumProductList";
-
+import LayoutMargin from "../components/LayoutMargin";
 import styles from "../styles/ProgressBar.module.css";
 
 export default function PersonalData() {
@@ -29,19 +29,18 @@ export default function PersonalData() {
       {/* aqui inicia el componente steps */}
       <ProgressCheckout />
       {/* aqui inicia la lista de productos */}
-      <div className="d-flex gap-3 flex-column flex-lg-row flex-column-reverse">
-        <div className="col d-flex flex-column flex-sm-row mb-3 ms-2 ">
-          {/* area ppal */}
-          <CheckoutFormUser />
-          
+      <LayoutMargin>
+        <div className="d-flex gap-3 flex-column flex-lg-row flex-column-reverse">
+          <div className="col d-flex flex-column flex-sm-row mb-3 ms-2 ">
+            {/* area ppal */}
+            <CheckoutFormUser />
+          </div>
+          {/* aqui inicia resumen de la compra */}
+          <div className="col col-md-auto d-flex flex-column flex-lg-row mb-3 mx-auto">
+            <CheckedList></CheckedList>
+          </div>
         </div>
-        {/* aqui inicia resumen de la compra */}
-        <div className="col col-md-auto d-flex flex-column flex-lg-row mb-3 mx-auto">
-          <CheckedList></CheckedList>
-        </div>
-        
-      </div>
-      
+      </LayoutMargin>
     </div>
   );
 }
