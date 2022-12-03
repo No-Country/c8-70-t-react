@@ -4,7 +4,7 @@ import LayoutMargin from "../components/LayoutMargin";
 
 export default function Register() {
   return (
-    <>
+    <div className="my-5 py-5">
       <div className="d-flex px-4 pt-3 ms-4">
         <p className="">Inicio</p>
         <p className="fw-bolder">/Registrarse</p>
@@ -126,6 +126,6 @@ export default function Register() {
           </form>
         </div>
         </LayoutMargin>
-    </>
+    </div>
   );
 }

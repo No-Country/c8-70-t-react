@@ -6,8 +6,8 @@ import styles from "../../styles/ProductIndex.module.css";
 export default function Productos() {
   return (
     <>
-      <div>
-        <div className="d-flex flex-column flex-md-row p-4 text-dark bg-white justify-content-between align-items-center ">
+      <div className="my-5 py-5">
+        <div className="d-flex flex-column flex-md-row p-4 text-dark bg-light justify-content-between align-items-center ">
           <div className="text-start me-5">
             <p className="ms-5  ">Categoria/Mochilas</p>
           </div>

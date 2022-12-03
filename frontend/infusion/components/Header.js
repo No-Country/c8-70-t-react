@@ -23,7 +23,7 @@ export default function Header() {
             </p>
           </div>
         ) : (
-          <nav className="navbar sticky-top navbar-expand-lg navbar-light align-items-center">
+          <nav className="navbar fixed-top navbar-expand-lg navbar-light align-items-center bg-light">
             <div className="container-fluid mx-5 my-2 g-5">
               <Link
                 className="navbar-brand text-uppercase fw-lighter fw-normal"
@@ -34,7 +34,13 @@ export default function Header() {
                 aria-current="page"
                 href="/"
               >
-                <img src="../LOGO.svg" alt="infusion" height={20} />
+                <img
+                  src="../LOGO.svg"
+                  alt="infusion"
+                  height={20}
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarToggler"
+                />
               </Link>
               <span className="d-lg-none">
                 {/* data-bs-toggle, data-bs-target is necesary to bootstrap 5 to use JS */}
@@ -62,7 +68,7 @@ export default function Header() {
               >
                 <span className="navbar-toggler-icon"></span>
               </button>
-              <div className="collapse navbar-collapse" id="navbarToggler">
+              <div className="collapse navbar-collapse " id="navbarToggler">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                   <li className="nav-item"></li>
                   <li className="nav-item">

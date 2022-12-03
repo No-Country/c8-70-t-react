@@ -7,7 +7,11 @@ const Profile = () => {
         console.log('presionado el a')
     }
   return (
-    <div className="d-flex flex-column flex-sm-row">
+    <div className="d-flex flex-column flex-sm-row my-5 py-5">
+      <div className="d-flex px-4 pt-3 ms-4">
+          <p className="">Inicio</p>
+          <p className="fw-bolder">/Perfil</p>
+        </div>
       <div
         className="p-4 bg-light col-3 mx-auto my-5 "
         style={{

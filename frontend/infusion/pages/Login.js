@@ -4,13 +4,16 @@ import LayoutMargin from "../components/LayoutMargin";
 
 const Login = () => {
   return (
-    <>
-      <div className="d-flex p-4 text-dark bg-white align-items-center ">
+    <div className="my-5 py-5">
+      {/* <div className="d-flex p-4 text-dark bg-transparent align-items-center ">
         <div className="col-12 ">
           <p className="ms-5">Inicio/Perfil</p>
         </div>
-        
-      </div>
+      </div> */}
+        <div className="d-flex px-4 pt-3 ms-4">
+          <p className="">Inicio</p>
+          <p className="fw-bolder">/Iniciar sesión</p>
+        </div>
       <LayoutMargin>
         <div
           className="p-4 bg-light col-10 mx-auto my-5"
@@ -84,7 +87,7 @@ const Login = () => {
           </div>
         </div>
       </LayoutMargin>
-    </>
+    </div>
   );
 };
 
