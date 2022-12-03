@@ -46,7 +46,10 @@ export default function CheckoutList({ nombre, precio, image, detalle }) {
               </td>
               <td>$ 75000</td>
               <td>
-                <i className="bi bi-x fs-4 text-danger" style={{ cursor: "pointer" }}></i>
+                <i
+                  className="bi bi-x fs-4 text-danger"
+                  style={{ cursor: "pointer" }}
+                ></i>
               </td>
             </tr>
             <tr>
@@ -67,13 +70,16 @@ export default function CheckoutList({ nombre, precio, image, detalle }) {
               <td>$ 75000</td>
               <td>
                 <ProductCounter
-                  scale={"scale(1)"}
+                  scale={"scale(0.8)"}
                   style={{ position: "relative", left: "50px" }}
                 ></ProductCounter>
               </td>
               <td>$ 75000</td>
               <td>
-                <i className="bi bi-x fs-4 text-danger" style={{ cursor: "pointer" }}></i>
+                <i
+                  className="bi bi-x fs-4 text-danger"
+                  style={{ cursor: "pointer" }}
+                ></i>
               </td>
             </tr>
             <tr>
@@ -94,13 +100,16 @@ export default function CheckoutList({ nombre, precio, image, detalle }) {
               <td>$ 75000</td>
               <td>
                 <ProductCounter
-                  scale={"scale(1)"}
+                  scale={"scale(0.8)"}
                   style={{ position: "relative", left: "50px" }}
                 ></ProductCounter>
               </td>
               <td>$ 75000</td>
               <td>
-                <i className="bi bi-x fs-4 text-danger" style={{ cursor: "pointer" }}></i>
+                <i
+                  className="bi bi-x fs-4 text-danger"
+                  style={{ cursor: "pointer" }}
+                ></i>
               </td>
             </tr>
           </tbody>

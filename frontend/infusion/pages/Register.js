@@ -46,7 +46,7 @@ export default function Register() {
                     required=""
                   />
                 </div>
-              
+
                 <div className="col-sm-12 my-3">
                   <label htmlFor="passport" className="form-label">
                     Documento*
@@ -111,6 +111,23 @@ export default function Register() {
                 className="text-light text-decoration-none mb-5"
               >
                 <button
+                  className="btn btn-info text-light px-5 "
+                  style={{
+                    borderRadius: "10px !important",
+                    minWidth: "20%",
+                    height: "40px",
+                    backgroundColor: "#00A5D0",
+                  }}
+                  type="button"
+                >
+                  Crear cuenta
+                </button>
+              </Link>
+              {/* <Link
+                href="/RegisterMessage"
+                className="text-light text-decoration-none mb-5"
+              >
+                <button
                   className="btn btn-info text-light px-5"
                   style={{
                     borderRadius: "10px !important",
@@ -121,11 +138,11 @@ export default function Register() {
                 >
                   Crear cuenta
                 </button>
-              </Link>
+              </Link> */}
             </div>
           </form>
         </div>
-        </LayoutMargin>
+      </LayoutMargin>
     </div>
   );
 }
