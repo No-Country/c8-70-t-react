@@ -23,43 +23,59 @@ export default function Header() {
             </p>
           </div>
         ) : (
-          <nav className="navbar navbar-expand-lg navbar-light align-items-center">
-            <div className="container-fluid ms-5 me-5 mt-3 g-5">
+          <nav className="navbar sticky-top navbar-expand-lg navbar-light align-items-center">
+            <div className="container-fluid mx-5 my-2 g-5">
               <Link
                 className="navbar-brand text-uppercase fw-lighter fw-normal"
                 href="/"
               ></Link>
+              <Link
+                className=" text-uppercase fw-lighter fw-normal text-dark me-auto"
+                aria-current="page"
+                href="/"
+              >
+                <img src="../LOGO.svg" alt="infusion" height={20} />
+              </Link>
+              <span className="d-lg-none">
+                {/* data-bs-toggle, data-bs-target is necesary to bootstrap 5 to use JS */}
+                <Link
+                  // type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight"
+                  aria-controls="offcanvasRight"
+                  className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
+                  href="/Cart"
+                >
+                  <i className="bi bi-bag-fill fs-4"></i>
+                  [5]
+                </Link>
+              </span>
               <button
-                className="navbar-toggler"
+                className="navbar-toggler ms-4"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#navbarTogglerDemo02"
-                aria-controls="navbarTogglerDemo02"
+                data-bs-dismiss="collapse"
+                data-bs-target="#navbarToggler"
+                aria-controls="navbarToggler"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
                 <span className="navbar-toggler-icon"></span>
               </button>
-              <div
-                className="collapse navbar-collapse"
-                id="navbarTogglerDemo02"
-              >
+              <div className="collapse navbar-collapse" id="navbarToggler">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li className="nav-item">
-                    <Link
-                      className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
-                      aria-current="page"
-                      href="/"
-                    >
-                      <img src="../LOGO.svg" alt="" />
-                    </Link>
-                  </li>
+                  <li className="nav-item"></li>
                   <li className="nav-item">
                     <Link
                       className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
                       href="/Custom"
                     >
-                      Personalizables
+                      <p
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarToggler"
+                      >
+                        Personalizables
+                      </p>
                     </Link>
                   </li>
                   <li className="nav-item">
@@ -68,7 +84,12 @@ export default function Header() {
                       href="/About"
                       aria-disabled="true"
                     >
-                      Sobre Nosotros
+                      <p
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarToggler"
+                      >
+                        Sobre Nosotros
+                      </p>
                     </Link>
                   </li>
                   <li className="nav-item">
@@ -77,18 +98,28 @@ export default function Header() {
                       href="/Contact"
                       aria-disabled="true"
                     >
-                      Contacto
+                      <p
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarToggler"
+                      >
+                        Contacto
+                      </p>
                     </Link>
                   </li>
                 </ul>
-                <div className="d-flex">
-                  <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <div className="d-flex ">
+                  <ul className="navbar-nav me-auto mb-2 mb-lg-1">
                     <li className="nav-item">
                       <Link
                         className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
                         href="/Register"
                       >
-                        Registrarse
+                        <p
+                          data-bs-toggle="collapse"
+                          data-bs-target="#navbarToggler"
+                        >
+                          Registrarse
+                        </p>
                       </Link>
                     </li>
                     <li className="nav-item">
@@ -96,7 +127,12 @@ export default function Header() {
                         className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
                         href="/Login"
                       >
-                        Iniciar Sesion
+                        <p
+                          data-bs-toggle="collapse"
+                          data-bs-target="#navbarToggler"
+                        >
+                          Iniciar Sesion
+                        </p>
                       </Link>
                     </li>
                     <li className="nav-item">
@@ -104,21 +140,24 @@ export default function Header() {
                         className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
                         href="/Login"
                       >
-                        <i className="bi bi-person-fill fs-4"></i>
+                        <p
+                          data-bs-toggle="collapse"
+                          data-bs-target="#navbarToggler"
+                        >
+                          <i className="bi bi-person-fill fs-4"></i>
+                        </p>
                       </Link>
                     </li>
                     <li className="nav-item">
-                      {/* tal vez sea necesario convertirlo en boton ya que bootstrap lo necesita para funcionar bien */}
-                      {/* https://getbootstrap.com/docs/5.2/components/offcanvas/#usage */}
                       <Link
                         // type="button"
                         data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasRight"
                         aria-controls="offcanvasRight"
-                        className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
+                        className=" nav-link text-uppercase fw-lighter fw-normal text-dark "
                         href="/Cart"
                       >
-                        <i className="bi bi-bag-fill fs-4"></i>
+                        <i className="bi bi-bag-fill fs-4"></i>[5]
                       </Link>
                     </li>
                   </ul>

@@ -156,12 +156,11 @@ export default function CartMenu() {
         <div className="m-auto mb-3 ">
           <Link
             href="/Checkout"
-            
           >
             <button
               className="btn btn-info text-light px-5"
               data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasRight"
+              data-bs-target="#offcanvasRight"
               style={{
                 borderRadius: "10px !important",
                 height: "40px",
