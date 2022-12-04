@@ -3,11 +3,11 @@ import Link from "next/link";
 import React from "react";
 import styles from "../styles/ProductCard.module.css";
 
-export default function ProductCard({ nombre, precio, image, detalle }) {
+export default function ProductCard({ nombre, precio, image, detalle, path }) {
   return (
     <>
       <div className="card position-relative">
-        <Link href={detalle} className=" text-decoration-none text-black">
+        <Link href={path} className=" text-decoration-none text-black">
           <img src={image} className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="card-title ">{nombre}</h5>

@@ -10,10 +10,10 @@ const Login = () => {
           <p className="ms-5">Inicio/Perfil</p>
         </div>
       </div> */}
-        <div className="d-flex px-4 pt-3 ms-4">
-          <p className="">Inicio</p>
-          <p className="fw-bolder">/Iniciar sesión</p>
-        </div>
+      <div className="d-flex px-4 pt-3 ms-4">
+        <p className="">Inicio</p>
+        <p className="fw-bolder">/Iniciar sesión</p>
+      </div>
       <LayoutMargin>
         <div
           className="p-4 bg-light col-10 mx-auto my-5"
@@ -29,10 +29,10 @@ const Login = () => {
             {/* para mostrar con condicional */}
             {/* <h2 className="mb-3">¡Tu cuenta se ha creado con éxito!</h2> */}
             <h2 className="mb-3">Iniciar sesión</h2>
-            <form className="needs-validation" novalidate="">
+            <form className="needs-validation" noValidate="">
               <div className="row flex-column g-3 ">
                 <div className="col-12 col-lg-6">
-                  <label for="email" className="form-label">
+                  <label htmlFor="email" className="form-label">
                     E-Mail <span className="text-muted"></span>
                   </label>
                   <input
@@ -47,7 +47,7 @@ const Login = () => {
                 </div>
 
                 <div className="col-12 col-lg-6">
-                  <label for="firstName" className="form-label">
+                  <label htmlFor="firstName" className="form-label">
                     Clave
                   </label>
                   <input

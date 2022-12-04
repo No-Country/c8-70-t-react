@@ -5,7 +5,25 @@ import CategoryList from "../components/CategoryList";
 import ProductList from "../components/ProductList";
 import LayoutMargin from "../components/LayoutMargin";
 import Slider from "../components/Slider";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+
 export default function Home() {
+  const router = useRouter();
+  const ruta = router.pathname;
+  console.log(ruta);
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const API_URL =
+        "https://c8-70-t-react-production.up.railway.app/products";
+      const data = await fetch(API_URL).then((response) => response.json());
+      setProducts(data);
+      console.log(data);
+    })();
+  }, []);
   return (
     <>
       <div className="my-5 py-5">

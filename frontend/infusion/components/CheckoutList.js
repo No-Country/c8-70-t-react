@@ -28,7 +28,12 @@ export default function CheckoutList({ nombre, precio, image, detalle }) {
             <tr>
               <th scope="row">
                 <div className=" d-flex flex-column flex-md-row">
-                  <img src="/home-product-1.png" width={100} height={100} />
+                  <img
+                    src="/home-product-1.png"
+                    width={100}
+                    height={100}
+                    alt="asd"
+                  />
                   <div className="col ms-1">
                     <h5 className="text-start" style={{ fontSize: "18px" }}>
                       Morral Bahamas
@@ -55,7 +60,12 @@ export default function CheckoutList({ nombre, precio, image, detalle }) {
             <tr>
               <th scope="row">
                 <div className=" d-flex flex-column flex-md-row">
-                  <img src="/home-product-1.png" width={100} height={100}></img>
+                  <img
+                    src="/home-product-1.png"
+                    width={100}
+                    height={100}
+                    alt="asd"
+                  ></img>
                   <div className="col ms-1">
                     <h5 className="text-start " style={{ fontSize: "18px" }}>
                       Morral Bahamas
@@ -85,7 +95,12 @@ export default function CheckoutList({ nombre, precio, image, detalle }) {
             <tr>
               <th scope="row">
                 <div className=" d-flex flex-column flex-md-row">
-                  <img src="/home-product-1.png" width={100} height={100}></img>
+                  <img
+                    src="/home-product-1.png"
+                    width={100}
+                    height={100}
+                    alt="asd"
+                  ></img>
                   <div className="col ms-1">
                     <h5 className="text-start " style={{ fontSize: "18px" }}>
                       Morral Bahamas

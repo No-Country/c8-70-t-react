@@ -1,9 +1,22 @@
-import React from "react";
+import { React, useEffect, useState } from "react";
 import LayoutMargin from "../../components/LayoutMargin";
 import ProductList from "../../components/ProductList";
 import styles from "../../styles/ProductIndex.module.css";
 
 export default function Productos() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const API_URL =
+        "https://c8-70-t-react-production.up.railway.app/products";
+      const data = await fetch(API_URL).then((response) => response.json());
+      setProducts(data);
+      console.log(data);
+    })();
+  }, [setProducts]);
+  console.log(products.category);
+
   return (
     <>
       <div className="my-5 py-5">
@@ -48,7 +61,7 @@ export default function Productos() {
         <div className="mt-5">
           {/* quitar margenes en version movil */}
           <LayoutMargin>
-            <ProductList />
+            <ProductList category={products.category} />
           </LayoutMargin>
         </div>
       </div>
