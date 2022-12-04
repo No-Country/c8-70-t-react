@@ -17,8 +17,8 @@ const Detail = () => {
       </div>
         <div className="mb-5 d-flex flex-column flex-lg-row ">
           <div className="d-flex col-lg-8 flex-column-reverse flex-xl-row ">
-            <div className="row  d-flex flex-row ">
-              <div className="p-2" style={{ maxWidth: "150px" }}>
+            <div className="row d-flex flex-row flex-xl-column ">
+              <div className="p-2 " style={{ maxWidth: "150px" }}>
                 <img
                   src="/home-product-1.png"
                   style={{ maxWidth: "150px" }}
@@ -37,7 +37,7 @@ const Detail = () => {
                 ></img>
               </div>
             </div>
-            <div className="col row-cols-1 row-cols-sm-1 col-md-3 justify-content-center mx-auto w-100 me-3 flex-fill">
+            <div className="col row-cols-1 row-cols-sm-1 col-md-3 justify-content-center mx-auto w-100 me-3 ms-xl-5 flex-fill">
               {/* <img src="/home-product-1.png" className="img-fluid"></img> */}
               <Image
                 src="/home-product-1.png"
@@ -48,9 +48,9 @@ const Detail = () => {
               ></Image>
             </div>
           </div>
-          <div className="col justify-content-center w-100 d-flex flex-column flex-md-row mt-3 mt-lg-0 align-items-lg-start align-items-sm-center">
+          <div className="col justify-content-center w-100 d-flex flex-column flex-md-row mt-3 mt-lg-0 align-items-lg-start align-items-sm-center ps-lg-4">
             <div
-              className="p-2 bg-light "
+              className="p-2 bg-light"
               style={{
                 minWidth: "320px",
                 maxWidth: "560px",

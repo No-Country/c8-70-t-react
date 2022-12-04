@@ -27,7 +27,7 @@ export default function Shipping() {
         <p className="pt-2"> Volver a Checkout</p>{" "}
       </Link>
       {/* aqui inicia el componente steps */}
-      <ProgressCheckout />
+      <ProgressCheckout percent="65%"/>
       {/* aqui inicia la lista de productos */}
       {/* <CheckedShipping/> */}
       <LayoutMargin>

@@ -53,7 +53,7 @@ export default function CategoryList() {
           key={item.id}
           category={item.name}
           image={"/home-product-3.png"}
-          link={"/Productos"}
+          link={`/Productos?category=${item.name}`}
         ></CategoryCard>
       ))}
     </div>

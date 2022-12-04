@@ -1,8 +1,29 @@
 import Link from "next/link";
 import React from "react";
+import CartCard from "./CartCard";
 import ProductCounter from "./ProductCounter";
 
 export default function CartMenu() {
+  const cartList = [
+    {
+      id:1,
+      title: "Morral Bahamas",
+      price: "75.000",
+      color: "Negro",
+    },
+    {
+      id:2,
+      title: "Morral Bahamas",
+      price: "75.000",
+      color: "Negro",
+    },
+    {
+      id:3,
+      title: "Morral Bahamas",
+      price: "75.000",
+      color: "Negro",
+    },
+  ];
   return (
     <>
       <div
@@ -28,95 +49,16 @@ export default function CartMenu() {
           style={{ border: "1px black solid" }}
         ></hr>
         <div className="offcanvas-body scroll">
-          <div className="d-flex mb-3 gap-2">
-            <div className="w-50">
-              <img src="/home-product-1.png" width={150}></img>
-            </div>
-            <div className="d-flex flex-column ">
-              <div className="col">
-                <h5 className="text-start" style={{ fontSize: "18px" }}>
-                  Morral Bahamas
-                </h5>
-              </div>
-              <div className="col">
-                <h5 className="text-start" style={{ fontSize: "18px" }}>
-                  {" "}
-                  $ 75.000
-                </h5>
-                <p className="" style={{ fontSize: "14px" }}>
-                  <strong>Color</strong>: Negro{" "}
-                </p>
-              </div>
-              <ProductCounter></ProductCounter>
-            </div>
-          </div>
-          {/* lista de prueba */}
-          {/* <div className="d-flex mb-3">
-            <div className="w-50">
-              <img src="/home-product-1.png" width={150}></img>
-            </div>
-            <div className="d-flex flex-column">
-              <div className="col">
-                <h5 className="text-start" style={{ fontSize: "18px" }}>
-                  Morral Bahamas
-                </h5>
-              </div>
-              <div className="col">
-                <h5 className="text-start" style={{ fontSize: "18px" }}>
-                  {" "}
-                  $ 75.000
-                </h5>
-                <p className="" style={{ fontSize: "14px" }}>
-                  <strong>Color</strong>: Negro{" "}
-                </p>
-              </div>
-              <ProductCounter></ProductCounter>
-            </div>
-          </div>
-          <div className="d-flex mb-3">
-            <div className="w-50">
-              <img src="/home-product-1.png" width={150}></img>
-            </div>
-            <div className="d-flex flex-column">
-              <div className="col">
-                <h5 className="text-start" style={{ fontSize: "18px" }}>
-                  Morral Bahamas
-                </h5>
-              </div>
-              <div className="col">
-                <h5 className="text-start" style={{ fontSize: "18px" }}>
-                  {" "}
-                  $ 75.000
-                </h5>
-                <p className="" style={{ fontSize: "14px" }}>
-                  <strong>Color</strong>: Negro{" "}
-                </p>
-              </div>
-              <ProductCounter></ProductCounter>
-            </div>
-          </div>
-          <div className="d-flex mb-3">
-            <div className="w-50">
-              <img src="/home-product-1.png" width={150}></img>
-            </div>
-            <div className="d-flex flex-column">
-              <div className="col">
-                <h5 className="text-start" style={{ fontSize: "18px" }}>
-                  Morral Bahamas
-                </h5>
-              </div>
-              <div className="col">
-                <h5 className="text-start" style={{ fontSize: "18px" }}>
-                  {" "}
-                  $ 75.000
-                </h5>
-                <p className="" style={{ fontSize: "14px" }}>
-                  <strong>Color</strong>: Negro{" "}
-                </p>
-              </div>
-              <ProductCounter></ProductCounter>
-            </div>
-          </div> */}
+          
+          {cartList.map((item) => (
+            <CartCard
+              title={item.title}
+              colors={item.color}
+              price={item.price}
+              key={item.id}
+            ></CartCard>
+          ))}
+         
           
         </div>
         <hr
@@ -154,9 +96,7 @@ export default function CartMenu() {
           </div>
         </div>
         <div className="m-auto mb-3 ">
-          <Link
-            href="/Checkout"
-          >
+          <Link href="/Checkout">
             <button
               className="btn btn-info text-light px-5"
               data-bs-toggle="offcanvas"

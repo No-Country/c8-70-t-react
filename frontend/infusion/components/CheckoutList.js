@@ -51,10 +51,11 @@ export default function CheckoutList({ nombre, precio, image, detalle }) {
               </td>
               <td>$ 75000</td>
               <td>
-                <i
+                {/* <i
                   className="bi bi-x fs-4 text-danger"
                   style={{ cursor: "pointer" }}
-                ></i>
+                ></i> */}
+                <i className="bi bi-trash-fill fs-5 text-danger"  style={{ cursor: "pointer" }}></i>
               </td>
             </tr>
             <tr>

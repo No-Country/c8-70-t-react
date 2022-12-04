@@ -3,7 +3,7 @@ import React from "react";
 
 import styles from "../styles/ProgressBar.module.css";
 
-const ProgressCheckout = () => {
+const ProgressCheckout = ({percent}) => {
   return (
     <>
       <div
@@ -15,7 +15,7 @@ const ProgressCheckout = () => {
               className="progress-bar progress-bar-striped progress-bar-animated bg-success"
               role="progressbar"
               aria-label="Basic example"
-              style={{ width: "33%" }}
+              style={{ width: percent }}
               aria-valuenow="25"
               aria-valuemin="0"
               aria-valuemax="100"

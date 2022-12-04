@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import styles from "../styles/ProductCard.module.css";
 
-export default function ProductCard({ nombre, precio, image, detalle, path }) {
+export default function ProductCard({ nombre, precio, image, detalle, path, etiqueta }) {
   return (
     <>
       <div className="card position-relative">
@@ -13,9 +13,7 @@ export default function ProductCard({ nombre, precio, image, detalle, path }) {
             <h5 className="card-title ">{nombre}</h5>
             <p className="card-text text-uppercase ">{precio}</p>
           </div>
-          {/* debe hacerse condicional para mostrar la etiqueta */}
-          <p className={`${styles.customBtn} fs-6 mt-4 p-4`}>Personalizable</p>
-          {/* ---------- */}
+          {etiqueta && <p className={`${styles.customBtn} fs-6 mt-4 p-4`}>{etiqueta}</p>}
           <button className={`${styles.cartBtn}`}>
             <i className="bi bi-cart-fill fs-1"></i>
           </button>

@@ -28,7 +28,7 @@ export default function Checkout() {
       </Link>
 
       {/* aqui inicia el componente steps */}
-      <ProgressCheckout />
+      <ProgressCheckout percent="0%"/>
 
       {/* aqui inicia la lista de productos */}
       <LayoutMargin>

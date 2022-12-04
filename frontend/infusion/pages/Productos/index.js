@@ -1,11 +1,13 @@
+import { useRouter } from "next/router";
 import { React, useEffect, useState } from "react";
 import LayoutMargin from "../../components/LayoutMargin";
 import ProductList from "../../components/ProductList";
 import styles from "../../styles/ProductIndex.module.css";
 
-export default function Productos() {
+export default function Productos({value}) {
   const [products, setProducts] = useState([]);
-
+  const ruta = useRouter()
+  // console.log(ruta.query.category)
   useEffect(() => {
     (async () => {
       const API_URL =
@@ -15,15 +17,19 @@ export default function Productos() {
       console.log(data);
     })();
   }, [setProducts]);
-  console.log(products.category);
+  // console.log(products.category);
 
   return (
     <>
       <div className="my-5 py-5">
-        <div className="d-flex flex-column flex-md-row p-4 text-dark bg-light justify-content-between align-items-center ">
-          <div className="text-start me-5">
-            <p className="ms-5  ">Categoria/Mochilas</p>
+        <div className="d-flex flex-column flex-md-row p-4 text-dark justify-content-between align-items-center ">
+          {/* <div className="text-start me-5"> */}
+          <div className="d-flex px-4 pt-3 ms-4">
+            {/* <p className="ms-5">/Mochilas</p> */}
+            <p className="">Categoria</p>
+            <p className="fw-bolder">{'/'+ruta.query.category}</p>
           </div>
+          {/* </div> */}
           <div className="dropdown d-flex flex-column flex-sm-row align-items-center me-md-5">
             <p className="me-2">Ordenar por:</p>
             <button
@@ -55,13 +61,18 @@ export default function Productos() {
                   Something else here
                 </a>
               </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Mochilas
+                </a>
+              </li>
             </ul>
           </div>
         </div>
         <div className="mt-5">
           {/* quitar margenes en version movil */}
           <LayoutMargin>
-            <ProductList category={products.category} />
+            <ProductList category={ruta.query.category} />
           </LayoutMargin>
         </div>
       </div>

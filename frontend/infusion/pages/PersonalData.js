@@ -27,7 +27,7 @@ export default function PersonalData() {
       </Link>
 
       {/* aqui inicia el componente steps */}
-      <ProgressCheckout />
+      <ProgressCheckout percent="33%" />
       {/* aqui inicia la lista de productos */}
       <LayoutMargin>
         <div className="d-flex gap-3 flex-column flex-lg-row flex-column-reverse">
