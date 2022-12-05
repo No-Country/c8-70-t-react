@@ -10,7 +10,8 @@ export default function CategoryList() {
         "https://c8-70-t-react-production.up.railway.app/categories";
       const data = await fetch(API_URL).then((response) => response.json());
       setcategoryList(data);
-      console.log(data);
+
+      // console.log(data);
     })();
   }, []);
 
@@ -51,9 +52,9 @@ export default function CategoryList() {
       {categoryList.map((item) => (
         <CategoryCard
           key={item.id}
-          category={item.name}
+          name={item.name}
           image={"/home-product-3.png"}
-          link={`/Productos?category=${item.name}`}
+          link={`/Productos?categoryId=${item.id}&categoryName=${item.name}`}
         ></CategoryCard>
       ))}
     </div>

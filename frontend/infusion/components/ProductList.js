@@ -3,61 +3,135 @@ import { React, useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 
 export default function ProductList({ category }) {
-  //   const Product = useRouter();
-  //   const route = Product.pathname;
-  console.log(category);
-  //   console.log(route);
+  const ruta = useRouter();
+  const q1 = ruta.query.categoryId;
+  const q2 = ruta.query.categoryName;
+  console.log("id", q1, "name", q2);
+
   const ProductData = [
+    // {
+    //   id: 1,
+    //   name: "cartera bahamas",
+    //   description: "lorem ipsum",
+    //   category: "RIÑONERAS",
+    //   colors: { color1: "#00000", color2: "#00000", color1: "#00000" },
+    //   price: 75000,
+    //   images: {
+    //     img1: "/home-product-1.png",
+    //     img2: "/home-product-1.png",
+    //     img3: "/home-product-1.png",
+    //     img4: "/home-product-1.png",
+    //   },
+    //   stock: 10,
+    //   featured: true,
+    // },
     {
       id: 1,
-      nombre: "Cartera Bahamas",
-      precio: "$75000 COP",
-      image: "/home-product-1.png",
-      category: "mochilas",
+      name: "cartera bahamas",
+      description: "lorem ipsum",
+      category_id: 11,
+      colors: { color1: "#00000", color2: "#00000", color1: "#00000" },
+      price: 75000,
+      images: {
+        img1: "/home-product-1.png",
+        img2: "/home-product-1.png",
+        img3: "/home-product-1.png",
+        img4: "/home-product-1.png",
+      },
+      stock: 10,
+      featured: true,
     },
     {
       id: 2,
-      nombre: "Cartera Bahamas",
-      precio: "$75000 COP",
-      image: "/home-product-1.png",
-      category: "mochilas",
+      name: "cartera bahamas",
+      description: "lorem ipsum",
+      category_id: 8,
+      colors: { color1: "#00000", color2: "#00000", color1: "#00000" },
+      price: 75000,
+      images: {
+        img1: "/home-product-1.png",
+        img2: "/home-product-1.png",
+        img3: "/home-product-1.png",
+        img4: "/home-product-1.png",
+      },
+      stock: 10,
+      featured: true,
     },
     {
       id: 3,
-      nombre: "Cartera Bahamas",
-      precio: "$75000 COP",
-      image: "/home-product-1.png",
-      category: "mochilas",
+      name: "cartera bahamas",
+      description: "lorem ipsum",
+      category_id: 9,
+      colors: { color1: "#00000", color2: "#00000", color1: "#00000" },
+      price: 75000,
+      images: {
+        img1: "/home-product-1.png",
+        img2: "/home-product-1.png",
+        img3: "/home-product-1.png",
+        img4: "/home-product-1.png",
+      },
+      stock: 10,
+      featured: true,
     },
+    ,
     {
       id: 4,
-      nombre: "Cartera Bahamas",
-      precio: "$75000 COP",
-      image: "/home-product-1.png",
-      category: "BOLSO DE MANO",
+      name: "cartera bahamas",
+      description: "lorem ipsum",
+      category_id: 10,
+      colors: { color1: "#00000", color2: "#00000", color1: "#00000" },
+      price: 75000,
+      images: {
+        img1: "/home-product-1.png",
+        img2: "/home-product-1.png",
+        img3: "/home-product-1.png",
+        img4: "/home-product-1.png",
+      },
+      stock: 10,
+      featured: true,
     },
+    ,
     {
       id: 5,
-      nombre: "Cartera Bahamas",
-      precio: "$75000 COP",
-      image: "/home-product-1.png",
-      category: "mochilas",
+      name: "cartera bahamas",
+      description: "lorem ipsum",
+      category_id: 12,
+      colors: { color1: "#00000", color2: "#00000", color1: "#00000" },
+      price: 75000,
+      images: {
+        img1: "/home-product-1.png",
+        img2: "/home-product-1.png",
+        img3: "/home-product-1.png",
+        img4: "/home-product-1.png",
+      },
+      stock: 10,
+      featured: true,
     },
+    ,
     {
       id: 6,
-      nombre: "Cartera Bahamas",
-      precio: "$75000",
-      image: "/home-product-1.png",
-      category: "mochilas",
-      // etiqueta: "Personalizable",
+      name: "cartera bahamas",
+      description: "lorem ipsum",
+      category_id: 13,
+      colors: { color1: "#00000", color2: "#00000", color1: "#00000" },
+      price: 75000,
+      images: {
+        img1: "/home-product-1.png",
+        img2: "/home-product-1.png",
+        img3: "/home-product-1.png",
+        img4: "/home-product-1.png",
+      },
+      stock: 10,
+      featured: true,
     },
+    ,
   ];
 
   const [products, setProducts] = useState([]);
 
   function filterData(category) {
     const filteredData = ProductData.filter(
-      (item) => item.category == category
+      (item) => item.category_id == category
     );
     console.log("hola mundo", filteredData);
     setProducts(filteredData);
@@ -69,11 +143,11 @@ export default function ProductList({ category }) {
     //         "https://c8-70-t-react-production.up.railway.app/products";
     //       const data = await fetch(API_URL).then((response) => response.json());
     //       setProducts(data);
-          setProducts(ProductData);
+    setProducts(ProductData);
     //       console.log(data);
     //     })();
-    if (category) {
-      filterData(category);
+    if (q1) {
+      filterData(q1);
     }
   }, [setProducts]);
 
@@ -84,11 +158,11 @@ export default function ProductList({ category }) {
       {products.map((item) => (
         <ProductCard
           key={item.id}
-          nombre={item.nombre}
+          name={item.name}
           image={item.image}
-          precio={item.precio}
+          price={item.price}
           path={`/Productos/${item.id}`}
-          etiqueta={item.etiqueta}
+          // etiqueta={item.etiqueta}
         ></ProductCard>
       ))}
     </div>

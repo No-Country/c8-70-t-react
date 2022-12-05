@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 export default function Home() {
   const router = useRouter();
   const ruta = router.pathname;
-  console.log(ruta);
+  // console.log(ruta);
 
   const [products, setProducts] = useState([]);
 
@@ -21,7 +21,7 @@ export default function Home() {
         "https://c8-70-t-react-production.up.railway.app/products";
       const data = await fetch(API_URL).then((response) => response.json());
       setProducts(data);
-      console.log(data);
+      // console.log(data);
     })();
   }, []);
   return (

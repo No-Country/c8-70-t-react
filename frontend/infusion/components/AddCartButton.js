@@ -1,6 +1,15 @@
-import React from "react";
+import { React, useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
-export default function AddCartButton() {
+export default function AddCartButton({ count, productData }) {
+  const { id, price, name } = productData;
+  const { addItem } = useContext(CartContext);
+
+  const onAddToCart = () => {
+    addItem({ id, name, price, count });
+    console.log("id", id, "name", name, "price", price, "count", count);
+  };
+
   return (
     <div className="">
       <button
@@ -10,6 +19,8 @@ export default function AddCartButton() {
           height: "40px",
           backgroundColor: "#00A5D0",
         }}
+        onClick={onAddToCart}
+        count={count}
       >
         Agregar al carrito
       </button>

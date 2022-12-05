@@ -1,29 +1,19 @@
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 import CartCard from "./CartCard";
 import ProductCounter from "./ProductCounter";
+import { CartContext } from "../context/CartContext";
 
 export default function CartMenu() {
-  const cartList = [
-    {
-      id:1,
-      title: "Morral Bahamas",
-      price: "75.000",
-      color: "Negro",
-    },
-    {
-      id:2,
-      title: "Morral Bahamas",
-      price: "75.000",
-      color: "Negro",
-    },
-    {
-      id:3,
-      title: "Morral Bahamas",
-      price: "75.000",
-      color: "Negro",
-    },
-  ];
+  const { cart, addItem } = useContext(CartContext);
+
+  const updateQuantity = () => {
+    cart.map((item) => {
+      item.quantity;
+    });
+    console.log("id", id, "name", name, "price", price, "count", count);
+  };
+
   return (
     <>
       <div
@@ -49,17 +39,15 @@ export default function CartMenu() {
           style={{ border: "1px black solid" }}
         ></hr>
         <div className="offcanvas-body scroll">
-          
-          {cartList.map((item) => (
+          {cart.map((item) => (
             <CartCard
-              title={item.title}
-              colors={item.color}
+              title={item.name}
+              // colors={item.color}
+              quantity={item.quantity}
               price={item.price}
               key={item.id}
             ></CartCard>
           ))}
-         
-          
         </div>
         <hr
           className="bg-black opacity-100 w-100"
@@ -106,6 +94,7 @@ export default function CartMenu() {
                 height: "40px",
                 backgroundColor: "#00A5D0",
               }}
+              onClick={updateQuantity}
             >
               Avanzar con la compra
             </button>

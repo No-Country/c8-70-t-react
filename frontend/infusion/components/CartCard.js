@@ -1,8 +1,11 @@
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 import ProductCounter from "./ProductCounter";
+import { CartContext } from "../context/CartContext";
 
-export default function CartCard({ title, price, colors }) {
+export default function CartCard({ title, price, colors, quantity }) {
+  const { cart } = useContext(CartContext);
+
   return (
     <>
       <div className="d-flex mb-3 gap-2">
@@ -23,7 +26,7 @@ export default function CartCard({ title, price, colors }) {
               <strong>Color</strong>: {colors}
             </p>
           </div>
-          <ProductCounter></ProductCounter>
+          <ProductCounter quantity={quantity}></ProductCounter>
         </div>
       </div>
     </>

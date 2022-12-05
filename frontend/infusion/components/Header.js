@@ -8,7 +8,7 @@ import CartMenu from "./CartMenu";
 export default function Header() {
   const router = useRouter();
   const ruta = router.pathname;
-  console.log(ruta);
+  // console.log(ruta);
   return (
     <>
       <header className="navbar-brand text-uppercase fw-lighter fw-normal bg-light">

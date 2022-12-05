@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import ProductCounter from "../../components/ProductCounter";
@@ -6,15 +6,38 @@ import AddCartButton from "../../components/AddCartButton";
 import LayoutMargin from "../../components/LayoutMargin";
 
 const Detail = () => {
+  const ProductData = {
+    id: 1,
+    name: "cartera bahamas",
+    description: "lorem ipsum",
+    category_id: 11,
+    colors: { color1: "#00000", color2: "#00000", color1: "#00000" },
+    price: 75000,
+    images: {
+      img1: "/home-product-1.png",
+      img2: "/home-product-1.png",
+      img3: "/home-product-1.png",
+      img4: "/home-product-1.png",
+    },
+    stock: 10,
+    featured: true,
+  };
+
+  const [count, setCount] = useState(0);
+
+  const onAdd = (count) => {
+    setCount(count);
+  };
+
   const router = useRouter();
   return (
     //!arreglar los margenes
     <div className="my-5 py-5">
       <LayoutMargin>
-      <div className="d-flex px-4 pt-3 ms-4">
-        <p className="">Inicio</p>
-        <p className="fw-bolder">/Iniciar sesión</p>
-      </div>
+        <div className="d-flex px-4 pt-3 ms-4">
+          <p className="">Inicio</p>
+          <p className="fw-bolder">/Iniciar sesión</p>
+        </div>
         <div className="mb-5 d-flex flex-column flex-lg-row ">
           <div className="d-flex col-lg-8 flex-column-reverse flex-xl-row ">
             <div className="row d-flex flex-row flex-xl-column ">
@@ -62,7 +85,7 @@ const Detail = () => {
               <div className="d-flex px-2">
                 <div className="col">
                   <h5 className="my-3 mx-3" style={{ fontSize: "18px" }}>
-                    Morral Bahamas
+                    {ProductData.name}
                   </h5>
                 </div>
                 <div className="col">
@@ -71,14 +94,13 @@ const Detail = () => {
                     style={{ fontSize: "18px" }}
                   >
                     {" "}
-                    $ 75.000
+                    $ {ProductData.price}
                   </h5>
                 </div>
               </div>
               <div className="m-auto" style={{ maxWidth: "300px" }}>
                 <p className="text-break text-start fs-10 lh-4">
-                  Morral personalizado, hecho de lona y cuero con 3 bolsillos
-                  internos, 3 externos y 1 en el espaldar.
+                  {ProductData.description}
                 </p>
               </div>
               <hr
@@ -114,8 +136,8 @@ const Detail = () => {
                 className="d-flex justify-content-around"
                 style={{ minWidth: "300px" }}
               >
-                <ProductCounter />
-                <AddCartButton />
+                <ProductCounter onAdd={onAdd} />
+                <AddCartButton count={count} productData={ProductData} />
               </div>
             </div>
           </div>

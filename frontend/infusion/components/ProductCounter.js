@@ -1,18 +1,33 @@
 import React, { useEffect, useState } from "react";
 
-export default function ProductCounter({ scale }) {
-  const defaultValue = 1;
+export default function ProductCounter({ scale, onAdd = () => {}, quantity }) {
+  const defaultValue = quantity ?? 1;
+
   const [count, setCount] = useState(defaultValue);
 
   const increment = () => {
+    // if (quantity) {
+    //   setTempCount(tempCount + 1);
+    // }
     setCount(count + 1);
   };
 
   const decrement = () => {
+    // if (quantity) {
+    //   if (count > 1) {
+    //     setTempCount(tempCount - 1);
+    //   }
+    //   // setCount(count - 1);
+    // }
+
     if (count > 1) {
       setCount(count - 1);
     }
   };
+
+  useEffect(() => {
+    onAdd(count);
+  }, [count, onAdd]);
 
   return (
     <div

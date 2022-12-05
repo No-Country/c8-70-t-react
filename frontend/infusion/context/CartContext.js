@@ -19,14 +19,12 @@ const CartFunction = ({ children }) => {
         ...cart,
         {
           id: product.id,
-          type: product.product_type,
+          name: product.name,
           price: product.price,
-          brand: product.brand,
-          img: product.img_product,
-          model: product.model,
           quantity: product.count,
-          subTotal: product.price * product.count,
-          total: product.count * product.price,
+
+          // subTotal: product.price * product.count,
+          // total: product.count * product.price,
         },
       ]);
       setUnits(units + 1);
@@ -34,7 +32,7 @@ const CartFunction = ({ children }) => {
     } else {
       const newCart = cart.map((item) => {
         if (item.id === product.id) {
-          item.quantity += product.count;
+          item.quantity = product.count;
         }
         return item;
       });
