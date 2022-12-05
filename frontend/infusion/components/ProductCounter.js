@@ -17,7 +17,7 @@ export default function ProductCounter({ scale, onAdd = () => {}, quantity }) {
     //   if (count > 1) {
     //     setTempCount(tempCount - 1);
     //   }
-    //   // setCount(count - 1);
+       // setCount(count - 1);
     // }
 
     if (count > 1) {
@@ -28,6 +28,12 @@ export default function ProductCounter({ scale, onAdd = () => {}, quantity }) {
   useEffect(() => {
     onAdd(count);
   }, [count, onAdd]);
+  
+  useEffect(() => {
+    if(quantity){
+      setCount(quantity);
+    }
+  }, [quantity]);
 
   return (
     <div

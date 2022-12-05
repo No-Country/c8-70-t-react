@@ -8,10 +8,10 @@ export default function CartMenu() {
   const { cart, addItem } = useContext(CartContext);
 
   const updateQuantity = () => {
-    cart.map((item) => {
-      item.quantity;
-    });
-    console.log("id", id, "name", name, "price", price, "count", count);
+    // cart.map((item) => {
+    //   item.quantity;
+    // });
+    // console.log("id", id, "name", name, "price", price, "count", count);
   };
 
   return (

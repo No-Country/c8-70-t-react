@@ -13,8 +13,8 @@ const CartFunction = ({ children }) => {
 
   const addItem = (product) => {
     const isInCart = cart.find((item) => item.id === product.id);
-
     if (!isInCart) {
+      console.log('esta en anadiendo un producto a la lista cart')
       setCart([
         ...cart,
         {
@@ -22,7 +22,7 @@ const CartFunction = ({ children }) => {
           name: product.name,
           price: product.price,
           quantity: product.count,
-
+          
           // subTotal: product.price * product.count,
           // total: product.count * product.price,
         },
@@ -30,6 +30,7 @@ const CartFunction = ({ children }) => {
       setUnits(units + 1);
       setTotal(product.price);
     } else {
+      console.log('esta en creando un nuevo cart')
       const newCart = cart.map((item) => {
         if (item.id === product.id) {
           item.quantity = product.count;

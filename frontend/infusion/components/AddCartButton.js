@@ -3,11 +3,12 @@ import { CartContext } from "../context/CartContext";
 
 export default function AddCartButton({ count, productData }) {
   const { id, price, name } = productData;
-  const { addItem } = useContext(CartContext);
+  const { addItem,cart } = useContext(CartContext);
 
   const onAddToCart = () => {
     addItem({ id, name, price, count });
-    console.log("id", id, "name", name, "price", price, "count", count);
+    // console.log("id", id, "name", name, "price", price, "count", count);
+    console.log("este es cart",cart);
   };
 
   return (

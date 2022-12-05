@@ -4,39 +4,42 @@ import Image from "next/image";
 import ProductCounter from "../../components/ProductCounter";
 import AddCartButton from "../../components/AddCartButton";
 import LayoutMargin from "../../components/LayoutMargin";
+import { ProductData } from "../../components/ProductList";
 
 const Detail = () => {
-  const ProductData = {
-    id: 1,
-    name: "cartera bahamas",
-    description: "lorem ipsum",
-    category_id: 11,
-    colors: { color1: "#00000", color2: "#00000", color1: "#00000" },
-    price: 75000,
-    images: {
-      img1: "/home-product-1.png",
-      img2: "/home-product-1.png",
-      img3: "/home-product-1.png",
-      img4: "/home-product-1.png",
-    },
-    stock: 10,
-    featured: true,
-  };
-
+  // const ProductData = {
+  //   id: 1,
+  //   name: "cartera bahamas",
+  //   description: "lorem ipsum",
+  //   category_id: 11,
+  //   colors: { color1: "#00000", color2: "#00000", color1: "#00000" },
+  //   price: 75000,
+  //   images: {
+  //     img1: "/home-product-1.png",
+  //     img2: "/home-product-1.png",
+  //     img3: "/home-product-1.png",
+  //     img4: "/home-product-1.png",
+  //   },
+  //   stock: 10,
+  //   featured: true,
+  // };
+  const route = useRouter()
+  const selected = ProductData.filter((item)=> item.id == parseInt(route.query.productId))
+  // console.log("este es el selesccionado",slected)
+  // const [selected, setSelected] = useState(null);
   const [count, setCount] = useState(0);
 
   const onAdd = (count) => {
     setCount(count);
   };
 
-  const router = useRouter();
   return (
     //!arreglar los margenes
     <div className="my-5 py-5">
       <LayoutMargin>
         <div className="d-flex px-4 pt-3 ms-4">
           <p className="">Inicio</p>
-          <p className="fw-bolder">/Iniciar sesión</p>
+          <p className="fw-bolder">/Productos</p>
         </div>
         <div className="mb-5 d-flex flex-column flex-lg-row ">
           <div className="d-flex col-lg-8 flex-column-reverse flex-xl-row ">
@@ -63,6 +66,7 @@ const Detail = () => {
             <div className="col row-cols-1 row-cols-sm-1 col-md-3 justify-content-center mx-auto w-100 me-3 ms-xl-5 flex-fill">
               {/* <img src="/home-product-1.png" className="img-fluid"></img> */}
               <Image
+                // src={images.img1}
                 src="/home-product-1.png"
                 className="img-fluid mx-auto"
                 alt="lalal"
@@ -137,7 +141,7 @@ const Detail = () => {
                 style={{ minWidth: "300px" }}
               >
                 <ProductCounter onAdd={onAdd} />
-                <AddCartButton count={count} productData={ProductData} />
+                <AddCartButton count={count} productData={selected} />
               </div>
             </div>
           </div>
