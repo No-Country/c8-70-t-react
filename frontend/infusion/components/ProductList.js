@@ -37,7 +37,7 @@ export const ProductData = [
   },
   {
     id: 2,
-    name: "cartera bahamas",
+    name: "bolso japon",
     description: "lorem ipsum",
     category_id: 8,
     colors: { color1: "#00000", color2: "#00000", color1: "#00000" },
@@ -53,7 +53,7 @@ export const ProductData = [
   },
   {
     id: 3,
-    name: "cartera bahamas",
+    name: "bandolera kenny",
     description: "lorem ipsum",
     category_id: 9,
     colors: { color1: "#00000", color2: "#00000", color1: "#00000" },
@@ -85,7 +85,7 @@ export const ProductData = [
   },
   {
     id: 5,
-    name: "cartera bahamas",
+    name: "billetera diana",
     description: "lorem ipsum",
     category_id: 12,
     colors: { color1: "#00000", color2: "#00000", color1: "#00000" },
@@ -101,7 +101,7 @@ export const ProductData = [
   },
   {
     id: 6,
-    name: "cartera bahamas",
+    name: "morral marley",
     description: "lorem ipsum",
     category_id: 13,
     colors: { color1: "#00000", color2: "#00000", color1: "#00000" },
@@ -114,7 +114,7 @@ export const ProductData = [
     },
     stock: 10,
     featured: true,
-  }
+  },
 ];
 
 export default function ProductList({ category }) {
@@ -122,7 +122,6 @@ export default function ProductList({ category }) {
   const q1 = ruta.query.categoryId;
   const q2 = ruta.query.categoryName;
   console.log("id", q1, "name", q2);
-
 
   const [products, setProducts] = useState([]);
 
@@ -156,7 +155,7 @@ export default function ProductList({ category }) {
         <ProductCard
           key={item.id}
           name={item.name}
-          image={item.image}
+          image={item.images}
           price={item.price}
           path={`/Productos/${item.id}`}
           // etiqueta={item.etiqueta}

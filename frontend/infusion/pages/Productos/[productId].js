@@ -23,9 +23,13 @@ const Detail = () => {
   //   stock: 10,
   //   featured: true,
   // };
-  const route = useRouter()
-  const selected = ProductData.filter((item)=> item.id == parseInt(route.query.productId))
-  // console.log("este es el selesccionado",slected)
+  const route = useRouter();
+  const filtro = ProductData.filter(
+    (item) => item.id == parseInt(route.query.productId)
+  );
+  const selected = filtro[0];
+
+  console.log("este es el selesccionado", selected);
   // const [selected, setSelected] = useState(null);
   const [count, setCount] = useState(0);
 
@@ -89,7 +93,7 @@ const Detail = () => {
               <div className="d-flex px-2">
                 <div className="col">
                   <h5 className="my-3 mx-3" style={{ fontSize: "18px" }}>
-                    {ProductData.name}
+                    {selected?.name}
                   </h5>
                 </div>
                 <div className="col">
@@ -98,13 +102,13 @@ const Detail = () => {
                     style={{ fontSize: "18px" }}
                   >
                     {" "}
-                    $ {ProductData.price}
+                    $ {selected?.price}
                   </h5>
                 </div>
               </div>
               <div className="m-auto" style={{ maxWidth: "300px" }}>
                 <p className="text-break text-start fs-10 lh-4">
-                  {ProductData.description}
+                  {selected?.description}
                 </p>
               </div>
               <hr

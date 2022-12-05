@@ -35,7 +35,7 @@ const Slider = () => {
                 alt="..."
               />
 
-              <div
+              {/* <div
                 className={`${styles.caption} carousel-caption d-none d-md-block text-start`}
               >
                 <h2>Elaborados a mano</h2>
@@ -48,7 +48,7 @@ const Slider = () => {
                 <Link href="">
                   <button>Conoce mas</button>
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="carousel-item">
