@@ -37,9 +37,9 @@ export class Product extends Entity {
   colors?: string[];
 
   @property({
-    type: 'string',
+    type: 'number',
   })
-  price?: string;
+  price?: number;
 
   @property.array(String)
   images?: string[];
@@ -48,6 +48,9 @@ export class Product extends Entity {
     type: 'string',
   })
   stock?: string;
+
+  @property.array(String)
+  label?: string[];
 
   @property({
     type: 'boolean',
