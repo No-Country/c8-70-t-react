@@ -2,7 +2,8 @@
 
 import {inject} from '@loopback/core';
 import {repository} from '@loopback/repository';
-import {getJsonSchemaRef, post, requestBody} from '@loopback/rest';
+import {get, getJsonSchemaRef, post, requestBody} from '@loopback/rest';
+import {securityId, UserProfile} from '@loopback/security';
 import * as _ from 'lodash';
 import {PasswordHasherBindings, TokenServiceBindings, UserServiceBindings} from '../keys';
 import {User} from '../models';
@@ -12,7 +13,6 @@ import {JWTService} from '../services/jwt-service';
 import {MyUserService} from '../services/user-service';
 import {validateCredentials} from '../services/validator';
 import {CredentialsRequestBody} from './specs/user.controller.spec';
-
 // import {inject} from '@loopback/core';
 
 
@@ -71,5 +71,10 @@ export class UserController {
     const userProfile = this.userService.convertToUserProfile(user);
     const token = await this.jwtService.generateToken(userProfile);
     return Promise.resolve({token});
+  }
+
+  @get('/users/me')
+  async me(): Promise<UserProfile> {
+    return Promise.resolve({[securityId]:'1',id:'1',name:'hello world'});
   }
 }
