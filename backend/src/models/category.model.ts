@@ -24,6 +24,11 @@ export class Category extends Entity {
   user_id?: number;
 
   @property({
+    type: 'string',
+  })
+  thumbnail?: string;
+
+  @property({
     type: 'date',
   })
   created?: string;

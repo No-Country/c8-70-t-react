@@ -2,10 +2,10 @@ import {Entity, model, property} from '@loopback/repository';
 
 @model({
   settings: {
-    postgresql: {table: 'car'},
+    postgresql: {table: 'ordered'},
   }
 })
-export class Car extends Entity {
+export class Order extends Entity {
   @property({
     type: 'number',
     id: true,
@@ -49,13 +49,13 @@ export class Car extends Entity {
   modified?: string;
 
 
-  constructor(data?: Partial<Car>) {
+  constructor(data?: Partial<Order>) {
     super(data);
   }
 }
 
-export interface CarRelations {
+export interface OrderRelations {
   // describe navigational properties here
 }
 
-export type CarWithRelations = Car & CarRelations;
+export type OrderWithRelations = Order & OrderRelations;

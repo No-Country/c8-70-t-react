@@ -33,35 +33,26 @@ export class Product extends Entity {
   })
   category_id?: number;
 
-  @property({
-    type: 'number',
-  })
-  price?: number;
+  @property.array(String)
+  colors?: string[];
 
   @property({
     type: 'string',
   })
-  thumbnail?: string;
+  price?: string;
+
+  @property.array(String)
+  images?: string[];
 
   @property({
     type: 'string',
   })
-  front_image?: string;
+  stock?: string;
 
   @property({
-    type: 'string',
+    type: 'boolean',
   })
-  back_image?: string;
-
-  @property({
-    type: 'string',
-  })
-  top_image?: string;
-
-  @property({
-    type: 'string',
-  })
-  bottom_image?: string;
+  featured?: boolean;
 
   @property({
     type: 'date',
