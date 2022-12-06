@@ -1,19 +1,22 @@
-import { React, useEffect, useState } from "react";
+import { React, useEffect, useState, useContext } from "react";
 import CategoryCard from "./CategoryCard";
+import { ProductContext } from "../context/ProductContext";
 
 export default function CategoryList() {
-  const [categoryList, setcategoryList] = useState([]);
-  const filter = '{"fields": {"created": false,"modified": false}}'
-  useEffect(() => {
-    (async () => {
-      const API_URL =
-        "https://c8-70-t-react-production.up.railway.app/categories";
-      const data = await fetch(API_URL).then((response) => response.json());
-      setcategoryList(data);
+  const { categoryList } = useContext(ProductContext);
 
-      // console.log(data);
-    })();
-  }, []);
+  // const [categoryList, setcategoryList] = useState([]);
+  // const filter = '{"fields": {"created": false,"modified": false}}'
+  // useEffect(() => {
+  //   (async () => {
+  //     const API_URL =
+  //       "https://c8-70-t-react-production.up.railway.app/categories";
+  //     const data = await fetch(API_URL).then((response) => response.json());
+  //     setcategoryList(data);
+
+  //     // console.log(data);
+  //   })();
+  // }, []);
 
   // const CategoryData = [
   //   {
@@ -47,6 +50,7 @@ export default function CategoryList() {
   //     image: "/home-product-2.png",
   //   },
   // ];
+  console.log(categoryList);
   return (
     <div className="row row-cols-2 row-cols-md-3 row-cols-sm-2 g-1">
       {categoryList.map((item) => (

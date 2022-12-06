@@ -1,0 +1,56 @@
+import React, { useState, useEffect } from "react";
+
+const ProductContext = React.createContext();
+
+const ProductFunction = ({ children }) => {
+  const [products, setProducts] = useState([]);
+  const [categoryList, setcategoryList] = useState([]);
+  const [productsByCategory, seProductByCategory] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const API_URL =
+        "https://c8-70-t-react-production.up.railway.app/products?filter=%7B%0A%20%20%22offset%22%3A%206%2C%0A%20%20%22fields%22%3A%20%7B%0A%20%20%20%20%22id%22%3A%20true%2C%0A%20%20%20%20%22name%22%3A%20true%2C%0A%20%20%20%20%22description%22%3A%20true%2C%0A%20%20%20%20%22user_id%22%3A%20true%2C%0A%20%20%20%20%22category_id%22%3A%20true%2C%0A%20%20%20%20%22colors%22%3A%20true%2C%0A%20%20%20%20%22price%22%3A%20true%2C%0A%20%20%20%20%22images%22%3A%20true%2C%0A%20%20%20%20%22stock%22%3A%20true%2C%0A%20%20%20%20%22label%22%3A%20true%2C%0A%20%20%20%20%22featured%22%3A%20true%2C%0A%20%20%20%20%22created%22%3A%20true%2C%0A%20%20%20%20%22modified%22%3A%20true%0A%20%20%7D%0A%7D";
+      const data = await fetch(API_URL).then((response) => response.json());
+      setProducts(data);
+    })();
+  }, []);
+
+  const filter = '{"fields": {"created": false,"modified": false}}';
+  useEffect(() => {
+    (async () => {
+      const API_URL =
+        "https://c8-70-t-react-production.up.railway.app/categories";
+      const data = await fetch(API_URL).then((response) => response.json());
+      setcategoryList(data);
+
+      // console.log(data);
+    })();
+  }, []);
+
+  const filterProductCategory = ({ categoryId }) => {
+    const filteredData = products.filter(
+      (item) => item.category_id == categoryId
+    );
+    console.log("hola mundo", filteredData);
+    seProductByCategory(filteredData);
+  };
+
+  //   const CategoryList = () => {};
+
+  return (
+    <ProductContext.Provider
+      value={{
+        products,
+
+        categoryList,
+        filterProductCategory,
+        productsByCategory,
+      }}
+    >
+      {children}
+    </ProductContext.Provider>
+  );
+};
+
+export { ProductContext, ProductFunction };

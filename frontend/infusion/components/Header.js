@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import styles from "../styles/Header.module.css";
 import ProductCounter from "./ProductCounter";
 import CartMenu from "./CartMenu";
+import { CartContext } from "../context/CartContext";
 
 export default function Header() {
+  const { cart } = useContext(CartContext);
   const router = useRouter();
   const ruta = router.pathname;
   // console.log(ruta);
@@ -35,7 +37,7 @@ export default function Header() {
                 className="navbar-brand text-uppercase fw-lighter fw-normal text-dark me-auto"
                 aria-current="page"
                 href="/"
-                style={{position:'relative',top:'-13px',right:'10px'}}
+                style={{ position: "relative", top: "-13px", right: "10px" }}
               >
                 <img
                   src="../LOGO.svg"
@@ -118,61 +120,82 @@ export default function Header() {
                   </li>
                 </ul>
                 {/* <div className="navbar gap-4 "> */}
-                  <ul className="navbar list-unstyled gap-4 mt-1 mb-lg-1">
-                    <li className="nav-item me-auto">
-                      <Link
-                        className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
-                        href="/Register"
+                <ul className="navbar list-unstyled gap-4 mt-1 mb-lg-1">
+                  <li className="nav-item me-auto">
+                    <Link
+                      className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
+                      href="/Register"
+                    >
+                      <p
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarToggler"
                       >
-                        <p
-                          data-bs-toggle="collapse"
-                          data-bs-target="#navbarToggler"
-                        >
-                          Registrarse
-                        </p>
-                      </Link>
-                    </li>
-                    <li className="nav-item me-auto">
-                      <Link
-                        className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
-                        href="/Login"
+                        Registrarse
+                      </p>
+                    </Link>
+                  </li>
+                  <li className="nav-item me-auto">
+                    <Link
+                      className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
+                      href="/Login"
+                    >
+                      <p
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarToggler"
                       >
-                        <p
-                          data-bs-toggle="collapse"
-                          data-bs-target="#navbarToggler"
-                        >
-                          Iniciar Sesion
-                        </p>
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link
-                        className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
-                        href="/Login"
+                        Iniciar Sesion
+                      </p>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
+                      href="/Login"
+                    >
+                      <p
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarToggler"
                       >
-                        <p
-                          data-bs-toggle="collapse"
-                          data-bs-target="#navbarToggler"
-                        >
-                          <i className="bi bi-person-fill fs-4"></i>
-                        </p>
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link
-                        className="nav-link text-uppercase fw-lighter fw-normal text-dark"
-                        href="#"
+                        <i className="bi bi-person-fill fs-4"></i>
+                      </p>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className="nav-link text-uppercase fw-lighter fw-normal text-dark"
+                      href="#"
+                    >
+                      <p
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight"
+                        aria-controls="offcanvasRight"
                       >
-                        <p
-                          data-bs-toggle="offcanvas"
-                          data-bs-target="#offcanvasRight"
-                          aria-controls="offcanvasRight"
+                        <i
+                          className="bi bi-bag-fill fs-5 position-relative"
+                          style={{ top: "-2px" }}
                         >
-                          <i className="bi bi-bag-fill fs-4"></i>[5]
-                        </p>
-                      </Link>
-                    </li>
-                    {/* <li className="nav-item">
+                          {" "}
+                        </i>
+                        {/* {cart == && (
+                          <span
+                            class="position-absolute start-100 translate-middle p-2 bg-danger border border-light rounded-circle"
+                            style={{ top: "10px" }}
+                          >
+                            {cart.length > 0 && cart.length}
+                          </span>
+                        )} */}
+                      </p>
+                    </Link>
+                  </li>
+                  {/* <li>
+                    <div type="button" class="light position-relative">
+                      <i className="bi bi-bag-fill fs-4"></i>
+                      <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                       
+                      </span>
+                    </div>
+                  </li> */}
+                  {/* <li className="nav-item">
                       <Link
                         // type="button"
                         data-bs-toggle="offcanvas"
@@ -184,7 +207,7 @@ export default function Header() {
                         <i className="bi bi-bag-fill fs-4"></i>[5]
                       </Link>
                     </li> */}
-                  </ul>
+                </ul>
                 {/* </div> */}
               </div>
             </div>
