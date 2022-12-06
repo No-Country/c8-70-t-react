@@ -149,10 +149,12 @@ export default function ProductList({ category }) {
 
   return (
     // hay que poner keys por item
-    <div className="row row-cols-2 row-cols-md-2 row-cols-lg-3 g-2">
+    <div className="row row-cols-2 row-cols-md-2 row-cols-lg-3">
+      {/* className="row row-cols-2 row-cols-md-2 row-cols-lg-3" */}
       {/* <div className="d-flex flex-column row-cols-2 row-cols-lg-3"> */}
       {products.map((item) => (
         <ProductCard
+          className="mx-2 my-2"
           key={item.id}
           name={item.name}
           image={item.images}

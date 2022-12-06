@@ -7,6 +7,7 @@ import LayoutMargin from "../components/LayoutMargin";
 import Slider from "../components/Slider";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Productlist2 from "../components/Productlist2";
 
 export default function Home() {
   const router = useRouter();
@@ -93,19 +94,26 @@ export default function Home() {
           </div>
           <br />
           <Title
-            title="Los mas populares"
+            title="Destacados de la temporada"
             subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
           />
           <br />
           <br />
-          <ProductList />
+
+          <Productlist2 />
+          <br />
+          <br />
+          <Title
+            title="Ofertas"
+            subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+          />
+          <Productlist2 />
           <div className="d-flex justify-content-center">
             <div className="mt-5 mb-5 justify-content-center btn btn-secondary bg-white w-25">
               <Link
                 href="/About"
                 className="text-decoration-none fs-4 border-dark border-1 text-dark m-2 m-auto"
               >
-                {/* {" "} */}
                 Ver mas
               </Link>
             </div>

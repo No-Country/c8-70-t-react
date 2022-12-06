@@ -5,6 +5,8 @@ import ProductCounter from "../../components/ProductCounter";
 import AddCartButton from "../../components/AddCartButton";
 import LayoutMargin from "../../components/LayoutMargin";
 import { ProductData } from "../../components/ProductList";
+import Productlist2 from "../../components/Productlist2";
+import Title from "../../components/Title";
 
 const Detail = () => {
   // const ProductData = {
@@ -150,6 +152,22 @@ const Detail = () => {
             </div>
           </div>
         </div>
+        <br />
+        <br />
+        <Title
+          title="Productos similares"
+          subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+        />
+        <br />
+        <br />
+        <Productlist2 />
+        <Title
+          title="Puede ser de tu interes"
+          subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+        />
+        <br />
+        <br />
+        <Productlist2 />
       </LayoutMargin>
     </div>
   );
