@@ -3,7 +3,7 @@ import CategoryCard from "./CategoryCard";
 
 export default function CategoryList() {
   const [categoryList, setcategoryList] = useState([]);
-
+  const filter = '{"fields": {"created": false,"modified": false}}'
   useEffect(() => {
     (async () => {
       const API_URL =

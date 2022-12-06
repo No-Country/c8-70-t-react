@@ -14,6 +14,7 @@ export default function Header() {
       <header className="navbar-brand text-uppercase fw-lighter fw-normal bg-light">
         {router.pathname === "/Checkout" ||
         router.pathname === "/PersonalData" ||
+        router.pathname === "/BuyConfirmation" ||
         router.pathname === "/Shipping" ||
         router.pathname === "/PayMethod" ? (
           <div className="d-flex pt-3 ms-4 ps-4 text-dark bg-white align-items-center">
@@ -23,27 +24,30 @@ export default function Header() {
             </p>
           </div>
         ) : (
-          <nav className="navbar fixed-top navbar-expand-lg navbar-light align-items-center bg-light">
-            <div className="container-fluid mx-5 my-2 g-5">
-              <Link
+          <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            {/* <div className="container-fluid mx-5 my-2 g-5"> */}
+            <div className="container-fluid mx-5 my-2">
+              {/* <Link
                 className="navbar-brand text-uppercase fw-lighter fw-normal"
                 href="/"
-              ></Link>
+              ></Link> */}
               <Link
-                className=" text-uppercase fw-lighter fw-normal text-dark me-auto"
+                className="navbar-brand text-uppercase fw-lighter fw-normal text-dark me-auto"
                 aria-current="page"
                 href="/"
+                style={{position:'relative',top:'-13px',right:'10px'}}
               >
                 <img
                   src="../LOGO.svg"
                   alt="infusion"
-                  height={20}
+                  // height={20}
+                  height={25}
+                  width={100}
                   data-bs-toggle="collapse"
                   data-bs-target="#navbarToggler"
                 />
               </Link>
               <span className="d-lg-none">
-                {/* data-bs-toggle, data-bs-target is necesary to bootstrap 5 to use JS */}
                 <Link
                   // type="button"
                   data-bs-toggle="offcanvas"
@@ -69,7 +73,7 @@ export default function Header() {
                 <span className="navbar-toggler-icon"></span>
               </button>
               <div className="collapse navbar-collapse " id="navbarToggler">
-                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul className="navbar-nav me-auto  mb-lg-0">
                   <li className="nav-item"></li>
                   <li className="nav-item">
                     <Link
@@ -113,9 +117,9 @@ export default function Header() {
                     </Link>
                   </li>
                 </ul>
-                <div className="d-flex ">
-                  <ul className="navbar-nav me-auto mb-2 mb-lg-1">
-                    <li className="nav-item">
+                {/* <div className="navbar gap-4 "> */}
+                  <ul className="navbar list-unstyled gap-4 mt-1 mb-lg-1">
+                    <li className="nav-item me-auto">
                       <Link
                         className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
                         href="/Register"
@@ -128,7 +132,7 @@ export default function Header() {
                         </p>
                       </Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item me-auto">
                       <Link
                         className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
                         href="/Login"
@@ -156,6 +160,20 @@ export default function Header() {
                     </li>
                     <li className="nav-item">
                       <Link
+                        className="nav-link text-uppercase fw-lighter fw-normal text-dark"
+                        href="#"
+                      >
+                        <p
+                          data-bs-toggle="offcanvas"
+                          data-bs-target="#offcanvasRight"
+                          aria-controls="offcanvasRight"
+                        >
+                          <i className="bi bi-bag-fill fs-4"></i>[5]
+                        </p>
+                      </Link>
+                    </li>
+                    {/* <li className="nav-item">
+                      <Link
                         // type="button"
                         data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasRight"
@@ -165,9 +183,9 @@ export default function Header() {
                       >
                         <i className="bi bi-bag-fill fs-4"></i>[5]
                       </Link>
-                    </li>
+                    </li> */}
                   </ul>
-                </div>
+                {/* </div> */}
               </div>
             </div>
           </nav>

@@ -28,7 +28,7 @@ export default function BuyConfirmation() {
       </Link>
 
       {/* aqui inicia el componente steps */}
-      <ProgressCheckout />
+      <ProgressCheckout percent="99%"/>
       {/* aqui inicia la lista de productos */}
       <LayoutMargin>
         <div className="d-flex flex-column flex-lg-row flex-column-reverse gap-3">
