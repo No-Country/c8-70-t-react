@@ -161,7 +161,7 @@ export default function Header() {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link
+                    <a
                       className="nav-link text-uppercase fw-lighter fw-normal text-dark"
                       href="#"
                     >
@@ -185,7 +185,7 @@ export default function Header() {
                           </span>
                         )} */}
                       </p>
-                    </Link>
+                    </a>
                   </li>
                   {/* <li>
                     <div type="button" class="light position-relative">

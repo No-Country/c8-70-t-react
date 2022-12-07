@@ -63,9 +63,9 @@ export default function Productlist2(props) {
       modules={[Pagination, Navigation]}
       className=""
     >
-      {loading ? (
+      {loading == false ? (
         <div>
-          {products.map((oneProduct) => (
+          {products && products?.map((oneProduct) => (
             <>
               <SwiperSlide key={oneProduct.id} className="">
                 <>

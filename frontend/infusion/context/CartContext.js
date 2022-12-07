@@ -14,7 +14,7 @@ const CartFunction = ({ children }) => {
   const addItem = (product) => {
     const isInCart = cart.find((item) => item.id === product.id);
     if (!isInCart) {
-      console.log("esta en anadiendo un producto a la lista cart");
+      // console.log("esta en anadiendo un producto a la lista cart");
       setCart([
         ...cart,
         {
@@ -22,7 +22,6 @@ const CartFunction = ({ children }) => {
           name: product.name,
           price: product.price,
           quantity: product.quantity,
-
           // subTotal: product.price * product.count,
           // total: product.count * product.price,
         },
@@ -40,6 +39,16 @@ const CartFunction = ({ children }) => {
       setCart(newCart);
     }
   };
+
+  function updateInCart(productId, newCount) {
+    // const updated = cart.filter((item) => {
+    cart.filter((item) => {
+      if(item.id === productId){
+        item.quantity = newCount
+      }
+    });
+  }
+
 
   const deleteItem = (id) => {
     const remove = cart.filter((item) => item.id !== id);
@@ -63,6 +72,7 @@ const CartFunction = ({ children }) => {
         setId,
         cleanCart,
         totalCart,
+        updateInCart
       }}
     >
       {children}

@@ -5,19 +5,7 @@ import ProductList from "../../components/ProductList";
 import styles from "../../styles/ProductIndex.module.css";
 
 export default function Productos({ value }) {
-  // const [products, setProducts] = useState([]);
   const ruta = useRouter();
-
-  // useEffect(() => {
-  //   (async () => {
-  //     const API_URL =
-  //       "https://c8-70-t-react-production.up.railway.app/products";
-  //     const data = await fetch(API_URL).then((response) => response.json());
-  //     setProducts(data);
-       // console.log(data);
-  //   })();
-  // }, [setProducts]);
-  // console.log(products.category);
 
   return (
     <>
@@ -26,8 +14,8 @@ export default function Productos({ value }) {
           {/* <div className="text-start me-5"> */}
           <div className="d-flex px-4 pt-3 ms-4">
             {/* <p className="ms-5">/Mochilas</p> */}
-            <p className="">Categoria</p>
-            <p className="fw-bolder">{"/" + ruta.query.categoryName}</p>
+            {ruta.query.categoryName ? <><p className="">Categoria</p>
+            <p className="fw-bolder">{"/" + ruta.query.categoryName}</p></>:<p className="">Todo</p>}
           </div>
           {/* </div> */}
           <div className="dropdown d-flex flex-column flex-sm-row align-items-center me-md-5">

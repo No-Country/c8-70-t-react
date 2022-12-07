@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import ProductCounter from "./ProductCounter";
 import { CartContext } from "../context/CartContext";
 
-export default function CartCard({ title, price, colors, quantity }) {
+export default function CartCard({ title, price, colors, quantity, productId }) {
   const { cart } = useContext(CartContext);
 
   return (
@@ -26,7 +26,8 @@ export default function CartCard({ title, price, colors, quantity }) {
               <strong>Color</strong>: {colors}
             </p>
           </div>
-          <ProductCounter quantity={quantity}></ProductCounter>
+          {/* dar un id a productcounter para hcer update directo a cart */}
+          <ProductCounter quantity={quantity} productId={productId} />
         </div>
       </div>
     </>

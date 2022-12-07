@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React, { useContext } from "react";
 import CartCard from "./CartCard";
-import ProductCounter from "./ProductCounter";
 import { CartContext } from "../context/CartContext";
 
 export default function CartMenu() {
@@ -45,6 +44,7 @@ export default function CartMenu() {
               // colors={item.color}
               quantity={item.quantity}
               price={item.price}
+              productId={item.id}
               key={item.id}
             ></CartCard>
           ))}

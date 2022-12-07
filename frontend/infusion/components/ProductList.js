@@ -8,30 +8,47 @@ export default function ProductList({}) {
   const ruta = useRouter();
   const q1 = ruta.query.categoryId;
   const q2 = ruta.query.categoryName;
-  const { productsByCategory, filterProductCategory, loading } =
+  const { productsByCategory, filterProductCategory, loading, products } =
     useContext(ProductContext);
 
   useEffect(() => {
     if (q1) {
       filterProductCategory(q1);
     }
-  }, [q1]);
+  }, [q1,products]);
 
   return (
     <>
       {loading == false ? (
-        <div className="row row-cols-2 row-cols-md-2 row-cols-lg-3">
-          {productsByCategory.map((item) => (
-            <ProductCard
-              className="mx-2 my-2"
-              key={item.id}
-              name={item.name}
-              image={item.images}
-              price={item.price}
-              path={`/Productos/${item.id}`}
-            ></ProductCard>
-          ))}
-        </div>
+        <>
+          {q1 ? (
+            <div className="row row-cols-2 row-cols-md-2 row-cols-lg-3">
+              {productsByCategory && productsByCategory.map((item) => (
+                <ProductCard
+                  className="mx-2 my-2"
+                  key={item.id}
+                  name={item.name}
+                  image={item.images}
+                  price={item.price}
+                  path={`/Productos/${item.id}`}
+                ></ProductCard>
+              ))}            
+            </div>
+          ) : (
+            <div className="row row-cols-2 row-cols-md-2 row-cols-lg-3">
+              {products && products.map((item) => (
+                <ProductCard
+                  className="mx-2 my-2"
+                  key={item.id}
+                  name={item.name}
+                  image={item.images}
+                  price={item.price}
+                  path={`/Productos/${item.id}`}
+                ></ProductCard>
+              ))}
+            </div>
+          )}
+        </>
       ) : (
         <div> cargando</div>
       )}

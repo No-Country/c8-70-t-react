@@ -12,7 +12,7 @@ import { ProductContext } from "../../context/ProductContext";
 const Detail = () => {
   const route = useRouter();
   const oneId = route.query.productId
-  const { filterOneProduct, oneProduct } = useContext(ProductContext);
+  const { filterOneProduct, oneProduct, products } = useContext(ProductContext);
   const [count, setCount] = useState(0); 
   
   
@@ -21,7 +21,7 @@ const Detail = () => {
       filterOneProduct(oneId)
       console.log('este es oneproduct filtrado',oneProduct)
     }
-  },[oneId])
+  },[oneId, products])
   
   const onAdd = (count) => {
     setCount(count);
@@ -35,7 +35,7 @@ const Detail = () => {
           <p className="">Inicio</p>
           <p className="fw-bolder">/Productos</p>
         </div>
-        <div className="mb-5 d-flex flex-column flex-lg-row ">
+        {!!oneProduct ? <div className="mb-5 d-flex flex-column flex-lg-row ">
           <div className="d-flex col-lg-8 flex-column-reverse flex-xl-row ">
             <div className="row d-flex flex-row flex-xl-column ">
               <div className="p-2 " style={{ maxWidth: "150px" }}>
@@ -76,7 +76,7 @@ const Detail = () => {
                 minWidth: "320px",
                 maxWidth: "560px",
                 width: "100%",
-                maxHeight: "260px",
+                // maxHeight: "260px",
                 fontSize: "14px",
               }}
             >
@@ -139,7 +139,7 @@ const Detail = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> : <div className="fs-1 text-center my-5 py-5">Producto no encontrado</div>}
         <br />
         <br />
         <Title

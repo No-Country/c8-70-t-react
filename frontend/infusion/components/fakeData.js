@@ -1,7 +1,4 @@
-// mochilas 2
-// bandolera 3
-//rinoneras 3
-//tula 2
+
 // export const ProductData = [
 // {
 //   id: 1,
@@ -116,3 +113,36 @@
 //     featured: true,
 //   },
 // ];
+
+// export const CategoryData = [
+  //   {
+  //     category: "Carteras",
+  //     link: "/Productos",
+  //     image: "/home-product-1.png",
+  //   },
+  //   {
+  //     category: "Mochilas",
+  //     link: "/Productos",
+  //     image: "/home-product-3.png",
+  //   },
+  //   {
+  //     category: "Manos Libres",
+  //     link: "/Productos",
+  //     image: "/home-product-2.png",
+  //   },
+  //   {
+  //     category: "Bandoleras",
+  //     link: "/Productos",
+  //     image: "/home-product-2.png",
+  //   },
+  //   {
+  //     category: "Billeteras",
+  //     link: "/Productos",
+  //     image: "/home-product-2.png",
+  //   },
+  //   {
+  //     category: "Monederos",
+  //     link: "/Productos",
+  //     image: "/home-product-2.png",
+  //   },
+  // ];
