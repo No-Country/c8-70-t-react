@@ -16,13 +16,14 @@ import ProductCard from "./ProductCard";
 import { ProductData } from "./ProductList";
 
 export default function Productlist2(props) {
-  const { products } = useContext(ProductContext);
+  const { products, filterProductByCategory } = useContext(ProductContext);
   console.log(products);
 
   const ruta = useRouter();
   const q1 = ruta.query.categoryId;
   const q2 = ruta.query.categoryName;
   console.log("id", q1, "name", q2);
+  
 
   // const [products, setProducts] = useState([]);
 

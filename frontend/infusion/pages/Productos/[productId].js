@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { useContext,React, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import ProductCounter from "../../components/ProductCounter";
@@ -7,34 +7,22 @@ import LayoutMargin from "../../components/LayoutMargin";
 import { ProductData } from "../../components/ProductList";
 import Productlist2 from "../../components/Productlist2";
 import Title from "../../components/Title";
+import { ProductContext } from "../../context/ProductContext";
 
 const Detail = () => {
-  // const ProductData = {
-  //   id: 1,
-  //   name: "cartera bahamas",
-  //   description: "lorem ipsum",
-  //   category_id: 11,
-  //   colors: { color1: "#00000", color2: "#00000", color1: "#00000" },
-  //   price: 75000,
-  //   images: {
-  //     img1: "/home-product-1.png",
-  //     img2: "/home-product-1.png",
-  //     img3: "/home-product-1.png",
-  //     img4: "/home-product-1.png",
-  //   },
-  //   stock: 10,
-  //   featured: true,
-  // };
   const route = useRouter();
-  const filtro = ProductData.filter(
-    (item) => item.id == parseInt(route.query.productId)
-  );
-  const selected = filtro[0];
-
-  console.log("este es el selesccionado", selected);
-  // const [selected, setSelected] = useState(null);
-  const [count, setCount] = useState(0);
-
+  const oneId = route.query.productId
+  const { filterOneProduct, oneProduct } = useContext(ProductContext);
+  const [count, setCount] = useState(0); 
+  
+  
+  useEffect(()=>{
+    if(oneId){
+      filterOneProduct(oneId)
+      console.log('este es oneproduct filtrado',oneProduct)
+    }
+  },[oneId])
+  
   const onAdd = (count) => {
     setCount(count);
   };
@@ -95,7 +83,7 @@ const Detail = () => {
               <div className="d-flex px-2">
                 <div className="col">
                   <h5 className="my-3 mx-3" style={{ fontSize: "18px" }}>
-                    {selected?.name}
+                    {oneProduct?.name}
                   </h5>
                 </div>
                 <div className="col">
@@ -104,13 +92,13 @@ const Detail = () => {
                     style={{ fontSize: "18px" }}
                   >
                     {" "}
-                    $ {selected?.price}
+                    $ {oneProduct?.price}
                   </h5>
                 </div>
               </div>
               <div className="m-auto" style={{ maxWidth: "300px" }}>
                 <p className="text-break text-start fs-10 lh-4">
-                  {selected?.description}
+                  {oneProduct?.description}
                 </p>
               </div>
               <hr
@@ -147,7 +135,7 @@ const Detail = () => {
                 style={{ minWidth: "300px" }}
               >
                 <ProductCounter onAdd={onAdd} />
-                <AddCartButton count={count} productData={selected} />
+                <AddCartButton count={count} oneProduct={oneProduct} />
               </div>
             </div>
           </div>

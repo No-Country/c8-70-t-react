@@ -1,19 +1,19 @@
 import { React, useContext } from "react";
 import { CartContext } from "../context/CartContext";
 
-export default function AddCartButton({ count, productData }) {
+export default function AddCartButton({ count, oneProduct }) {
   const { addItem, cart } = useContext(CartContext);
 
   const onAddToCart = () => {
-    console.log(productData);
+    // console.log(oneProduct);
     addItem({
-      id: productData.id,
-      name: productData.name,
-      price: productData.price,
+      id: oneProduct.id,
+      name: oneProduct.name,
+      price: oneProduct.price,
       quantity: count,
     });
     // console.log("id", id, "name", name, "price", price, "count", count);
-    console.log("este es cart", cart);
+    // console.log("este es cart", cart);
   };
 
   return (

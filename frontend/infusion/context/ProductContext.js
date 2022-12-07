@@ -6,6 +6,7 @@ const ProductFunction = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [categoryList, setcategoryList] = useState([]);
   const [productsByCategory, seProductByCategory] = useState([]);
+  const [oneProduct, setOneProduct] = useState({});
 
   useEffect(() => {
     (async () => {
@@ -28,13 +29,18 @@ const ProductFunction = ({ children }) => {
     })();
   }, []);
 
-  const filterProductCategory = ({ categoryId }) => {
+  function filterProductCategory(categoryId) {
+    console.log("hola category", typeof categoryId);
     const filteredData = products.filter(
-      (item) => item.category_id == categoryId
+      (item) => item.category_id == parseInt(categoryId)
     );
-    console.log("hola mundo", filteredData);
     seProductByCategory(filteredData);
-  };
+  }
+
+  function filterOneProduct(productId) {
+    const filtro = products.filter((item) => item.id == parseInt(productId));
+    setOneProduct(filtro[0]);
+  }
 
   //   const CategoryList = () => {};
 
@@ -42,10 +48,11 @@ const ProductFunction = ({ children }) => {
     <ProductContext.Provider
       value={{
         products,
-
         categoryList,
         filterProductCategory,
         productsByCategory,
+        filterOneProduct,
+        oneProduct,
       }}
     >
       {children}

@@ -126,11 +126,13 @@ export default function ProductList({}) {
   const ruta = useRouter();
   const q1 = ruta.query.categoryId;
   const q2 = ruta.query.categoryName;
-  console.log("id", q1, "name", q2);
-  const { productsByCategory, filterProductCategory } =
-    useContext(ProductContext);
+  const { productsByCategory, filterProductCategory } = useContext(ProductContext);
 
-  filterProductCategory({ q1 });
+  useEffect(()=>{
+    if (q1){
+      filterProductCategory(q1)
+    }
+  },[q1])
 
   // const [products, setProducts] = useState([]);
 
@@ -143,14 +145,14 @@ export default function ProductList({}) {
   // }
 
   // useEffect(() => {
-  //   //     (async () => {
-  //   //       const API_URL =
-  //   //         "https://c8-70-t-react-production.up.railway.app/products";
-  //   //       const data = await fetch(API_URL).then((response) => response.json());
-  //   //       setProducts(data);
-  //   setProducts(ProductData);
-  //   //       console.log(data);
-  //   //     })();
+    //     (async () => {
+    //       const API_URL =
+    //         "https://c8-70-t-react-production.up.railway.app/products";
+    //       const data = await fetch(API_URL).then((response) => response.json());
+    //       setProducts(data);
+    // setProducts(ProductData);
+    //       console.log(data);
+    //     })();
   //   if (q1) {
   //     filterData(q1);
   //   }
