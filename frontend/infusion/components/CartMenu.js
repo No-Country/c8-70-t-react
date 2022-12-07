@@ -4,7 +4,7 @@ import CartCard from "./CartCard";
 import { CartContext } from "../context/CartContext";
 
 export default function CartMenu() {
-  const { cart, addItem } = useContext(CartContext);
+  const { cart, addItem, totalCart } = useContext(CartContext);
 
   const updateQuantity = () => {
     // cart.map((item) => {
@@ -62,7 +62,7 @@ export default function CartMenu() {
               </h5>
               <h5 className="" style={{ fontSize: "16px" }}>
                 {" "}
-                $ 75.000
+                $ {totalCart}
               </h5>
             </div>
           </div>
@@ -75,7 +75,7 @@ export default function CartMenu() {
 
               <h5 className="" style={{ fontSize: "18px" }}>
                 {" "}
-                <strong>$ 75.000</strong>
+                <strong>$ {totalCart}</strong>
               </h5>
             </div>
             <p className="" style={{ fontSize: "14px" }}>

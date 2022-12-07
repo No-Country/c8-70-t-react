@@ -28,45 +28,45 @@ export default function Checkout() {
       </Link>
 
       {/* aqui inicia el componente steps */}
-      <ProgressCheckout percent="0%"/>
+      <ProgressCheckout percent="0%" />
 
       {/* aqui inicia la lista de productos */}
       <LayoutMargin>
-      <div className="d-flex gap-3 flex-column flex-lg-row">
-        <div className="col d-flex flex-column flex-sm-row mb-3 ms-2 ">
-          {/* area ppal */}
-          <div
-            className="p-4 bg-light col-12"
-            style={{
-              // minWidth: "660px",
-              // maxWidth: "1960px",
-              // width:'220%',
-              minHeight: "360px",
-              fontSize: "14px",
-            }}
-          >
-            <CheckoutList />
-            {/* <CheckoutFormUser/> */}
-            {/* <ShippingForm/> */}
+        <div className="d-flex gap-3 flex-column flex-lg-row">
+          <div className="col d-flex flex-column flex-sm-row mb-3 ms-2 ">
+            {/* area ppal */}
+            <div
+              className="p-4 bg-light col-12"
+              style={{
+                // minWidth: "660px",
+                // maxWidth: "1960px",
+                // width:'220%',
+                minHeight: "360px",
+                fontSize: "14px",
+              }}
+            >
+              <CheckoutList />
+              {/* <CheckoutFormUser/> */}
+              {/* <ShippingForm/> */}
+            </div>
+          </div>
+          {/* aqui inicia resumen de la compra */}
+          <div className="col col-md-auto d-flex flex-column flex-lg-row mb-3 ">
+            <div
+              className="p-4 bg-light h-75"
+              style={{
+                // minWidth: "360px",
+                // maxWidth: "740px",
+                // width: "700px",
+                // width: "130%",
+                minHeight: "360px",
+                fontSize: "14px",
+              }}
+            >
+              <SumProductList></SumProductList>
+            </div>
           </div>
         </div>
-        {/* aqui inicia resumen de la compra */}
-        <div className="col col-md-auto d-flex flex-column flex-lg-row mb-3 ">
-          <div
-            className="p-4 bg-light h-75"
-            style={{
-              // minWidth: "360px",
-              // maxWidth: "740px",
-              // width: "700px",
-              // width: "130%",
-              minHeight: "360px",
-              fontSize: "14px",
-            }}
-          >
-            <SumProductList></SumProductList>
-          </div>
-        </div>
-      </div>
       </LayoutMargin>
       {/* aqui empieza la lista checkeado, se deberia hacer conditional entre <checkedlist> y <>*/}
       {/* <div className="col d-flex flex-column flex-lg-row mb-3 mx-auto">

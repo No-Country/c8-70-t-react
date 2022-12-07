@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import ProductCounter from "../components/ProductCounter";
 import Link from "next/link";
 // import styles from "../styles/CheckoutList.module.css";
+import { CartContext } from "../context/CartContext";
 
 export default function SumProductList({ product, precio }) {
+  const { totalCart } = useContext(CartContext);
   return (
     <>
       <div className="d-flex  pb-3">
@@ -22,7 +24,7 @@ export default function SumProductList({ product, precio }) {
           </h5>
           <h5 className="" style={{ fontSize: "16px" }}>
             {" "}
-            $ 75.000
+            $ {totalCart}
           </h5>
         </div>
       </div>
@@ -38,7 +40,7 @@ export default function SumProductList({ product, precio }) {
 
         <h5 className="" style={{ fontSize: "18px" }}>
           {" "}
-          <strong>$ 75.000</strong>
+          <strong>$ {totalCart}</strong>
         </h5>
       </div>
       <div
