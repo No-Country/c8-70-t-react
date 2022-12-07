@@ -16,14 +16,14 @@ import ProductCard from "./ProductCard";
 import { ProductData } from "./ProductList";
 
 export default function Productlist2(props) {
-  const { products, filterProductByCategory } = useContext(ProductContext);
+  const { products, filterProductByCategory, loading } =
+    useContext(ProductContext);
   console.log(products);
 
   const ruta = useRouter();
   const q1 = ruta.query.categoryId;
   const q2 = ruta.query.categoryName;
   console.log("id", q1, "name", q2);
-  
 
   // const [products, setProducts] = useState([]);
 
@@ -63,26 +63,31 @@ export default function Productlist2(props) {
       modules={[Pagination, Navigation]}
       className=""
     >
-      {" "}
-      {products.map((oneProduct) => (
-        <>
-          <SwiperSlide key={oneProduct.id} className="">
+      {loading ? (
+        <div>
+          {products.map((oneProduct) => (
             <>
-              {/* className="row row-cols-2 row-cols-md-2 row-cols-lg-3" */}
-              {/* <div className="d-flex flex-column row-cols-2 row-cols-lg-3"> */}
+              <SwiperSlide key={oneProduct.id} className="">
+                <>
+                  {/* className="row row-cols-2 row-cols-md-2 row-cols-lg-3" */}
+                  {/* <div className="d-flex flex-column row-cols-2 row-cols-lg-3"> */}
 
-              <ProductCard
-                key={oneProduct.id}
-                name={oneProduct.name}
-                image={oneProduct.images}
-                price={oneProduct.price}
-                path={`/Productos/${oneProduct.id}`}
-                // etiqueta={item.etiqueta}
-              ></ProductCard>
+                  <ProductCard
+                    key={oneProduct.id}
+                    name={oneProduct.name}
+                    image={oneProduct.images}
+                    price={oneProduct.price}
+                    path={`/Productos/${oneProduct.id}`}
+                    // etiqueta={item.etiqueta}
+                  ></ProductCard>
+                </>
+              </SwiperSlide>
             </>
-          </SwiperSlide>
-        </>
-      ))}
+          ))}
+        </div>
+      ) : (
+        <div> cargando ...</div>
+      )}
     </Swiper>
   );
 }
