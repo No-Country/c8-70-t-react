@@ -42,22 +42,32 @@ export default function Productos({ value }) {
             <ul className="dropdown-menu border-dark">
               <li>
                 <a className="dropdown-item" href="#">
-                  Action
+                  ACCESORIOS
                 </a>
               </li>
               <li>
                 <a className="dropdown-item" href="#">
-                  Another action
+                  BOLSO DE MANO
                 </a>
               </li>
               <li>
                 <a className="dropdown-item" href="#">
-                  Something else here
+                  BANDOLERA - MANOS LIBRES
                 </a>
               </li>
               <li>
                 <a className="dropdown-item" href="#">
-                  Mochilas
+                  MOCHILAS
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  RIÑONERAS
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  BOLSO TULA
                 </a>
               </li>
             </ul>

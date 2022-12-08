@@ -4,13 +4,13 @@ import React, { useState, useEffect, useContext } from "react";
 import { ProductContext } from "../context/ProductContext";
 import ProductCard from "./ProductCard";
 
-export default function ProductList({}) {
+export default function ProductListMobile({}) {
   const ruta = useRouter();
   const q1 = ruta.query.categoryId;
   const q2 = ruta.query.categoryName;
   const { productsByCategory, filterProductCategory, loading, products } =
     useContext(ProductContext);
-
+    
   useEffect(() => {
     if (q1) {
       filterProductCategory(q1);
@@ -22,7 +22,7 @@ export default function ProductList({}) {
       {loading == false ? (
         <>
           {q1 ? (
-            <div className="row row-cols-2 row-cols-md-2 row-cols-lg-3  ">
+            <div className="row row-cols-2 row-cols-md-2 .d-block .d-sm-none">
               {productsByCategory && productsByCategory.map((item) => (
                 <ProductCard
                   className="mx-2 my-2"
@@ -35,7 +35,7 @@ export default function ProductList({}) {
               ))}            
             </div>
           ) : (
-            <div className="row row-cols-2 row-cols-md-2 row-cols-lg-3 ">
+            <div className="row row-cols-2 row-cols-md-2 row-cols-lg-3">
               {products && products.map((item) => (
                 <ProductCard
                   className="mx-2 my-2"
