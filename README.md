@@ -5,4 +5,4 @@ Ecommerce _INFUSIÓN_ site de productos de marroquineria artesanal
 
 Infusión es una pagina de comercio electrónico, dedicado a la venta de productos artesanales elaborados a mano, de alta calidad, con el objetivo dar a conocer e incorporar productos elaborados con material prima colombiana a fin de revalorizar el mercado como actividad económica y cultural.
 
-<p align="center" ><img width="50px" align="center"src="httpshttps://firebasestorage.googleapis.com/v0/b/backend-econmerce.appspot.com/o/LOGO.png?alt=media&token=4307f6e4-8a53-4582-88a5-eaf9df2f4d91"></p> 
+<img width="50px" align="center" src="https://firebasestorage.googleapis.com/v0/b/backend-econmerce.appspot.com/o/LOGO.png?alt=media&token=4307f6e4-8a53-4582-88a5-eaf9df2f4d91"/>
