@@ -1,19 +1,22 @@
-import React from "react";
+import Reac, { useContext } from "react";
 import ProductCounter from "../components/ProductCounter";
 // import styles from "../styles/CheckoutList.module.css";
+import { CartContext } from "../context/CartContext";
 
 export default function CheckedList({ nombre, precio, image, detalle }) {
+  const { cart, totalCart } = useContext(CartContext);
+
   return (
     <>
       <div className="col col-md-auto d-flex flex-column flex-lg-row mb-3 mx-auto">
         <div
-          className="p-4 bg-light h-75"
+          className="p-4 bg-light"
           style={{
             // minWidth: "360px",
             // maxWidth: "740px",
             // width: "700px",
             // width: "130%",
-            minHeight: "360px",
+            // minHeight: "360px",
             fontSize: "14px",
           }}
         >
@@ -26,32 +29,35 @@ export default function CheckedList({ nombre, precio, image, detalle }) {
             className="bg-black opacity-100"
             style={{ border: "1px black solid" }}
           ></hr>
-          <div className="d-flex ">
-            <div className="">
-              <img src="/home-product-1.png" width={80} height={80}></img>
+          {cart.map((item) => (
+            <div className="d-flex ">
+              <div className="">
+                <img src="/home-product-1.png" width={80} height={80}></img>
+              </div>
+              <div className="d-flex flex-column ms-1">
+                <div className="col ">
+                  <h5 className="text-start" style={{ fontSize: "14px" }}>
+                    {item.name}
+                  </h5>
+                </div>
+                <div className="col">
+                  <h5 className="text-start" style={{ fontSize: "14px" }}>
+                    Cantidad: {item.quantity}
+                  </h5>
+                </div>
+                <div className="col">
+                  <h5 className="text-start" style={{ fontSize: "14px" }}>
+                    {" "}
+                    $ {item.price}
+                  </h5>
+                  <p className="" style={{ fontSize: "14px" }}>
+                    {/* Color: Negro{" "} */}
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="d-flex flex-column ms-1">
-              <div className="col ">
-                <h5 className="text-start" style={{ fontSize: "14px" }}>
-                  Morral Bahamas
-                </h5>
-              </div>
-              <div className="col">
-                <h5 className="text-start" style={{ fontSize: "14px" }}>
-                  Cantidad: 1
-                </h5>
-              </div>
-              <div className="col">
-                <h5 className="text-start" style={{ fontSize: "14px" }}>
-                  {" "}
-                  $ 75.000
-                </h5>
-                <p className="" style={{ fontSize: "14px" }}>
-                  Color: Negro{" "}
-                </p>
-              </div>
-            </div>
-          </div>
+          ))}
+
           <div className="col mt-4">
             <div className="d-flex">
               <h5 className="me-auto" style={{ fontSize: "16px" }}>
@@ -60,7 +66,7 @@ export default function CheckedList({ nombre, precio, image, detalle }) {
               </h5>
               <h5 className="" style={{ fontSize: "16px" }}>
                 {" "}
-                $ 75.000
+                $ {totalCart}
               </h5>
             </div>
           </div>
@@ -85,7 +91,7 @@ export default function CheckedList({ nombre, precio, image, detalle }) {
 
               <h5 className="" style={{ fontSize: "18px" }}>
                 {" "}
-                <strong>$ 75.000</strong>
+                <strong>$ {totalCart}</strong>
               </h5>
             </div>
             <p className="" style={{ fontSize: "14px" }}>

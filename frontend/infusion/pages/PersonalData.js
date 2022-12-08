@@ -6,9 +6,10 @@ import CheckedShipping from "../components/CheckedShipping";
 import CheckedUser from "../components/CheckedUser";
 import CheckoutFormUser from "../components/CheckoutFormUser";
 import CheckoutList from "../components/CheckoutList";
+import ProgressCheckout from "../components/ProgressCheckout";
 import ShippingForm from "../components/ShippingForm";
 import SumProductList from "../components/SumProductList";
-
+import LayoutMargin from "../components/LayoutMargin";
 import styles from "../styles/ProgressBar.module.css";
 
 export default function PersonalData() {
@@ -26,50 +27,20 @@ export default function PersonalData() {
       </Link>
 
       {/* aqui inicia el componente steps */}
-      
-      
-
+      <ProgressCheckout percent="33%" />
       {/* aqui inicia la lista de productos */}
-          {/* <CheckedUser/> */}
-          {/* <CheckedShipping/> */}
-          {/* <CheckedList></CheckedList> */}
-      <div className="d-flex gap-3 flex-column flex-lg-row">
-        <div className="col d-flex flex-column flex-sm-row mb-3 ms-2 ">
-          {/* area ppal */}
-          <div
-            className="p-4 bg-light col-12"
-            style={{
-              // minWidth: "660px",
-              // maxWidth: "1960px",
-              // width:'220%',
-              minHeight: "360px",
-              fontSize: "14px",
-            }}
-          >
-            {/* <CheckoutList /> */}
-            <CheckoutFormUser/>
-            {/* <ShippingForm/> */}
+      <LayoutMargin>
+        <div className="d-flex gap-3 flex-column flex-lg-row flex-column-reverse">
+          <div className="col d-flex flex-column flex-sm-row mb-3 ms-2 ">
+            {/* area ppal */}
+            <CheckoutFormUser />
           </div>
-        </div>
-        {/* aqui inicia resumen de la compra */}
-        <div className="col col-md-auto d-flex flex-column flex-lg-row mb-3 mx-auto">
-          <div
-            className="p-4 bg-light h-75"
-            style={{
-              minWidth: "360px",
-              maxWidth: "740px",
-              // width: "700px",
-              // width: "130%",
-              minHeight: "360px",
-              fontSize: "14px",
-            }}
-          >
-            {/* <SumProductList></SumProductList> */}
+          {/* aqui inicia resumen de la compra */}
+          <div className="col col-md-auto d-flex flex-column flex-lg-row mb-3 mx-auto">
             <CheckedList></CheckedList>
           </div>
         </div>
-      </div>
-      
+      </LayoutMargin>
     </div>
   );
 }

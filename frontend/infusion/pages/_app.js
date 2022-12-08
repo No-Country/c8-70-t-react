@@ -5,6 +5,8 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 import Layout from "../components/Layout";
 import { useEffect } from "react";
+import { CartFunction } from "../context/CartContext";
+import { ProductFunction } from "../context/ProductContext";
 
 // import dynamic from "next/dynamic";
 
@@ -21,9 +23,13 @@ function MyApp({ Component, pageProps }) {
   }, []);
   return (
     <>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <ProductFunction>
+        <CartFunction>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </CartFunction>
+      </ProductFunction>
     </>
   );
 }

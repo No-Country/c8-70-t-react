@@ -1,48 +1,23 @@
-import React from "react";
+import { React, useEffect, useState, useContext } from "react";
 import CategoryCard from "./CategoryCard";
+import { ProductContext } from "../context/ProductContext";
 
 export default function CategoryList() {
-  const CategoryData = [
-    {
-      category: "Carteras",
-      link: "/Productos",
-      image: "/home-product-1.png",
-    },
-    {
-      category: "Mochilas",
-      link: "/Productos",
-      image: "/home-product-3.png",
-    },
-    {
-      category: "Manos Libres",
-      link: "/Productos",
-      image: "/home-product-2.png",
-    },
-    {
-      category: "Bandoleras",
-      link: "/Productos",
-      image: "/home-product-2.png",
-    },
-    {
-      category: "Billeteras",
-      link: "/Productos",
-      image: "/home-product-2.png",
-    },
-    {
-      category: "Monederos",
-      link: "/Productos",
-      image: "/home-product-2.png",
-    },
-  ];
+  const { categoryList } = useContext(ProductContext);
+  // console.log(categoryList);
   return (
-    <div className="row row-cols-1 row-cols-md-3 row-cols-sm-2  g-4">
-      {CategoryData.map((item) => (
-        <CategoryCard
-          category={item.category}
-          image={item.image}
-          link={item.link}
-        ></CategoryCard>
-      ))}
-    </div>
+    <>
+      <div className="row row-cols-2 row-cols-md-3 row-cols-sm-2 g-1">
+        {categoryList &&
+          categoryList?.map((item) => (
+            <CategoryCard
+              key={item.id}
+              name={item.name}
+              image={"/home-product-3.png"}
+              link={`/Productos?categoryId=${item.id}&categoryName=${item.name}`}
+            ></CategoryCard>
+          ))}
+      </div>
+    </>
   );
 }

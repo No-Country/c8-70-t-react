@@ -1,8 +1,29 @@
 import Link from "next/link";
-import React from "react";
-import ProductCounter from "./ProductCounter";
+import React, { useContext } from "react";
+import CartCard from "./CartCard";
+import { CartContext } from "../context/CartContext";
 
 export default function CartMenu() {
+  const { cart, addItem, totalCart, setCart } = useContext(CartContext);
+  
+
+  const updateQuantity = () => {
+    const updateCart = cart.map((item) => {
+        // console.log('soy igual a product id')
+        return { ...item, 
+          id: item.id,
+          name: item.name,
+          price: item.price,
+          quantity: item.quantity,
+          subTotal: item.price * item.quantity,
+          total: item.quantity * item.price,
+          description: item.description,
+        }
+    });
+    setCart(updateCart)
+    // console.log("id", id, "name", name, "price", price, "count", count);
+  };
+
   return (
     <>
       <div
@@ -28,96 +49,16 @@ export default function CartMenu() {
           style={{ border: "1px black solid" }}
         ></hr>
         <div className="offcanvas-body scroll">
-          <div className="d-flex mb-3">
-            <div className="w-50">
-              <img src="/home-product-1.png" width={150}></img>
-            </div>
-            <div className="d-flex flex-column">
-              <div className="col">
-                <h5 className="text-start" style={{ fontSize: "18px" }}>
-                  Morral Bahamas
-                </h5>
-              </div>
-              <div className="col">
-                <h5 className="text-start" style={{ fontSize: "18px" }}>
-                  {" "}
-                  $ 75.000
-                </h5>
-                <p className="" style={{ fontSize: "14px" }}>
-                  <strong>Color</strong>: Negro{" "}
-                </p>
-              </div>
-              <ProductCounter></ProductCounter>
-            </div>
-          </div>
-          {/* lista de prueba */}
-          {/* <div className="d-flex mb-3">
-            <div className="w-50">
-              <img src="/home-product-1.png" width={150}></img>
-            </div>
-            <div className="d-flex flex-column">
-              <div className="col">
-                <h5 className="text-start" style={{ fontSize: "18px" }}>
-                  Morral Bahamas
-                </h5>
-              </div>
-              <div className="col">
-                <h5 className="text-start" style={{ fontSize: "18px" }}>
-                  {" "}
-                  $ 75.000
-                </h5>
-                <p className="" style={{ fontSize: "14px" }}>
-                  <strong>Color</strong>: Negro{" "}
-                </p>
-              </div>
-              <ProductCounter></ProductCounter>
-            </div>
-          </div>
-          <div className="d-flex mb-3">
-            <div className="w-50">
-              <img src="/home-product-1.png" width={150}></img>
-            </div>
-            <div className="d-flex flex-column">
-              <div className="col">
-                <h5 className="text-start" style={{ fontSize: "18px" }}>
-                  Morral Bahamas
-                </h5>
-              </div>
-              <div className="col">
-                <h5 className="text-start" style={{ fontSize: "18px" }}>
-                  {" "}
-                  $ 75.000
-                </h5>
-                <p className="" style={{ fontSize: "14px" }}>
-                  <strong>Color</strong>: Negro{" "}
-                </p>
-              </div>
-              <ProductCounter></ProductCounter>
-            </div>
-          </div>
-          <div className="d-flex mb-3">
-            <div className="w-50">
-              <img src="/home-product-1.png" width={150}></img>
-            </div>
-            <div className="d-flex flex-column">
-              <div className="col">
-                <h5 className="text-start" style={{ fontSize: "18px" }}>
-                  Morral Bahamas
-                </h5>
-              </div>
-              <div className="col">
-                <h5 className="text-start" style={{ fontSize: "18px" }}>
-                  {" "}
-                  $ 75.000
-                </h5>
-                <p className="" style={{ fontSize: "14px" }}>
-                  <strong>Color</strong>: Negro{" "}
-                </p>
-              </div>
-              <ProductCounter></ProductCounter>
-            </div>
-          </div> */}
-          
+          {cart.map((item) => (
+            <CartCard
+              title={item.name}
+              // colors={item.color}
+              quantity={item.quantity}
+              price={item.price}
+              productId={item.id}
+              key={item.id}
+            ></CartCard>
+          ))}
         </div>
         <hr
           className="bg-black opacity-100 w-100"
@@ -132,7 +73,7 @@ export default function CartMenu() {
               </h5>
               <h5 className="" style={{ fontSize: "16px" }}>
                 {" "}
-                $ 75.000
+                $ {totalCart}
               </h5>
             </div>
           </div>
@@ -145,7 +86,7 @@ export default function CartMenu() {
 
               <h5 className="" style={{ fontSize: "18px" }}>
                 {" "}
-                <strong>$ 75.000</strong>
+                <strong>$ {totalCart}</strong>
               </h5>
             </div>
             <p className="" style={{ fontSize: "14px" }}>
@@ -154,19 +95,17 @@ export default function CartMenu() {
           </div>
         </div>
         <div className="m-auto mb-3 ">
-          <Link
-            href="/Checkout"
-            
-          >
+          <Link href="/Checkout">
             <button
               className="btn btn-info text-light px-5"
               data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasRight"
+              data-bs-target="#offcanvasRight"
               style={{
                 borderRadius: "10px !important",
                 height: "40px",
                 backgroundColor: "#00A5D0",
               }}
+              onClick={updateQuantity}
             >
               Avanzar con la compra
             </button>

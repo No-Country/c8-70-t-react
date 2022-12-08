@@ -1,57 +1,57 @@
-import React from "react";
+import { loadGetInitialProps } from "next/dist/shared/lib/utils";
+import { useRouter } from "next/router";
+import React, { useState, useEffect, useContext } from "react";
+import { ProductContext } from "../context/ProductContext";
 import ProductCard from "./ProductCard";
 
-export default function ProductList() {
-  const ProductData = [
-    {
-      nombre: "Cartera Bahamas",
-      precio: "$75000 COP",
-      image: "/home-product-1.png",
-      detalle: "/Productos/1"
-    },
-    {
-      nombre: "Cartera Bahamas",
-      precio: "$75000 COP",
-      image: "/home-product-1.png",
-      detalle: "/Productos/2"
-    },
-    {
-      nombre: "Cartera Bahamas",
-      precio: "$75000 COP",
-      image: "/home-product-1.png",
-      detalle: "/Productos/3"
-    },
-    {
-      nombre: "Cartera Bahamas",
-      precio: "$75000 COP",
-      image: "/home-product-1.png",
-      detalle: "/Productos/4"
-    },
-    {
-      nombre: "Cartera Bahamas",
-      precio: "$75000 COP",
-      image: "/home-product-1.png",
-      detalle: "/Productos/5"
-    },
-    {
-      nombre: "Cartera Bahamas",
-      precio: "$75000",
-      image: "/home-product-1.png",
-      detalle: "/Productos/6"
-    },
-  ];
+export default function ProductList({}) {
+  const ruta = useRouter();
+  const q1 = ruta.query.categoryId;
+  const q2 = ruta.query.categoryName;
+  const { productsByCategory, filterProductCategory, loading, products } =
+    useContext(ProductContext);
+
+  useEffect(() => {
+    if (q1) {
+      filterProductCategory(q1);
+    }
+  }, [q1,products]);
 
   return (
-    // hay que poner keys por item
-    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-      {ProductData.map((item) => (
-        <ProductCard
-          nombre={item.nombre}
-          image={item.image}
-          precio={item.precio}
-          detalle={item.detalle}
-        ></ProductCard>
-      ))}
-    </div>
+    <>
+      {loading == false ? (
+        <>
+          {q1 ? (
+            <div className="row row-cols-2 row-cols-md-2 row-cols-lg-3">
+              {productsByCategory && productsByCategory.map((item) => (
+                <ProductCard
+                  className="mx-2 my-2"
+                  key={item.id}
+                  name={item.name}
+                  image={item.images}
+                  price={item.price}
+                  path={`/Productos/${item.id}`}
+                ></ProductCard>
+              ))}            
+            </div>
+          ) : (
+            <div className="row row-cols-2 row-cols-md-2 row-cols-lg-3">
+              {products && products.map((item) => (
+                <ProductCard
+                  className="mx-2 my-2"
+                  key={item.id}
+                  name={item.name}
+                  image={item.images}
+                  price={item.price}
+                  path={`/Productos/${item.id}`}
+                ></ProductCard>
+              ))}
+            </div>
+          )}
+        </>
+      ) : (
+        <div> cargando</div>
+      )}
+    </>
   );
 }

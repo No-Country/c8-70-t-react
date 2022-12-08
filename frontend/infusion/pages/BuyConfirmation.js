@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import AddCartButton from "../components/AddCartButton";
 import CheckedList from "../components/CheckedList";
+import CheckedPayment from "../components/CheckedPayment";
 import CheckedShipping from "../components/CheckedShipping";
 import CheckedUser from "../components/CheckedUser";
 import CheckoutFormUser from "../components/CheckoutFormUser";
@@ -12,7 +13,7 @@ import ShippingForm from "../components/ShippingForm";
 
 import styles from "../styles/ProgressBar.module.css";
 
-export default function PayMethod() {
+export default function BuyConfirmation() {
   // const  [progress , setProgress] = useState(initialState = 0)
 
   return (
@@ -27,15 +28,31 @@ export default function PayMethod() {
       </Link>
 
       {/* aqui inicia el componente steps */}
-      <ProgressCheckout percent="99%" />
+      <ProgressCheckout percent="99%"/>
       {/* aqui inicia la lista de productos */}
       <LayoutMargin>
-        <div className="d-flex gap-3 flex-column flex-lg-row flex-column-reverse">
-          <div className="col d-flex flex-column gap-3 mb-3">
+        <div className="d-flex flex-column flex-lg-row flex-column-reverse gap-3">
+          <div className="col d-flex gap-3 flex-column ">
             {/* area ppal */}
             <CheckedUser />
             <CheckedShipping />
-            <ChoosePayment />
+            <CheckedPayment />
+            <Link
+              href="/"
+              className="text-light text-decoration-none mb-5 mx-auto"
+            >
+              <button
+                className="btn btn-info text-light px-5 text-wrap"
+                style={{
+                  borderRadius: "10px !important",
+                  height: "40px",
+                  backgroundColor: "#00A5D0",
+                }}
+                type="button"
+              >
+                Finalizar la Compra
+              </button>
+            </Link>
           </div>
           {/* aqui inicia resumen de la compra */}
           <CheckedList></CheckedList>

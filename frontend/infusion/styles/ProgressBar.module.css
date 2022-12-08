@@ -1,5 +1,8 @@
 .container {
   font-size: 14px;
+  /* height: 200px; */
+  /* padding: 180px 0px; */
+  /* margin: 20px 90px; */
 }
 
 .progresses {
@@ -7,25 +10,67 @@
   align-items: center;
 }
 
+.bar{
+    width: 90%;
+    /* padding: -20px; */
+    margin: auto;
+  }
+
 .line {
-  width: 120px;
+  width: 190px;
   height: 6px;
   background: #63d19e;
 }
 
-.steps {
+.stepsGroup {
+  /* display: flex; */
+  position: absolute;
+  width: 95%;
+  bottom: -30px;
+  font-size: 14px;
+  padding: 20px;
+  /* margin-left: 15px; */
+  justify-content: space-between !important;
+}
+
+/* .steps {
+  
+} */
+
+.circle {
   display: flex;
   background-color: #63d19e;
   color: #fff;
   font-size: 14px;
   width: 53px;
   height: 53px;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center !important; */
   border-radius: 50%;
+  /* justify-content: space-around !important; */
 }
 
-.stepsGroup {
-  bottom: -5px;
-  font-size: 14px;
+/* @media only screen and (min-width: 578px) {
+  .stepsGroup {
+    
+    justify-content: space-between !important;
+  }
+  .bar{
+    width: 90%;
+    
+    margin: auto;
+  }
 }
+
+@media only screen and (max-width: 578px) {
+  .stepsGroup {
+    bottom: -45px !important;
+    
+    
+    justify-content: space-between !important;
+  }
+  .bar{
+    width: 90% !important;
+    
+    margin: auto !important;
+  }
+} */
