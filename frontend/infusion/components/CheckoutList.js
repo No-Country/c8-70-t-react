@@ -55,6 +55,7 @@ export default function CheckoutList({ nombre, precio, image, detalle }) {
                   <ProductCounter
                     scale={"scale(0.8)"}
                     quantity={item.quantity}
+                    productId={item.id}
                   ></ProductCounter>
                 </td>
                 <td>$ {item.subTotal}</td>

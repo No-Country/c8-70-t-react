@@ -8,6 +8,8 @@ import { CartContext } from "../context/CartContext";
 
 export default function Header() {
   const { cart } = useContext(CartContext);
+  const cartQuantity = cart.reduce((acc, red) => acc + red.quantity, 0);
+  console.log(cartQuantity);
   const router = useRouter();
   const ruta = router.pathname;
   // console.log(ruta);
@@ -19,8 +21,8 @@ export default function Header() {
         router.pathname === "/BuyConfirmation" ||
         router.pathname === "/Shipping" ||
         router.pathname === "/PayMethod" ? (
-          <div className="d-flex pt-3 ms-4 ps-4 text-dark bg-white align-items-center">
-            <p className="text-wrap">
+          <div className="d-flex pt-3  ps-4 text-dark bg-white align-items-center">
+            <p className="text-wrap ms-4">
               Atención al cliente | +54 3122693369 de Lunes a Viernes 9:00 AM
               hasta 20:00 PM
             </p>
@@ -59,7 +61,6 @@ export default function Header() {
                   href="/Cart"
                 >
                   <i className="bi bi-bag-fill fs-4"></i>
-                  [5]
                 </Link>
               </span>
               <button
@@ -160,6 +161,7 @@ export default function Header() {
                       </p>
                     </Link>
                   </li>
+
                   <li className="nav-item">
                     <a
                       className="nav-link text-uppercase fw-lighter fw-normal text-dark"
@@ -187,6 +189,7 @@ export default function Header() {
                       </p>
                     </a>
                   </li>
+                  <p>Mi carrito ({cartQuantity})</p>
                   {/* <li>
                     <div type="button" class="light position-relative">
                       <i className="bi bi-bag-fill fs-4"></i>

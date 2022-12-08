@@ -7,6 +7,7 @@ import Layout from "../components/Layout";
 import { useEffect } from "react";
 import { CartFunction } from "../context/CartContext";
 import { ProductFunction } from "../context/ProductContext";
+import { FormFunction } from "../context/FormContext";
 
 // import dynamic from "next/dynamic";
 
@@ -24,11 +25,13 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <ProductFunction>
-        <CartFunction>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </CartFunction>
+        <FormFunction>
+          <CartFunction>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </CartFunction>
+        </FormFunction>
       </ProductFunction>
     </>
   );

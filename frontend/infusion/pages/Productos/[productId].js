@@ -74,7 +74,7 @@ const Detail = () => {
               className="p-2 bg-light"
               style={{
                 minWidth: "320px",
-                maxWidth: "560px",
+                // maxWidth: "560px",
                 width: "100%",
                 // maxHeight: "260px",
                 fontSize: "14px",

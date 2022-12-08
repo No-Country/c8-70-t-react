@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import CategoryList from "../components/CategoryList";
 import { ProductData } from "../components/fakeData";
 import { CategoryData } from "../components/fakeData";
 
@@ -48,7 +49,7 @@ const ProductFunction = ({ children }) => {
     const timer = setTimeout(() => {
       fetchData2();
     }, 1000);
-
+    
     return () => clearTimeout(timer);
   }, []);
 
@@ -63,10 +64,10 @@ const ProductFunction = ({ children }) => {
   // }, []);
 
   function filterProductCategory(categoryId) {
-    // console.log("hola category", typeof categoryId);
     const filteredData = products.filter(
       (item) => item.category_id == parseInt(categoryId)
-    );
+      );
+      console.log("hola category", filteredData);
     seProductByCategory(filteredData);
   }
 

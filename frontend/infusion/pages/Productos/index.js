@@ -14,8 +14,14 @@ export default function Productos({ value }) {
           {/* <div className="text-start me-5"> */}
           <div className="d-flex px-4 pt-3 ms-4">
             {/* <p className="ms-5">/Mochilas</p> */}
-            {ruta.query.categoryName ? <><p className="">Categoria</p>
-            <p className="fw-bolder">{"/" + ruta.query.categoryName}</p></>:<p className="">Todo</p>}
+            {ruta.query.categoryName ? (
+              <>
+                <p className="">Categoria</p>
+                <p className="fw-bolder">{"/" + ruta.query.categoryName}</p>
+              </>
+            ) : (
+              <p className="">Todo</p>
+            )}
           </div>
           {/* </div> */}
           <div className="dropdown d-flex flex-column flex-sm-row align-items-center me-md-5">
@@ -36,22 +42,32 @@ export default function Productos({ value }) {
             <ul className="dropdown-menu border-dark">
               <li>
                 <a className="dropdown-item" href="#">
-                  Action
+                  ACCESORIOS
                 </a>
               </li>
               <li>
                 <a className="dropdown-item" href="#">
-                  Another action
+                  BOLSO DE MANO
                 </a>
               </li>
               <li>
                 <a className="dropdown-item" href="#">
-                  Something else here
+                  BANDOLERA - MANOS LIBRES
                 </a>
               </li>
               <li>
                 <a className="dropdown-item" href="#">
-                  Mochilas
+                  MOCHILAS
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  RIÑONERAS
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  BOLSO TULA
                 </a>
               </li>
             </ul>
