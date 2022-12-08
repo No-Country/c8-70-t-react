@@ -5,7 +5,7 @@
 
 Infusión es una pagina de comercio electrónico, dedicado a la venta de productos artesanales elaborados a mano, de alta calidad, con el objetivo dar a conocer e incorporar productos elaborados con material prima colombiana a fin de revalorizar el mercado como actividad económica y cultural.
 
-<h3 align="center"><b>Puedes consultar nuestra página web aquí:</b></h3>
+<h3 align="center"><b>Puedes consultar nuestra página:</b></h3>
 
 <p align="center">
 <img width="50px" align="center" src="https://firebasestorage.googleapis.com/v0/b/backend-econmerce.appspot.com/o/LOGO.png?alt=media&token=4307f6e4-8a53-4582-88a5-eaf9df2f4d91"/>
