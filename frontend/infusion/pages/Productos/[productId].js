@@ -19,7 +19,7 @@ const Detail = () => {
   useEffect(()=>{
     if(oneId){
       filterOneProduct(oneId)
-      console.log('este es oneproduct filtrado',oneProduct)
+      // console.log('este es oneproduct filtrado',oneProduct)
     }
   },[oneId, products])
   

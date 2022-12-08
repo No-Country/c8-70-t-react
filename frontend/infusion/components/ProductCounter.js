@@ -1,36 +1,45 @@
-import { useContext,useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../context/CartContext";
 
-export default function ProductCounter({ scale, onAdd = () => {}, quantity, productId }) {
-  const { updateInCart } = useContext(CartContext)
+export default function ProductCounter({
+  scale,
+  onAdd = () => {},
+  quantity,
+  productId = 0,
+}) {
+  const { updateInCart } = useContext(CartContext);
   const defaultValue = quantity ?? 1;
 
   const [count, setCount] = useState(defaultValue);
 
   const increment = () => {
     setCount(count + 1);
+    // if (productId != undefined) {
+    //   updateInCart(productId, count);
+    // }
   };
 
   const decrement = () => {
     if (count > 1) {
       setCount(count - 1);
+      if (productId != undefined) {
+        // updateInCart(productId, count);
+        // console.log("count se esta enviando", count);
+      }
     }
   };
 
   useEffect(() => {
     onAdd(count);
-    if(productId){
-      updateInCart(productId, count)
-    }
   }, [count, onAdd]);
-  
+
   useEffect(() => {
-    if(quantity){
+    if (quantity) {
       setCount(quantity);
+      // updateInCart(productId, count);
     }
   }, [quantity]);
 
-  console.log(productId)
 
   return (
     <div
