@@ -53,7 +53,7 @@ npm start
 |:-:|:-:|:-:|:-:|:-:|
 | **Dev**| **UI/UX**| **Dev**| **Dev**| **TL**|
 
-## Licensia
+## Licencia
 
 <br/>
 
