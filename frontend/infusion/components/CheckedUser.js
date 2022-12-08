@@ -30,7 +30,8 @@ export default function CheckedUser({ nombre, email, phone }) {
             style={{ border: "1px black solid" }}
           ></hr>
           <span className="fs-6">
-            <strong>Nombre:</strong> {personalDataParse.nombre}
+            <strong>Nombre:</strong> {personalDataParse.nombre}{" "}
+            {personalDataParse.apellido}
           </span>
           <br />
           <span className="fs-6">
@@ -38,7 +39,8 @@ export default function CheckedUser({ nombre, email, phone }) {
           </span>
           <br />
           <span className="fs-6">
-            <strong>Telefono:</strong> {personalDataParse.celular}
+            <strong>Telefono:</strong> {}+{personalDataParse.codArea}{" "}
+            {personalDataParse.celular}
           </span>
           <br />
           {/* <h5 className="mb-3">Telefono:</h5> */}

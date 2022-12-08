@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import ProductCounter from "../components/ProductCounter";
+import { FormContext } from "../context/FormContext";
 // import styles from "../styles/CheckoutList.module.css";
 
 export default function CheckedShipping({ nombre, email, phone }) {
+  const { shippingData } = useContext(FormContext);
+  const shippingDataParse = JSON.parse(shippingData);
+
+  console.log(typeof shippingDataParse, shippingDataParse);
+
   return (
     <>
       {/* <div className="d-flex gap-3 flex-column flex-lg-row mb-3 col-9">
@@ -31,33 +37,37 @@ export default function CheckedShipping({ nombre, email, phone }) {
       </div> */}
       <div className="d-flex gap-3 flex-column flex-lg-row mb-3 col-12 col-lg-12">
         {/* <div className="col d-flex flex-column flex-sm-row mb-3  "> */}
-          {/* area ppal */}
-          <div
-            className="p-4 bg-light col-12"
-            style={{
-              // minWidth: "660px",
-              // maxWidth: "1960px",
-              // width:'220%',
-              // minHeight: "260px",
-              fontSize: "14px",
-            }}
-          >
-            <h4 className="mb-3">2 FACTURACIÓN Y ENTREGA</h4>
-            <hr
-              className="bg-black opacity-100"
-              style={{ border: "1px black solid" }}
-            ></hr>
-            <span className="fs-6">
-            <strong>A entregar en: </strong> Av. Palacios 27</span>
-            <br/>
-            <span className="fs-6">
-            <strong>Ciudad:</strong> Medellín</span>
-            <br/>
-            <span className="fs-6">
-            <strong>Tiempo estimado:</strong>  15 días hábiles</span>
-            <br/>
-            {/* <h5 className="mb-3">Telefono:</h5> */}
-          </div>
+        {/* area ppal */}
+        <div
+          className="p-4 bg-light col-12"
+          style={{
+            // minWidth: "660px",
+            // maxWidth: "1960px",
+            // width:'220%',
+            // minHeight: "260px",
+            fontSize: "14px",
+          }}
+        >
+          <h4 className="mb-3">2 FACTURACIÓN Y ENTREGA</h4>
+          <hr
+            className="bg-black opacity-100"
+            style={{ border: "1px black solid" }}
+          ></hr>
+          <span className="fs-6">
+            <strong>A entregar en: </strong> {shippingDataParse.direccion}{" "}
+            {shippingDataParse.numero}
+          </span>
+          <br />
+          <span className="fs-6">
+            <strong>Ciudad:</strong> {shippingDataParse.ciudad}
+          </span>
+          <br />
+          <span className="fs-6">
+            <strong>Tiempo estimado:</strong> 15 días hábiles
+          </span>
+          <br />
+          {/* <h5 className="mb-3">Telefono:</h5> */}
+        </div>
         {/* </div> */}
       </div>
     </>

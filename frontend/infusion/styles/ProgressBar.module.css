@@ -10,11 +10,11 @@
   align-items: center;
 }
 
-.bar{
-    width: 90%;
-    /* padding: -20px; */
-    margin: auto;
-  }
+.bar {
+  width: 90%;
+  /* padding: -20px; */
+  margin: auto;
+}
 
 .line {
   width: 190px;

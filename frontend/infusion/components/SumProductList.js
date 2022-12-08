@@ -76,10 +76,7 @@ export default function SumProductList({ product, precio }) {
               color: "#34A5D0",
             }}
           >
-            <Link
-              href="/PersonalData"
-              className="text-info text-decoration-none mb-5"
-            >
+            <Link href="/" className="text-info text-decoration-none mb-5">
               <i className="bi bi-arrow-left-short">
                 Continuar viendo productos
               </i>

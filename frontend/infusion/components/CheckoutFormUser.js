@@ -6,10 +6,10 @@ import { FormContext } from "../context/FormContext";
 import { useForm } from "react-hook-form";
 import CartCard from "./CartCard";
 
-// import styles from "../styles/CheckoutList.module.css";
-
 export default function CheckoutFormUser({}) {
   const { setPersonalData, personalData } = useContext(FormContext);
+  const [confirmVisible, setConfirmVisible] = useState(true);
+  const [nextVisible, setNextVisible] = useState(true);
 
   const {
     register,
@@ -22,6 +22,7 @@ export default function CheckoutFormUser({}) {
   console.log(errors);
   console.log("datapersonal", data);
   console.log("personalData", personalData);
+
   return (
     <>
       <div
@@ -119,7 +120,7 @@ export default function CheckoutFormUser({}) {
                 defaultValue="57"
                 type="number"
                 placeholder="+57"
-                {...register}
+                {...register("codArea")}
               />
               <div className="invalid-feedback">Zip code required.</div>
             </div>
@@ -149,7 +150,7 @@ export default function CheckoutFormUser({}) {
             >
               <input
                 value="Avanzar con la compra"
-                type="submit"
+                type="button"
                 className="btn btn-info text-light px-5"
                 style={{
                   borderRadius: "10px !important",
@@ -158,9 +159,8 @@ export default function CheckoutFormUser({}) {
                 }}
               />
             </Link>
-
             <input
-              value="Avanzar con la compra"
+              value="Confirmar Datos"
               type="submit"
               className="btn btn-info text-light px-5"
               style={{

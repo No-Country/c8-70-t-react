@@ -14,8 +14,14 @@ export default function Productos({ value }) {
           {/* <div className="text-start me-5"> */}
           <div className="d-flex px-4 pt-3 ms-4">
             {/* <p className="ms-5">/Mochilas</p> */}
-            {ruta.query.categoryName ? <><p className="">Categoria</p>
-            <p className="fw-bolder">{"/" + ruta.query.categoryName}</p></>:<p className="">Todo</p>}
+            {ruta.query.categoryName ? (
+              <>
+                <p className="">Categoria</p>
+                <p className="fw-bolder">{"/" + ruta.query.categoryName}</p>
+              </>
+            ) : (
+              <p className="">Todo</p>
+            )}
           </div>
           {/* </div> */}
           <div className="dropdown d-flex flex-column flex-sm-row align-items-center me-md-5">

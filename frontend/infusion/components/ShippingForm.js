@@ -1,9 +1,26 @@
 import Link from "next/link";
-import React from "react";
+import React, { useContext, useState } from "react";
 import ProductCounter from "../components/ProductCounter";
 // import styles from "../styles/CheckoutList.module.css";
+import { FormContext } from "../context/FormContext";
+
+import { useForm } from "react-hook-form";
 
 export default function ShippingForm({ nombre, precio, image, detalle }) {
+  const { shippingData, setShippingData } = useContext(FormContext);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const [data, setData] = useState("");
+  const onSubmit = (data) => setShippingData(data);
+
+  console.log(errors);
+  // console.log("dataShipping", data);
+  console.log("shippingData", shippingData);
+
   return (
     <>
       <div
@@ -21,17 +38,23 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
           className="bg-black opacity-100"
           style={{ border: "1px black solid" }}
         ></hr>
-        <form className="needs-validation" noValidate="">
+        <form
+          onSubmit={handleSubmit((data) =>
+            setShippingData(JSON.stringify(data))
+          )}
+        >
           <div className="row g-3">
             <div className="col-6">
               <label htmlFor="email" className="form-label">
                 Ciudad <span className="text-muted"></span>
               </label>
+
               <input
-                type="email"
                 className="form-control bg-dark bg-opacity-10"
-                id="email"
+                defaultValue="Medellin"
+                type="text"
                 placeholder="Medellin"
+                {...register("ciudad")}
               />
               <div className="invalid-feedback">
                 Please enter a valid email address for shipping updates.
@@ -42,13 +65,13 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
               <label htmlFor="firstName" className="form-label">
                 Codigo Postal
               </label>
+
               <input
-                type="text"
                 className="form-control bg-dark bg-opacity-10"
-                id="firstName"
+                defaultValue="0525"
+                type="text"
                 placeholder="0525"
-                // value=""
-                required=""
+                {...register("codigoPostal")}
               />
               <div className="invalid-feedback">
                 Valid first name is required.
@@ -71,22 +94,20 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
             </div>
 
             {/* ¿No sabes tu código postal? */}
-            <label htmlFor="direccion" className="form-label">
-              Direccion
-            </label>
 
             <div className="col-4 col-sm-4">
-              <label htmlFor="calle" className="form-label">
-                Calle
+              <label htmlFor="direccion" className="form-label">
+                Direccion
               </label>
+
               <input
-                type="text"
                 className="form-control bg-dark bg-opacity-10"
-                id="lastName"
-                placeholder="CLL - KR"
-                // value=""
-                required=""
+                defaultValue="Av. Palacios"
+                type="text"
+                placeholder="Av. Palacios"
+                {...register("direccion")}
               />
+
               <div className="invalid-feedback">
                 Valid last name is required.
               </div>
@@ -96,12 +117,13 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
               <label htmlFor="numerocalle" className="form-label">
                 Numero
               </label>
+
               <input
-                type="text"
                 className="form-control bg-dark bg-opacity-10"
-                id="address"
+                defaultValue="36"
+                type="number"
                 placeholder="36"
-                required=""
+                {...register("numero")}
               />
               <div className="invalid-feedback">
                 Please enter your shipping address.
@@ -110,14 +132,15 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
 
             <div className="col-4 col-sm-4 ">
               <label htmlFor="numerocasa" className="form-label">
-                # residencia
+                # Residencia
               </label>
+
               <input
-                type="text"
                 className="form-control bg-dark bg-opacity-10"
-                id="zip"
+                defaultValue="#35-22"
+                type="number"
                 placeholder="#35-22"
-                required=""
+                {...register("residencia")}
               />
               <div className="invalid-feedback">Zip code required.</div>
             </div>
@@ -126,12 +149,13 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
               <label htmlFor="nombrereceptor" className="form-label">
                 Nombre de quien recibe el paquete
               </label>
+
               <input
-                type="text"
                 className="form-control bg-dark bg-opacity-10"
-                id="nombre"
-                placeholder="Fulanito Guzmán"
-                required=""
+                defaultValue="Laura Guzman"
+                type="text"
+                placeholder="Laura Guzman"
+                {...register("quienRecibe")}
               />
               <div className="invalid-feedback">
                 Please enter your shipping address.
@@ -156,6 +180,16 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
                 Avanzar con la compra
               </button>
             </Link>
+            <input
+              value="Confirmar Datos"
+              type="submit"
+              className="btn btn-info text-light px-5"
+              style={{
+                borderRadius: "10px !important",
+                height: "40px",
+                backgroundColor: "#00A5D0",
+              }}
+            />
           </div>
         </form>
       </div>
