@@ -12,7 +12,7 @@ export default function hoookForm() {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <div className="">
+    <div className="mx-5">
       <>
         <br />
         <br />

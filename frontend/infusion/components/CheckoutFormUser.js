@@ -1,9 +1,27 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState, useContext } from "react";
 import ProductCounter from "../components/ProductCounter";
+import { FormContext } from "../context/FormContext";
+
+import { useForm } from "react-hook-form";
+import CartCard from "./CartCard";
+
 // import styles from "../styles/CheckoutList.module.css";
 
-export default function CheckoutFormUser({ nombre, precio, image, detalle }) {
+export default function CheckoutFormUser({}) {
+  const { setPersonalData, personalData } = useContext(FormContext);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const [data, setData] = useState("");
+  const onSubmit = (data) => setPersonalData(data);
+  console.log(errors);
+  console.log("datapersonal", data);
+  console.log("personalData", personalData);
   return (
     <>
       <div
@@ -17,17 +35,26 @@ export default function CheckoutFormUser({ nombre, precio, image, detalle }) {
         }}
       >
         <h4 className="mb-3">Datos Personales</h4>
-        <form className="needs-validation" noValidate="">
+        <form
+          onSubmit={handleSubmit((data) =>
+            setPersonalData(JSON.stringify(data))
+          )}
+        >
           <div className="row g-3">
             <div className="col-12">
               <label htmlFor="email" className="form-label">
                 E-Mail <span className="text-muted"></span>
               </label>
               <input
-                type="email"
                 className="form-control bg-dark bg-opacity-10"
-                id="email"
-                placeholder="fulanito@example.com"
+                defaultValue="prueba@micorreo.com"
+                type="text"
+                placeholder="tuemail@example.com"
+                {...register("Email", {
+                  required: true,
+                  maxLength: 100,
+                  pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/i,
+                })}
               />
               <div className="invalid-feedback">
                 Please enter a valid email address for shipping updates.
@@ -38,13 +65,13 @@ export default function CheckoutFormUser({ nombre, precio, image, detalle }) {
               <label htmlFor="firstName" className="form-label">
                 Nombre
               </label>
+
               <input
-                type="text"
                 className="form-control bg-dark bg-opacity-10"
-                id="firstName"
-                placeholder=""
-                // value=""
-                required=""
+                defaultValue="Laura"
+                type="text"
+                placeholder="Nombre"
+                {...register("nombre")}
               />
               <div className="invalid-feedback">
                 Valid first name is required.
@@ -56,12 +83,11 @@ export default function CheckoutFormUser({ nombre, precio, image, detalle }) {
                 Apellidos
               </label>
               <input
-                type="text"
                 className="form-control bg-dark bg-opacity-10"
-                id="lastName"
-                placeholder=""
-                // value=""
-                required=""
+                defaultValue="Guzman"
+                type="text"
+                placeholder="Apellido"
+                {...register("apellido")}
               />
               <div className="invalid-feedback">
                 Valid last name is required.
@@ -73,11 +99,11 @@ export default function CheckoutFormUser({ nombre, precio, image, detalle }) {
                 Documento de Identidad
               </label>
               <input
-                type="text"
                 className="form-control bg-dark bg-opacity-10"
-                id="address"
-                placeholder="1234 Main St"
-                required=""
+                defaultValue="40234456"
+                type="text"
+                placeholder="Documento de Identidad"
+                {...register("documento")}
               />
               <div className="invalid-feedback">
                 Please enter your shipping address.
@@ -89,11 +115,11 @@ export default function CheckoutFormUser({ nombre, precio, image, detalle }) {
                 Cod Area
               </label>
               <input
-                type="text"
                 className="form-control bg-dark bg-opacity-10"
-                id="zip"
+                defaultValue="57"
+                type="number"
                 placeholder="+57"
-                required=""
+                {...register}
               />
               <div className="invalid-feedback">Zip code required.</div>
             </div>
@@ -103,69 +129,46 @@ export default function CheckoutFormUser({ nombre, precio, image, detalle }) {
                 Celular
               </label>
               <input
-                type="text"
                 className="form-control bg-dark bg-opacity-10"
-                id="address"
-                placeholder="305679129"
-                required=""
+                defaultValue="114567882"
+                type="number"
+                placeholder="Celular"
+                {...register("celular")}
               />
               <div className="invalid-feedback">
                 Please enter your shipping address.
               </div>
             </div>
-
-            {/* <div className="col-md-5">
-              <label htmlFor="country" className="form-label">Country</label>
-              <select className="form-select" id="country" required="">
-                <option value="">Choose...</option>
-                <option>United States</option>
-              </select>
-              <div className="invalid-feedback">
-                Please select a valid country.
-              </div>
-            </div> */}
-
-            {/* <div className="col-md-4">
-              <label htmlFor="state" className="form-label">State</label>
-              <select className="form-select" id="state" required="">
-                <option value="">Choose...</option>
-                <option>California</option>
-              </select>
-              <div className="invalid-feedback">
-                Please provide a valid state.
-              </div>
-            </div> */}
           </div>
 
-          {/* <hr className="my-4"/> */}
-
-          {/* <div className="form-check">
-            <input type="checkbox" className="form-check-input" id="same-address"/>
-            <label className="form-check-label" htmlFor="same-address">Shipping address is the same as my billing address</label>
-          </div>
-          <div className="form-check">
-            <input type="checkbox" className="form-check-input" id="save-info"/>
-            <label className="form-check-label" htmlFor="save-info">Save this information htmlFor next time</label>
-          </div> */}
-          {/* <hr className="my-4"/> */}
           <div className="m-auto mt-5">
             {/* al presionar este boton se guarda el estado de lista de cart */}
             <Link
               href="/Shipping"
               className="text-light text-decoration-none mb-5"
             >
-              <button
+              <input
+                value="Avanzar con la compra"
+                type="submit"
                 className="btn btn-info text-light px-5"
                 style={{
                   borderRadius: "10px !important",
                   height: "40px",
                   backgroundColor: "#00A5D0",
                 }}
-                type="button"
-              >
-                Avanzar con la compra
-              </button>
+              />
             </Link>
+
+            <input
+              value="Avanzar con la compra"
+              type="submit"
+              className="btn btn-info text-light px-5"
+              style={{
+                borderRadius: "10px !important",
+                height: "40px",
+                backgroundColor: "#00A5D0",
+              }}
+            />
           </div>
         </form>
       </div>
