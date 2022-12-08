@@ -35,7 +35,7 @@ export default function Home() {
           <br />
           <Title
             title="Categorias"
-            subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+            subtitle="Tenemos diversidad de productos para ofrecerte en nuestro catálogo "
           />
           <br />
           <CategoryList />
@@ -95,7 +95,7 @@ export default function Home() {
           <br />
           <Title
             title="Destacados de la temporada"
-            subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+            subtitle="Conoce los imprescindibles de primavera-verano"
           />
           <br />
           <br />
@@ -105,7 +105,7 @@ export default function Home() {
           <br />
           <Title
             title="Ofertas"
-            subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+            subtitle="No te pierdas los mejores precios en todos nuestros productos"
           />
           <Productlist2 />
           <div className="d-flex justify-content-center">
