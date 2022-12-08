@@ -3,7 +3,7 @@ import React from "react";
 
 import styles from "../styles/ProgressBar.module.css";
 
-const ProgressCheckout = ({percent}) => {
+const ProgressCheckout = ({ percent }) => {
   return (
     <>
       <div
@@ -27,30 +27,48 @@ const ProgressCheckout = ({percent}) => {
           >
             <div className={`${styles.steps}`}>
               <p>PASO 1 </p>
-              <div className={`${styles.circle} d-flex justify-content-center align-items-center `}>
-                <Image src={'/verificar-lista.svg'} width={25} height={25}></Image>
+              <div
+                className={`${styles.circle} d-flex justify-content-center align-items-center `}
+              >
+                <Image
+                  src={"/verificar-lista.svg"}
+                  width={25}
+                  height={25}
+                ></Image>
               </div>
               <p className="text-wrap">Verificar Compra</p>
             </div>
-            <div className={`${styles.steps} d-flex flex-column align-items-center`}>
+            <div
+              className={`${styles.steps} d-flex flex-column align-items-center`}
+            >
               <p>PASO 2 </p>
-              <div className={`${styles.circle} d-flex justify-content-center align-items-center`}>
-              {/* <Image src={'/verificar-lista.svg'} width={25} height={25}></Image> */}
-              <i className="bi bi-person-fill fs-2"></i>
+              <div
+                className={`${styles.circle} d-flex justify-content-center align-items-center`}
+              >
+                {/* <Image src={'/verificar-lista.svg'} width={25} height={25}></Image> */}
+                <i className="bi bi-person-fill fs-2"></i>
               </div>
               <p>Datos personales</p>
             </div>
-            <div className={`${styles.steps} d-flex flex-column align-items-center`}>
+            <div
+              className={`${styles.steps} d-flex flex-column align-items-center`}
+            >
               <p>PASO 3 </p>
-              <div className={`${styles.circle} d-flex justify-content-center align-items-center`}>
-              <Image src={'/billing-icon.svg'} width={25} height={25}></Image>
+              <div
+                className={`${styles.circle} d-flex justify-content-center align-items-center`}
+              >
+                <Image src={"/billing-icon.svg"} width={25} height={25}></Image>
               </div>
               <p>Facturación y entrega</p>
             </div>
-            <div className={`${styles.steps} d-flex flex-column align-items-end`}>
+            <div
+              className={`${styles.steps} d-flex flex-column align-items-end`}
+            >
               <p>PASO 4 </p>
-              <div className={`${styles.circle} d-flex justify-content-center align-items-center`}>
-              <Image src={'/payment-icon.svg'} width={25} height={25}></Image>
+              <div
+                className={`${styles.circle} d-flex justify-content-center align-items-center`}
+              >
+                <Image src={"/payment-icon.svg"} width={25} height={25}></Image>
               </div>
               <p className="">Método de pago</p>
             </div>

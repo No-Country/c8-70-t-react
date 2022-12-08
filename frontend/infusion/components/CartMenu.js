@@ -4,12 +4,23 @@ import CartCard from "./CartCard";
 import { CartContext } from "../context/CartContext";
 
 export default function CartMenu() {
-  const { cart, addItem, totalCart } = useContext(CartContext);
+  const { cart, addItem, totalCart, setCart } = useContext(CartContext);
+  
 
   const updateQuantity = () => {
-    // cart.map((item) => {
-    //   item.quantity;
-    // });
+    const updateCart = cart.map((item) => {
+        // console.log('soy igual a product id')
+        return { ...item, 
+          id: item.id,
+          name: item.name,
+          price: item.price,
+          quantity: item.quantity,
+          subTotal: item.price * item.quantity,
+          total: item.quantity * item.price,
+          description: item.description,
+        }
+    });
+    setCart(updateCart)
     // console.log("id", id, "name", name, "price", price, "count", count);
   };
 

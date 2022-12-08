@@ -5,7 +5,7 @@ export default function ProductCounter({
   scale,
   onAdd = () => {},
   quantity,
-  productId = 0,
+  productId,
 }) {
   const { updateInCart } = useContext(CartContext);
   const defaultValue = quantity ?? 1;
@@ -14,17 +14,17 @@ export default function ProductCounter({
 
   const increment = () => {
     setCount(count + 1);
-    // if (productId != undefined) {
-    //   updateInCart(productId, count);
-    // }
+    if (productId != undefined) {
+      updateInCart(productId, count + 1);
+    }
   };
 
   const decrement = () => {
     if (count > 1) {
       setCount(count - 1);
       if (productId != undefined) {
-        // updateInCart(productId, count);
-        // console.log("count se esta enviando", count);
+        updateInCart(productId, count - 1);
+        console.log("count se esta enviando", count);
       }
     }
   };

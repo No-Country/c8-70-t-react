@@ -44,7 +44,7 @@ const CartFunction = ({ children }) => {
   function updateInCart(productId, newCount) {
     const isInCart = cart.map((item) => {
       if(item.id === productId){
-        console.log('soy igual a product id')
+        // console.log('soy igual a product id')
         return { ...item, quantity: newCount}
       }
     });

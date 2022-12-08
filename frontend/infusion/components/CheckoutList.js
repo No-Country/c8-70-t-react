@@ -5,7 +5,7 @@ import { CartContext } from "../context/CartContext";
 
 export default function CheckoutList({ nombre, precio, image, detalle }) {
   const { cart, deleteItem } = useContext(CartContext);
-  console.log(cart);
+  // console.log(cart);
 
   return (
     <>
