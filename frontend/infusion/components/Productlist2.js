@@ -42,23 +42,24 @@ export default function Productlist2(props) {
           <div>
             {products &&
               products?.map((oneProduct) => (
-                <>
+                
                   <SwiperSlide key={oneProduct.id} className="">
-                    <>
+                  
                       {/* className="row row-cols-2 row-cols-md-2 row-cols-lg-3" */}
                       {/* <div className="d-flex flex-column row-cols-2 row-cols-lg-3"> */}
 
                       <ProductCard
-                        key={oneProduct.id}
+                        // key={oneProduct.id}
+                        // testid={oneProduct.id}
                         name={oneProduct.name}
                         image={oneProduct.images}
                         price={oneProduct.price}
                         path={`/Productos/${oneProduct.id}`}
                         // etiqueta={item.etiqueta}
                       ></ProductCard>
-                    </>
+                    
                   </SwiperSlide>
-                </>
+                
               ))}
           </div>
         ) : (

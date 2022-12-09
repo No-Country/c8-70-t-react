@@ -5,10 +5,11 @@ import { FormContext } from "../context/FormContext";
 
 export default function CheckedUser({ nombre, email, phone }) {
   const { personalData } = useContext(FormContext);
-  const personalDataParse = JSON.parse(personalData);
-  const { Email } = personalData;
+  // const personalDataParse = JSON.parse(personalData);
+  // console.log("personal data state",personalDataParse)
+  // const { Email } = personalDataParse;
 
-  console.log(typeof personalDataParse, personalDataParse);
+  // console.log(typeof personalDataParse, personalDataParse);
   return (
     <>
       <div className="d-flex flex-column flex-lg-row col-12">
@@ -30,17 +31,17 @@ export default function CheckedUser({ nombre, email, phone }) {
             style={{ border: "1px black solid" }}
           ></hr>
           <span className="fs-6">
-            <strong>Nombre:</strong> {personalDataParse.nombre}{" "}
-            {personalDataParse.apellido}
+            <strong>Nombre:</strong> {personalData.nombre}{" "}
+            {personalData.apellido}
           </span>
           <br />
           <span className="fs-6">
-            <strong>Email:</strong> {personalDataParse.Email}
+            <strong>Email:</strong> {personalData.Email}
           </span>
           <br />
           <span className="fs-6">
-            <strong>Telefono:</strong> {}+{personalDataParse.codArea}{" "}
-            {personalDataParse.celular}
+            <strong>Telefono:</strong> {"+"}{personalData.codArea}{" "}
+            {personalData.celular}
           </span>
           <br />
           {/* <h5 className="mb-3">Telefono:</h5> */}

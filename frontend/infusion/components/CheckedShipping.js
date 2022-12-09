@@ -5,9 +5,9 @@ import { FormContext } from "../context/FormContext";
 
 export default function CheckedShipping({ nombre, email, phone }) {
   const { shippingData } = useContext(FormContext);
-  const shippingDataParse = JSON.parse(shippingData);
+  // const shippingData = JSON.parse(shippingData);
 
-  console.log(typeof shippingDataParse, shippingDataParse);
+  // console.log(typeof shippingData, shippingData);
 
   return (
     <>
@@ -54,12 +54,12 @@ export default function CheckedShipping({ nombre, email, phone }) {
             style={{ border: "1px black solid" }}
           ></hr>
           <span className="fs-6">
-            <strong>A entregar en: </strong> {shippingDataParse.direccion}{" "}
-            {shippingDataParse.numero}
+            <strong>A entregar en: </strong> {shippingData.direccion}{" "}
+            {shippingData.numero}
           </span>
           <br />
           <span className="fs-6">
-            <strong>Ciudad:</strong> {shippingDataParse.ciudad}
+            <strong>Ciudad:</strong> {shippingData.ciudad}
           </span>
           <br />
           <span className="fs-6">

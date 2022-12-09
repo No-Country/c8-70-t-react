@@ -13,7 +13,7 @@ export default function CategoryList() {
             <CategoryCard
               key={item.id}
               name={item.name}
-              image={"/home-product-3.png"}
+              image={item.thumbnail}
               link={`/Productos?categoryId=${item.id}&categoryName=${item.name}`}
             ></CategoryCard>
           ))}

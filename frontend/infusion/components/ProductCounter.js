@@ -58,8 +58,8 @@ export default function ProductCounter({
         type="button"
         className="btn btn-info text-light"
         style={{
-          "border-top-left-radius": "10px !important",
-          "border-bottom-left-radius": "10px !important",
+          borderTopLeftRadius: "10px !important",
+          borderBottomLeftRadius: "10px !important",
           backgroundColor: "#00A5D0",
         }}
         onClick={decrement}
@@ -82,8 +82,8 @@ export default function ProductCounter({
         type="button"
         className="btn btn-info text-light"
         style={{
-          "border-top-right-radius": "10px !important",
-          "border-bottom-right-radius": "10px !important",
+          borderTopRightRadius: "10px !important",
+          borderBottomRightRadius: "10px !important",
           backgroundColor: "#00A5D0",
         }}
         onClick={increment}
