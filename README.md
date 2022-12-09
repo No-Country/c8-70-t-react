@@ -49,7 +49,7 @@ npm start
 
 ## Team
 
-| Alan Telo | Marielba Bracho | Mateo Garcia | Noelia Martínez | Vanina Gody |
+| Alan Telo | Marielba Bracho | Mateo Garcia | Noelia Martínez | Vanina Godoy |
 |:-:|:-:|:-:|:-:|:-:|
 | **Dev**| **UI/UX**| **Dev**| **Dev**| **TL**|
 
