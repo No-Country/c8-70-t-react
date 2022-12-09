@@ -8,7 +8,8 @@ const CartFunction = ({ children }) => {
   const [units, setUnits] = useState(0);
   const [id, setId] = useState("");
 
-  const totalCart2 = cart.map((item) => (item.price * item.quantity));
+  
+  const totalCart2 = cart.map((item) => item.price * item.quantity);
   const totalCart = totalCart2.reduce((acc, red) => acc + red, 0);
 
   const addItem = (product) => {
@@ -66,7 +67,6 @@ const CartFunction = ({ children }) => {
         cart,
         setCart,
         units,
-        total,
         addItem,
         deleteItem,
         id,

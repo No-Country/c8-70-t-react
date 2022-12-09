@@ -10,7 +10,9 @@ export default function ProductCard({
   description,
   path,
   etiqueta,
+  // testid
 }) {
+  // console.log(testid)
   return (
     <>
       <div className="card position-relative mb-5">

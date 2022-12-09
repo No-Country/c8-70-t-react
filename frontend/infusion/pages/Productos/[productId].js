@@ -96,7 +96,7 @@ const Detail = () => {
                     </h5>
                   </div>
                 </div>
-                <div className="m-auto" style={{ maxWidth: "300px" }}>
+                <div className="m-auto" style={{ maxWidth: "90%" }}>
                   <p className="text-break text-start fs-10 lh-4">
                     {oneProduct?.description}
                   </p>

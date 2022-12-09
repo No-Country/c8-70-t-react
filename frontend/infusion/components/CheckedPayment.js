@@ -10,9 +10,9 @@ export default function CheckedPayment({ nombre, email, phone }) {
   const { personalData } = useContext(FormContext);
   const { cart, totalCart } = useContext(CartContext);
   console.log(cart);
-  const personalDataParse = JSON.parse(personalData);
+  // const personalData = JSON.parse(personalData);
 
-  console.log(personalDataParse);
+  // console.log(personalData);
 
   return (
     <>
@@ -41,12 +41,12 @@ export default function CheckedPayment({ nombre, email, phone }) {
           <br />
           <span className="fs-6">
             <strong>Datos para tu factura:</strong>{" "}
-            {personalDataParse.nombre +
+            {personalData.nombre +
               " " +
-              personalDataParse.apellido +
+              personalData.apellido +
               " " +
               "Documento: " +
-              personalDataParse.documento}
+              personalData.documento}
           </span>
           <br />
 

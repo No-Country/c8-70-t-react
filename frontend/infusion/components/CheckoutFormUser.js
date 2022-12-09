@@ -17,10 +17,10 @@ export default function CheckoutFormUser({}) {
     formState: { errors },
   } = useForm();
 
-  const [data, setData] = useState("");
-  const onSubmit = (data) => setPersonalData(data);
+  // const [data, setData] = useState("");
+  // const onSubmit = (data) => setPersonalData(data);
   console.log(errors);
-  console.log("datapersonal", data);
+  // console.log("datapersonal", data);
   console.log("personalData", personalData);
 
   return (
@@ -38,7 +38,7 @@ export default function CheckoutFormUser({}) {
         <h4 className="mb-3">Datos Personales</h4>
         <form
           onSubmit={handleSubmit((data) =>
-            setPersonalData(JSON.stringify(data))
+            setPersonalData(data)
           )}
         >
           <div className="row g-3">

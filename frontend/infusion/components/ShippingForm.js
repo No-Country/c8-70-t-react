@@ -14,8 +14,8 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
     formState: { errors },
   } = useForm();
 
-  const [data, setData] = useState("");
-  const onSubmit = (data) => setShippingData(data);
+  // const [data, setData] = useState("");
+  // const onSubmit = (data) => setShippingData(data);
 
   console.log(errors);
   // console.log("dataShipping", data);
@@ -40,7 +40,7 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
         ></hr>
         <form
           onSubmit={handleSubmit((data) =>
-            setShippingData(JSON.stringify(data))
+            setShippingData(data)
           )}
         >
           <div className="row g-3">

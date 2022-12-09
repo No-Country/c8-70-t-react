@@ -51,7 +51,7 @@ export default function Footer() {
               {/* <!-- Grid column --> */}
               <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                 {/* <!-- Content --> */}
-                <Image src={'/Logo-Infusion.svg'} width={250} height={150}></Image>
+                <Image src={'/Logo-Infusion.svg'} width={250} height={150} alt={'Infusion logo'}></Image>
                 {/* <h6 className="text-uppercase fw-bold mb-2 text-uppercase">
                   <i className="fas fa-gem"></i>Infusion Diseño
                 </h6>
