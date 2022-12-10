@@ -37,7 +37,7 @@ export default function CheckoutList({ nombre, precio, image, detalle }) {
                       src="/home-product-1.png"
                       width={100}
                       height={100}
-                      alt="asd"
+                      alt="home product"
                     />
                     <div className="col ms-1">
                       <h5 className="text-start" style={{ fontSize: "18px" }}>

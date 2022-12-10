@@ -37,7 +37,6 @@ export default function SumProductList({ product, precio }) {
           {" "}
           <strong>Total</strong>
         </h5>
-
         <h5 className="" style={{ fontSize: "18px" }}>
           {" "}
           <strong>$ {totalCart}</strong>
@@ -48,7 +47,6 @@ export default function SumProductList({ product, precio }) {
         style={{ minWidth: "300px" }}
       >
         <div className="m-auto mb-3 ">
-          {/* al presionar este boton se guarda el estado de lista de cart */}
           <button
             className="btn btn-info text-light"
             style={{

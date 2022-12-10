@@ -5,6 +5,7 @@ import ProductCounter from "../components/ProductCounter";
 import { FormContext } from "../context/FormContext";
 
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/router";
 
 export default function ShippingForm({ nombre, precio, image, detalle }) {
   const { shippingData, setShippingData } = useContext(FormContext);
@@ -15,8 +16,11 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
   } = useForm();
 
   // const [data, setData] = useState("");
-  // const onSubmit = (data) => setShippingData(data);
+  // const onSubmit = (data) => {
 
+  //   setShippingData(data)
+  // }
+  const router = useRouter()
   console.log(errors);
   // console.log("dataShipping", data);
   console.log("shippingData", shippingData);
@@ -138,7 +142,7 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
               <input
                 className="form-control bg-dark bg-opacity-10"
                 defaultValue="#35-22"
-                type="number"
+                type="string"
                 placeholder="#35-22"
                 {...register("residencia")}
               />
@@ -163,11 +167,10 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
             </div>
           </div>
           <div className="m-auto mt-5">
-            {/* al presionar este boton se guarda el estado de lista de cart */}
-            <Link
+            {/* <Link
               href="/PayMethod"
               className="text-light text-decoration-none mb-5"
-            >
+              > */}
               <button
                 className="btn btn-info text-light px-5"
                 style={{
@@ -175,12 +178,13 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
                   height: "40px",
                   backgroundColor: "#00A5D0",
                 }}
-                type="button"
-              >
+                // type="submit"
+                onClick={() => router.push('/PayMethod')}
+                >
                 Avanzar con la compra
               </button>
-            </Link>
-            <input
+            {/* </Link> */}
+            {/* <input
               value="Confirmar Datos"
               type="submit"
               className="btn btn-info text-light px-5"
@@ -189,7 +193,7 @@ export default function ShippingForm({ nombre, precio, image, detalle }) {
                 height: "40px",
                 backgroundColor: "#00A5D0",
               }}
-            />
+            /> */}
           </div>
         </form>
       </div>

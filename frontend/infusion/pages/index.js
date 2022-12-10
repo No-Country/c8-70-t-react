@@ -93,21 +93,34 @@ export default function Home() {
             </div>
           </div>
           <br />
-          <Title
-            title="Destacados de la temporada"
-            subtitle="Conoce los imprescindibles de primavera-verano"
-          />
-          <br />
-          <br />
+          <div className="d-sm-block d-md-none">
+            <Title
+              title="Destacados de la temporada"
+              subtitle="Conoce los imprescindibles de primavera-verano"
+            />
+            <br />
+            <br />
+            <ProductList />
+          </div>
+          <div className="d-none d-md-block">
+            <Title
+              title="Destacados de la temporada"
+              subtitle="Conoce los imprescindibles de primavera-verano"
+            />
+            <br />
+            <br />
 
-          <Productlist2 />
-          <br />
-          <br />
-          <Title
-            title="Ofertas"
-            subtitle="No te pierdas los mejores precios en todos nuestros productos"
-          />
-          <Productlist2 />
+            <Productlist2 />
+          </div>
+          <div className="d-none d-md-block">
+            <br />
+            <br />
+            <Title
+              title="Ofertas"
+              subtitle="No te pierdas los mejores precios en todos nuestros productos"
+            />
+            <Productlist2 />
+          </div>
           <div className="d-flex justify-content-center">
             <div className="mt-5 mb-5 justify-content-center btn btn-secondary bg-white w-25">
               <Link

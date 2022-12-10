@@ -49,7 +49,7 @@ export default function CartMenu() {
           style={{ border: "1px black solid" }}
         ></hr>
         <div className="offcanvas-body scroll">
-          {cart.map((item) => (
+          {cart && cart.map((item) => (
             <CartCard
               title={item.name}
               // colors={item.color}
