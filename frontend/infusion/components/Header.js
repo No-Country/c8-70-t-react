@@ -11,7 +11,7 @@ export default function Header() {
   const cartQuantity = cart.reduce((acc, red) => acc + red.quantity, 0);
   console.log(cartQuantity);
   const router = useRouter();
-  const ruta = router.pathname;
+  // const ruta = router.pathname;
   // console.log(ruta);
   return (
     <>
@@ -176,20 +176,21 @@ export default function Header() {
                           className="bi bi-bag-fill fs-5 position-relative"
                           style={{ top: "-2px" }}
                         >
-                          {" "}
-                        </i>
-                        {/* {cart == && (
+                        {cart.length > 0 && (
                           <span
-                            class="position-absolute start-100 translate-middle p-2 bg-danger border border-light rounded-circle"
-                            style={{ top: "10px" }}
+                            class="position-absolute start-100 translate-middle p-2 bg-danger border-light rounded-circle "
+                            style={{ top: "4px" }}
                           >
-                            {cart.length > 0 && cart.length}
                           </span>
-                        )} */}
+                        )}
+                            {/* <p style={{ fontSize: "8px" }}>
+                              {cart.length > 0 && cart.length}
+                            </p> */}
+                        </i>
                       </p>
                     </a>
                   </li>
-                  <p>Mi carrito ({cartQuantity})</p>
+                  <p>({cartQuantity})</p>
                   {/* <li>
                     <div type="button" class="light position-relative">
                       <i className="bi bi-bag-fill fs-4"></i>

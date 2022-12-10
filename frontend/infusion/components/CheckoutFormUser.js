@@ -5,12 +5,11 @@ import { FormContext } from "../context/FormContext";
 
 import { useForm } from "react-hook-form";
 import CartCard from "./CartCard";
+import { useRouter } from "next/router";
 
 export default function CheckoutFormUser({}) {
   const { setPersonalData, personalData } = useContext(FormContext);
-  const [confirmVisible, setConfirmVisible] = useState(true);
-  const [nextVisible, setNextVisible] = useState(true);
-
+  const router = useRouter()
   const {
     register,
     handleSubmit,
@@ -66,7 +65,6 @@ export default function CheckoutFormUser({}) {
               <label htmlFor="firstName" className="form-label">
                 Nombre
               </label>
-
               <input
                 className="form-control bg-dark bg-opacity-10"
                 defaultValue="Laura"
@@ -143,32 +141,19 @@ export default function CheckoutFormUser({}) {
           </div>
 
           <div className="m-auto mt-5">
-            {/* al presionar este boton se guarda el estado de lista de cart */}
-            <Link
-              href="/Shipping"
-              className="text-light text-decoration-none mb-5"
-            >
+          
               <input
                 value="Avanzar con la compra"
-                type="button"
+                type="submit"
                 className="btn btn-info text-light px-5"
                 style={{
                   borderRadius: "10px !important",
                   height: "40px",
                   backgroundColor: "#00A5D0",
                 }}
+                onClick={() => router.push('/Shipping')}
               />
-            </Link>
-            <input
-              value="Confirmar Datos"
-              type="submit"
-              className="btn btn-info text-light px-5"
-              style={{
-                borderRadius: "10px !important",
-                height: "40px",
-                backgroundColor: "#00A5D0",
-              }}
-            />
+            
           </div>
         </form>
       </div>

@@ -68,7 +68,7 @@ const ProgressCheckout = ({ percent }) => {
               <div
                 className={`${styles.circle} d-flex justify-content-center align-items-center`}
               >
-                <Image src={"/payment-icon.svg"} width={25} height={25}></Image>
+                <Image src={"/payment-icon.svg"} width={25} height={25} style={{opacity:100, color: 'black'}}></Image>
               </div>
               <p className="">Método de pago</p>
             </div>

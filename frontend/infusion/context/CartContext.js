@@ -7,7 +7,7 @@ const CartFunction = ({ children }) => {
   const [total, setTotal] = useState(0);
   const [units, setUnits] = useState(0);
   const [id, setId] = useState("");
-
+  // const [totalCart2, setTotalCart2] = useState(0)
   
   const totalCart2 = cart.map((item) => item.price * item.quantity);
   const totalCart = totalCart2.reduce((acc, red) => acc + red, 0);
@@ -46,8 +46,9 @@ const CartFunction = ({ children }) => {
     const isInCart = cart.map((item) => {
       if(item.id === productId){
         // console.log('soy igual a product id')
-        return { ...item, quantity: newCount}
+        return { ...item, quantity: newCount, subTotal: item.price * newCount}
       }
+      return item
     });
     setCart(isInCart)
   }
@@ -75,8 +76,7 @@ const CartFunction = ({ children }) => {
         totalCart,
         updateInCart,
         total,
-        units,
-        totalCart,
+        units,    
       }}
     >
       {children}
