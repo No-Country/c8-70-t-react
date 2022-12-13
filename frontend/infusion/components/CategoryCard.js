@@ -11,7 +11,9 @@ export default function CategoryCard({ name, link, image }) {
       <div className="card">
         <Link href={link} className=" text-decoration-none text-dark">
           <div className="card border-0">
-            <img src={image} className="card-img-top" alt="..." />
+            {/* <div style={{minHeight:'300px'}}> */}
+            <Image src={image} className="card-img-top" width={80} height={350} alt="..." />
+            {/* </div> */}
             <div className="card-body">
               <h5 className="card-title text-center text-uppercase">{name}</h5>
             </div>
