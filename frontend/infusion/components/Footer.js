@@ -11,14 +11,7 @@ export default function Footer() {
         className={`text-center text-lg-start bg-light text-muted ${styles.footer} mt-5`}
       >
         {/* <!-- Section: Social media --> */}
-        {/* <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"> */}
-        {/* <!-- Left --> */}
-        {/* <div className="me-5 d-none d-lg-block" >
-            <span>Get connected with us on social networks:</span>
-          </div> */}
-        {/* <!-- Left --> */}
-
-        {/* <!-- Right --> */}
+        
         <div>
           <a href="" className="me-4 text-reset">
             <i className="fab fa-facebook-f"></i>
@@ -39,8 +32,6 @@ export default function Footer() {
             <i className="fab fa-github"></i>
           </a>
         </div>
-        {/* <!-- Right --> */}
-        {/* </section> */}
         {/* <!-- Section: Social media --> */}
 
         {/* <!-- Section: Links  --> */}
@@ -66,17 +57,17 @@ export default function Footer() {
                   Enlaces Rapidos
                 </h6>
                 <p className="lh-1">
-                  <a href="#!" className="text-reset text-decoration-none">
+                  <a href="/Custom" className="text-reset text-decoration-none">
                     Personalizables
                   </a>
                 </p>
                 <p className="lh-1">
-                  <a href="#!" className="text-reset text-decoration-none">
+                  <a href="/About" className="text-reset text-decoration-none">
                     Sobre Nosotros
                   </a>
                 </p>
                 <p className="lh-1">
-                  <a href="#!" className="text-reset text-decoration-none">
+                  <a href="/Contact" className="text-reset text-decoration-none">
                     Contacto
                   </a>
                 </p>
@@ -98,10 +89,7 @@ export default function Footer() {
                 <p className="lh-1">
                   <i className="fas fa-home "></i> Medellin - Colombia
                 </p>
-                <p className="lh-1">
-                  <i className="fas fa-envelope"></i>
-                  {/* info@example.com */}
-                </p>
+                
               </div>
               {/* <!-- Grid column --> */}
 
@@ -112,12 +100,12 @@ export default function Footer() {
                   Navegacion
                 </h6>
                 <p className="lh-1">
-                  <a href="#!" className="text-reset text-decoration-none">
+                  <a href="/Privacy" className="text-reset text-decoration-none">
                     Politica de privacidad
                   </a>
                 </p>
                 <p className="lh-1">
-                  <a href="#!" className="text-reset text-decoration-none">
+                  <a href="/Refunds" className="text-reset text-decoration-none">
                     Politica de devoluciones
                   </a>
                 </p>

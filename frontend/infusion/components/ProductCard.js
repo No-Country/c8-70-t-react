@@ -14,10 +14,22 @@ export default function ProductCard({
 }) {
   // console.log(testid)
   return (
-    <>
+    <div className="col">
       <div className="card position-relative mb-5">
         <Link href={path} className=" text-decoration-none text-black">
-          <img src={image.img1} className="card-img-top" alt="..." />
+          <div 
+          // style={{MaxHeight:'360px',maxWidth:'390px',MinHeight:'300px',minWidth:'300px'}}
+          style={{position:"relative"}}
+          >
+            <Image src={image.img2} 
+            className="card-img-top" 
+            style={{objectFit:"contain"}}
+            // fill
+            width={300} 
+            height={300}
+            alt="..." 
+            />
+          </div>
           <div className="card-body">
             <h5 className="card-title">{name}</h5>
             <p className="card-text text-uppercase">$ {price} COP</p>
@@ -30,6 +42,6 @@ export default function ProductCard({
           </button>
         </Link>
       </div>
-    </>
+    </div>
   );
 }
