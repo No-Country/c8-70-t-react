@@ -12,7 +12,7 @@ export default function CategoryCard({ name, link, image }) {
         <Link href={link} className=" text-decoration-none text-dark">
           <div className="card border-0">
             {/* <div style={{minHeight:'300px'}}> */}
-            <Image src={image} className="card-img-top" width={80} height={350} alt="..." />
+            <Image src={image} className="card-img-top" width={80} height={350} unoptimized={true} alt="..." />
             {/* </div> */}
             <div className="card-body">
               <h5 className="card-title text-center text-uppercase">{name}</h5>
