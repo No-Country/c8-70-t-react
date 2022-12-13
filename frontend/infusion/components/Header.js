@@ -60,7 +60,15 @@ export default function Header() {
                   className=" nav-link text-uppercase fw-lighter fw-normal text-dark"
                   href="/Cart"
                 >
-                  <i className="bi bi-bag-fill fs-4"></i>
+                  <i className="bi bi-bag-fill fs-4 position-relative" style={{ top: "-2px" }}>
+                  {cart.length > 0 && (
+                          <span
+                            class="position-absolute start-100 translate-middle p-2 bg-danger border-light rounded-circle "
+                            style={{ top: "4px" }}
+                          >
+                          </span>
+                        )}
+                  </i>
                 </Link>
               </span>
               <button

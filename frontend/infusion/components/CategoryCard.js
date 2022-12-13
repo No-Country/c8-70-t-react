@@ -7,7 +7,7 @@ export default function CategoryCard({ name, link, image }) {
   const ruta = useRouter();
   // console.log(ruta.query);
   return (
-    <>
+    <div className="col g-3">
       <div className="card">
         <Link href={link} className=" text-decoration-none text-dark">
           <div className="card border-0">
@@ -18,6 +18,6 @@ export default function CategoryCard({ name, link, image }) {
           </div>
         </Link>
       </div>
-    </>
+    </div>
   );
 }
